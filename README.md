@@ -1,2 +1,4 @@
 # covid-19-uy-vacc-data
-COVID-19 UY - Vaccination monitor data
+This project was created to make public the vaccination information carried out in Uruguay.
+
+
