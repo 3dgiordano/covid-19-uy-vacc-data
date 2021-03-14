@@ -45,6 +45,45 @@ def region_vaccinated(date):
     return pd.DataFrame(json_origin["resultset"], columns=['code', 'total_vaccinated', 'name', 'scale']).fillna(0)
 
 
+def add_formatted_row(spreadsheet, sheet, date):
+    sheet_id = sheet.id
+    last_row = len(list(filter(None, sheet.col_values(1))))
+    last_col = sheet.col_count
+    body = {
+        'requests': [
+            {
+                'copyPaste': {
+                    'source': {
+                        'sheetId': sheet_id,
+                        'startRowIndex': int(last_row - 1), 'endRowIndex': last_row,
+                        'startColumnIndex': 0, 'endColumnIndex': last_col
+                    },
+                    'destination': {
+                        'sheetId': sheet_id,
+                        'startRowIndex': last_row, 'endRowIndex': int(last_row + 1),
+                        'startColumnIndex': 0, 'endColumnIndex': last_col
+                    },
+                    'pasteType': 'PASTE_FORMULA'
+                }
+            }
+        ]
+    }
+    spreadsheet.batch_update(body)  # Paste Formula
+    body["requests"][0]["copyPaste"]["pasteType"] = "PASTE_FORMAT"
+    spreadsheet.batch_update(body)
+
+    sheet_headers = sheet.row_values(1)
+    date_index = get_col_index(sheet_headers, "date")
+    sheet.update_cell(int(last_row + 1), date_index, date)
+    init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_ar", "daily_agenda_ini", "daily_agenda",
+                 "daily_ar", "daily_ca", "daily_cl", "daily_co", "daily_du", "daily_fd", "daily_fs",
+                 "daily_la", "daily_ma", "daily_mo", "daily_pa", "daily_rn", "daily_ro", "daily_rv", "daily_sa",
+                 "daily_sj", "daily_so", "daily_ta", "daily_tt"]
+    for col_ini in init_cols:
+        col_init_index = get_col_index(sheet_headers, col_ini)
+        sheet.update_cell(int(last_row + 1), col_init_index, "0")
+
+
 def main():
     daily_vac_origin = daily_vaccinated()
 
@@ -67,6 +106,9 @@ def main():
             date_row = "2021-" + date_row  # WA when format is without year
 
         sheet_row = find_row(date_row, sheet_dic)
+        if len(sheet_row) == 0:  # If not exist, create the row
+            add_formatted_row(sh, sheet, date_row)
+            sheet_row = find_row(date_row, sheet_dic)
 
         sheet_daily_vac = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_vaccinated"] or 0)
         daily_vac_origin_value = daily_vac_origin_row["daily_vaccinated"]
@@ -74,7 +116,7 @@ def main():
         sheet_row_index = -1 if len(sheet_row) == 0 else get_row_index(sheet_dic, sheet_row[0])
 
         record = True
-        if len(sheet_row) == 0:
+        if len(sheet_row) == 0:  # Extra control
             print("Create:" + date_row + " old: none new:" + str(daily_vac_origin_value))
         elif sheet_daily_vac != daily_vac_origin_value:
 
