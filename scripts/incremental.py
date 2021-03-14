@@ -7,6 +7,11 @@ import pandas as pd
 monitor_url = 'https://monitor.uruguaysevacuna.gub.uy/plugin/cda/api/doQuery?'
 
 
+def get_today():
+    from datetime import date
+    return date.today().strftime("%Y-%m-%d")
+
+
 def find_row(date, data_dic):
     return [elem for elem in data_dic if elem["date"] == date]
 
@@ -31,7 +36,7 @@ def daily_vaccinated():
 
 
 def region_vaccinated(date):
-    # Region use the format YYYYMMDD
+    # Date format YYYYMMDD
     today_str = bytes(date.replace("-", "").encode())
     data = b"paramp_periodo_desde_sk=" + today_str + b"&paramp_periodo_hasta_sk=" + today_str + \
            b"&paramp_ncto_desde_sk=0&" \
@@ -43,6 +48,19 @@ def region_vaccinated(date):
         urlopen(Request(monitor_url, data=data)).read().decode()
     )
     return pd.DataFrame(json_origin["resultset"], columns=['code', 'total_vaccinated', 'name', 'scale']).fillna(0)
+
+
+def date_agenda(date):
+    # Date format YYYYMMDD
+    today_str = bytes(date.replace("-", "").encode())
+    data = b"paramp_periodo_desde_sk=" + today_str + b"&paramp_periodo_hasta_sk=" + today_str + \
+           b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
+           b"dataAccessId=sql_indicadores_gral_agenda&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
+
+    json_origin = json.loads(
+        urlopen(Request(monitor_url, data=data)).read().decode()
+    )
+    return pd.DataFrame(json_origin["resultset"], columns=['future', 'today']).fillna(0)
 
 
 def add_formatted_row(spreadsheet, sheet, date):
@@ -87,6 +105,10 @@ def add_formatted_row(spreadsheet, sheet, date):
 def main():
     daily_vac_origin = daily_vaccinated()
 
+    today = get_today()
+
+    day_agenda = date_agenda(today)["today"]
+
     gc = gspread.service_account()
     sh = gc.open("CoronavirusUY - Vaccination monitor")
 
@@ -98,6 +120,9 @@ def main():
     daily_coronavac_col_index = get_col_index(sheet_headers, "daily_coronavac")
     daily_pfizer_col_index = get_col_index(sheet_headers, "daily_pfizer")
 
+    daily_agenda_ini_col_index = get_col_index(sheet_headers, "daily_agenda_ini")
+    daily_agenda_col_index = get_col_index(sheet_headers, "daily_agenda")
+
     for daily_vac_origin_index, daily_vac_origin_row in daily_vac_origin.iterrows():
 
         # Get date
@@ -108,6 +133,7 @@ def main():
         sheet_row = find_row(date_row, sheet_dic)
         if len(sheet_row) == 0:  # If not exist, create the row
             add_formatted_row(sh, sheet, date_row)
+            sheet_dic = sheet.get_all_records()  # Get updated changes
             sheet_row = find_row(date_row, sheet_dic)
 
         sheet_daily_vac = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_vaccinated"] or 0)
@@ -115,10 +141,23 @@ def main():
 
         sheet_row_index = -1 if len(sheet_row) == 0 else get_row_index(sheet_dic, sheet_row[0])
 
+        sheet_agenda_ini = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda_ini"] or 0)
+        sheet_agenda = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda"] or 0)
+
         record = True
         if len(sheet_row) == 0:  # Extra control
             print("Create:" + date_row + " old: none new:" + str(daily_vac_origin_value))
         elif sheet_daily_vac != daily_vac_origin_value:
+            if today == date_row:
+                if sheet_agenda_ini == 0 and day_agenda > 0:
+                    # Set the ini agenda value
+                    print("Update Agenda ini:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                        sheet_agenda_ini) + " new:" + str(day_agenda))
+                    sheet.update_cell(sheet_row_index, daily_agenda_ini_col_index, day_agenda)
+                if sheet_agenda < day_agenda:
+                    print("Update Agenda:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                        sheet_agenda) + " new:" + str(day_agenda))
+                    sheet.update_cell(sheet_row_index, daily_agenda_col_index, day_agenda)
 
             print("Update:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
                 sheet_daily_vac) + " new:" + str(daily_vac_origin_value))
