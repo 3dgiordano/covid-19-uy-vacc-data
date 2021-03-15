@@ -140,6 +140,8 @@ def main():
                 last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
             return
 
+    batch_update_cells = []
+
     for daily_vac_origin_index, daily_vac_origin_row in daily_vac_origin.iterrows():
 
         # Get date
@@ -164,11 +166,15 @@ def main():
                 # Set the ini agenda value
                 print("Update Agenda ini:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
                     sheet_agenda_ini) + " new:" + str(day_agenda))
-                sheet.update_cell(sheet_row_index, daily_agenda_ini_col_index, day_agenda)
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_agenda_ini_col_index, value=day_agenda)
+                )
             if sheet_agenda < day_agenda:
                 print("Update Agenda:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
                     sheet_agenda) + " new:" + str(day_agenda))
-                sheet.update_cell(sheet_row_index, daily_agenda_col_index, day_agenda)
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_agenda_col_index, value=day_agenda)
+                )
 
         record = True
         if len(sheet_row) == 0:  # Extra control
@@ -183,12 +189,19 @@ def main():
                 print("* Warning! decrement!")
 
             if int(daily_vac_origin_value) != sheet_daily_vac:
-                sheet.update_cell(sheet_row_index, daily_vac_col_index, daily_vac_origin_value)
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_vac_col_index, value=daily_vac_origin_value)
+                )
 
                 # Update daily vaccinated by type
-                sheet.update_cell(sheet_row_index, daily_coronavac_col_index, daily_vac_origin_row["daily_coronavac"])
-                sheet.update_cell(sheet_row_index, daily_pfizer_col_index, daily_vac_origin_row["daily_pfizer"])
-
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_coronavac_col_index,
+                                        value=daily_vac_origin_row["daily_coronavac"])
+                )
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_pfizer_col_index,
+                                        value=daily_vac_origin_row["daily_pfizer"])
+                )
         else:
             record = False
 
@@ -210,9 +223,14 @@ def main():
                     print("Update Region:" + date_row + " " + region_label + " idx:" + str(
                         sheet_row_index) + " old:" + str(sheet_daily_vac_region) + " new:" + str(
                         daily_vac_region_origin_value))
-                    sheet.update_cell(sheet_row_index, daily_vac_col_index, daily_vac_region_origin_value)
+                    batch_update_cells.append(
+                        gspread.models.Cell(sheet_row_index, daily_vac_col_index, value=daily_vac_region_origin_value)
+                    )
                     if daily_vac_region_origin_value < sheet_daily_vac_region:
                         print("* Warning! decrement! ")
+
+    if len(batch_update_cells) > 0:
+        sheet.update_cells(batch_update_cells)
 
     # Refresh and check results
     sheet_dic = sheet.get_all_records()  # Get updated changes
