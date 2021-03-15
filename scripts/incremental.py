@@ -7,11 +7,6 @@ import pandas as pd
 monitor_url = 'https://monitor.uruguaysevacuna.gub.uy/plugin/cda/api/doQuery?'
 
 
-def get_today():
-    from datetime import date
-    return date.today().strftime("%Y-%m-%d")
-
-
 def find_row(date, data_dic):
     return [elem for elem in data_dic if elem["date"] == date]
 
@@ -24,15 +19,15 @@ def get_col_index(headers, label):
     return headers.index(label) + 1
 
 
+def get_data(data, columns):
+    json_origin = json.loads(urlopen(Request(monitor_url, data=data)).read().decode())
+    return pd.DataFrame(json_origin["resultset"], columns=columns).fillna(0)
+
+
 def daily_vaccinated():
     data = b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_evolucion&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
-
-    json_origin = json.loads(
-        urlopen(Request(monitor_url, data=data)).read().decode()
-    )
-    return pd.DataFrame(json_origin["resultset"],
-                        columns=['date', 'daily_vaccinated', 'daily_coronavac', 'daily_pfizer']).fillna(0)
+    return get_data(data, ['date', 'daily_vaccinated', 'daily_coronavac', 'daily_pfizer'])
 
 
 def region_vaccinated(date):
@@ -43,11 +38,7 @@ def region_vaccinated(date):
            b"paramp_ncto_hasta_sk=0&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2F" \
            b"VacunasCovid.cda&dataAccessId=sql_vacunas_depto_vacunatorio&outputIndexId=1&pageSize=0&" \
            b"pageStart=0&sortBy=&paramsearchBox="
-
-    json_origin = json.loads(
-        urlopen(Request(monitor_url, data=data)).read().decode()
-    )
-    return pd.DataFrame(json_origin["resultset"], columns=['code', 'total_vaccinated', 'name', 'scale']).fillna(0)
+    return get_data(data, ['code', 'total_vaccinated', 'name', 'scale'])
 
 
 def date_agenda(date):
@@ -56,11 +47,17 @@ def date_agenda(date):
     data = b"paramp_periodo_desde_sk=" + today_str + b"&paramp_periodo_hasta_sk=" + today_str + \
            b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_indicadores_gral_agenda&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
+    return get_data(data, ['future', 'today'])
 
-    json_origin = json.loads(
-        urlopen(Request(monitor_url, data=data)).read().decode()
-    )
-    return pd.DataFrame(json_origin["resultset"], columns=['future', 'today']).fillna(0)
+
+def today_status(date):
+    # Date format YYYYMMDD
+    today_str = bytes(date.replace("-", "").encode())
+    data = b"paramp_periodo_desde_sk=" + today_str + b"&paramp_periodo_hasta_sk=" + today_str + \
+           b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunas" \
+           b"Covid.cda&dataAccessId=sql_indicadores_generales&outputIndexId=1&pageSize=0&pageStart=0&" \
+           b"sortBy=&paramsearchBox="
+    return get_data(data, ['total_vaccinations', 'today_vaccinations', 'centers', 'update_time'])
 
 
 def add_formatted_row(spreadsheet, sheet, date):
@@ -114,7 +111,11 @@ def main():
 
     today = transform_date(daily_vac_origin.tail(1)["date"].values[0])
 
-    day_agenda = int(date_agenda(get_today())["today"].item() or 0)
+    day_agenda = int(date_agenda(today)["today"].item() or 0)
+
+    today_vac_status = today_status(today)
+
+    today_total_vaccinations = int(today_vac_status["total_vaccinations"].item() or 0)
 
     gc = gspread.service_account()
     sh = gc.open("CoronavirusUY - Vaccination monitor")
@@ -129,6 +130,15 @@ def main():
 
     daily_agenda_ini_col_index = get_col_index(sheet_headers, "daily_agenda_ini")
     daily_agenda_col_index = get_col_index(sheet_headers, "daily_agenda")
+
+    last_row = sheet_dic[-1]
+    last_date = last_row["date"]
+
+    if last_date == today:
+        if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
+            print("* Execution Excluded! Corrupt source data? Last valid:" + str(
+                last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
+            return
 
     for daily_vac_origin_index, daily_vac_origin_row in daily_vac_origin.iterrows():
 
