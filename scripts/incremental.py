@@ -179,19 +179,21 @@ def main():
                 sheet_daily_vac) + " new:" + str(daily_vac_origin_value))
 
             # Only update when value is increased (protection against errors at source)
-            if int(daily_vac_origin_value) > sheet_daily_vac:
+            if int(daily_vac_origin_value) < sheet_daily_vac:
+                print("* Warning! decrement!")
+
+            if int(daily_vac_origin_value) != sheet_daily_vac:
                 sheet.update_cell(sheet_row_index, daily_vac_col_index, daily_vac_origin_value)
 
                 # Update daily vaccinated by type
                 sheet.update_cell(sheet_row_index, daily_coronavac_col_index, daily_vac_origin_row["daily_coronavac"])
                 sheet.update_cell(sheet_row_index, daily_pfizer_col_index, daily_vac_origin_row["daily_pfizer"])
-            else:
-                print("* Excluded! decrement!")
+
         else:
             record = False
 
         if record:  # Only request to recalculate regions when daily_vaccinated change
-
+            # time.sleep(60)  # Modification quota every 60 seconds
             # Get region data for that date
             daily_vac_region_origin = region_vaccinated(date_row)
 
@@ -211,6 +213,14 @@ def main():
                     sheet.update_cell(sheet_row_index, daily_vac_col_index, daily_vac_region_origin_value)
                     if daily_vac_region_origin_value < sheet_daily_vac_region:
                         print("* Warning! decrement! ")
+
+    # Refresh and check results
+    sheet_dic = sheet.get_all_records()  # Get updated changes
+    last_row = sheet_dic[-1]
+    last_date = last_row["date"]
+
+    if last_date == today:
+        print("Source Total:" + str(last_row["total_vaccinations"]) + " Final Total:" + str(today_total_vaccinations))
 
 
 if __name__ == "__main__":
