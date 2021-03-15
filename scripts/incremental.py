@@ -102,12 +102,19 @@ def add_formatted_row(spreadsheet, sheet, date):
         sheet.update_cell(int(last_row + 1), col_init_index, "0")
 
 
+def transform_date(date_str):
+    date_str = "-".join(date_str.split("-")[::-1])
+    if not date_str.startswith("2021-"):
+        date_str = "2021-" + date_str  # WA when format is without year
+    return date_str
+
+
 def main():
     daily_vac_origin = daily_vaccinated()
 
-    today = get_today()
+    today = transform_date(daily_vac_origin.tail(1)["date"].values[0])
 
-    day_agenda = date_agenda(today)["today"]
+    day_agenda = int(date_agenda(get_today())["today"].item() or 0)
 
     gc = gspread.service_account()
     sh = gc.open("CoronavirusUY - Vaccination monitor")
@@ -126,9 +133,7 @@ def main():
     for daily_vac_origin_index, daily_vac_origin_row in daily_vac_origin.iterrows():
 
         # Get date
-        date_row = "-".join(daily_vac_origin_row["date"].split("-")[::-1])
-        if not date_row.startswith("2021-"):
-            date_row = "2021-" + date_row  # WA when format is without year
+        date_row = transform_date(daily_vac_origin_row["date"])
 
         sheet_row = find_row(date_row, sheet_dic)
         if len(sheet_row) == 0:  # If not exist, create the row
@@ -144,20 +149,21 @@ def main():
         sheet_agenda_ini = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda_ini"] or 0)
         sheet_agenda = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda"] or 0)
 
+        if today == date_row:
+            if sheet_agenda_ini == 0 and day_agenda > 0:
+                # Set the ini agenda value
+                print("Update Agenda ini:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_agenda_ini) + " new:" + str(day_agenda))
+                sheet.update_cell(sheet_row_index, daily_agenda_ini_col_index, day_agenda)
+            if sheet_agenda < day_agenda:
+                print("Update Agenda:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_agenda) + " new:" + str(day_agenda))
+                sheet.update_cell(sheet_row_index, daily_agenda_col_index, day_agenda)
+
         record = True
         if len(sheet_row) == 0:  # Extra control
             print("Create:" + date_row + " old: none new:" + str(daily_vac_origin_value))
         elif sheet_daily_vac != daily_vac_origin_value:
-            if today == date_row:
-                if sheet_agenda_ini == 0 and day_agenda > 0:
-                    # Set the ini agenda value
-                    print("Update Agenda ini:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
-                        sheet_agenda_ini) + " new:" + str(day_agenda))
-                    sheet.update_cell(sheet_row_index, daily_agenda_ini_col_index, day_agenda)
-                if sheet_agenda < day_agenda:
-                    print("Update Agenda:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
-                        sheet_agenda) + " new:" + str(day_agenda))
-                    sheet.update_cell(sheet_row_index, daily_agenda_col_index, day_agenda)
 
             print("Update:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
                 sheet_daily_vac) + " new:" + str(daily_vac_origin_value))
