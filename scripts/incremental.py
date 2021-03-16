@@ -1,4 +1,5 @@
 import json
+import time
 from urllib.request import Request, urlopen
 
 import gspread
@@ -154,6 +155,7 @@ def main():
         sheet_row = find_row(date_row, sheet_dic)
         if len(sheet_row) == 0:  # If not exist, create the row
             add_formatted_row(sh, sheet, date_row)
+            time.sleep(1)  # Wait for refresh
             sheet_dic = sheet.get_all_records()  # Get updated changes
             sheet_row = find_row(date_row, sheet_dic)
 
@@ -188,7 +190,6 @@ def main():
             print("Update:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
                 sheet_daily_vac) + " new:" + str(daily_vac_origin_value))
 
-            # Only update when value is increased (protection against errors at source)
             if int(daily_vac_origin_value) < sheet_daily_vac:
                 print("* Warning! decrement!")
 
