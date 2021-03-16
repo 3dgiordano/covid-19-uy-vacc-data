@@ -94,9 +94,13 @@ def add_formatted_row(spreadsheet, sheet, date):
                  "daily_ar", "daily_ca", "daily_cl", "daily_co", "daily_du", "daily_fd", "daily_fs",
                  "daily_la", "daily_ma", "daily_mo", "daily_pa", "daily_rn", "daily_ro", "daily_rv", "daily_sa",
                  "daily_sj", "daily_so", "daily_ta", "daily_tt"]
+
+    batch_update_cells = []
     for col_ini in init_cols:
         col_init_index = get_col_index(sheet_headers, col_ini)
-        sheet.update_cell(int(last_row + 1), col_init_index, "0")
+        batch_update_cells.append(gspread.models.Cell(int(last_row + 1), col_init_index, value="0"))
+    if len(batch_update_cells) > 0:
+        sheet.update_cells(batch_update_cells)
 
 
 def transform_date(date_str):
