@@ -98,7 +98,7 @@ def add_formatted_row(spreadsheet, sheet, date):
     batch_update_cells = []
     for col_ini in init_cols:
         col_init_index = get_col_index(sheet_headers, col_ini)
-        batch_update_cells.append(gspread.models.Cell(int(last_row + 1), col_init_index, value="0"))
+        batch_update_cells.append(gspread.models.Cell(int(last_row + 1), col_init_index, value=0))
     if len(batch_update_cells) > 0:
         sheet.update_cells(batch_update_cells)
 
