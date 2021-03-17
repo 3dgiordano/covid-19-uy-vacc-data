@@ -2,10 +2,6 @@ name: Update data
 
 on: 
   workflow_dispatch:
-  schedule:
-    # Run every 15 minutes on the UTC time range 12:00 PM UTC to 02:00 AM UTC
-    - cron: '*/15 12-23 * * *'
-    - cron: '*/15 0-2 * * *'
     
 jobs:
   build:
