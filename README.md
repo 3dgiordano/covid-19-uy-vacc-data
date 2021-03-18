@@ -2,7 +2,7 @@
 #### covid-19-uy-vacc-data
 This project was created to publicize the Covid-19 vaccination information carried out in Uruguay.
 
-The project was born as a collaboration to provide updated data to [Our World in Data](https://ourworldindata.org/)
+It was born as a collaboration to provide updated data to [Our World in Data](https://ourworldindata.org/)
 
 Thanks to Edouard Mathieu [@edomt](https://github.com/edomt) Head of Data at [@owid](https://github.com/owid) for trusting in this project.
 
@@ -10,7 +10,7 @@ Data gattered from Ministry of Public Health of Uruguay. https://monitor.uruguay
 
 Our World in Data takes our data to publish it on its portal [Uruguay Covid-19 Vaccinations in Our World in Data](https://ourworldindata.org/covid-vaccinations?country=~URY)
 
-Today, the project also collects more data like detailed daily vaccination data for each region, as well as the expected daily agenda.
+Today, the project also collects more data, such as detailed daily vaccination data for each region, as well as the expected daily agenda.
 
 All data is public, you can access the raw data and create your own reports if you want [/data/Uruguay.csv](https://github.com/3dgiordano/covid-19-uy-vacc-data/blob/main/data/Uruguay.csv)
 
