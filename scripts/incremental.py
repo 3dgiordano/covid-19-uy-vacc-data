@@ -160,7 +160,13 @@ def main():
             sheet_row = find_row(date_row, sheet_dic)
 
         sheet_daily_vac = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_vaccinated"] or 0)
+
+        sheet_daily_vac_coronavac = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_coronavac"] or 0)
+        sheet_daily_vac_pfizer = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_pfizer"] or 0)
+
         daily_vac_origin_value = daily_vac_origin_row["daily_vaccinated"]
+        daily_vac_coronavac_origin_value = daily_vac_origin_row["daily_coronavac"]
+        daily_vac_pfizer_origin_value = daily_vac_origin_row["daily_pfizer"]
 
         sheet_row_index = -1 if len(sheet_row) == 0 else get_row_index(sheet_dic, sheet_row[0])
 
@@ -182,7 +188,6 @@ def main():
                     gspread.models.Cell(sheet_row_index, daily_agenda_col_index, value=day_agenda)
                 )
 
-        record = True
         if len(sheet_row) == 0:  # Extra control
             print("Create:" + date_row + " old: none new:" + str(daily_vac_origin_value))
         elif sheet_daily_vac != daily_vac_origin_value:
@@ -198,41 +203,48 @@ def main():
                     gspread.models.Cell(sheet_row_index, daily_vac_col_index, value=daily_vac_origin_value)
                 )
 
+            if int(daily_vac_coronavac_origin_value) != sheet_daily_vac_coronavac:
                 # Update daily vaccinated by type
+
+                print("Update Coronavac:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_daily_vac_coronavac) + " new:" + str(daily_vac_coronavac_origin_value))
+
                 batch_update_cells.append(
                     gspread.models.Cell(sheet_row_index, daily_coronavac_col_index,
-                                        value=daily_vac_origin_row["daily_coronavac"])
+                                        value=daily_vac_coronavac_origin_value)
                 )
+
+            if int(daily_vac_pfizer_origin_value) != sheet_daily_vac_pfizer:
+
+                print("Update Pfizer:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_daily_vac_pfizer) + " new:" + str(daily_vac_pfizer_origin_value))
+
                 batch_update_cells.append(
                     gspread.models.Cell(sheet_row_index, daily_pfizer_col_index,
-                                        value=daily_vac_origin_row["daily_pfizer"])
+                                        value=daily_vac_pfizer_origin_value)
                 )
-        else:
-            record = False
 
-        if record:  # Only request to recalculate regions when daily_vaccinated change
-            # time.sleep(60)  # Modification quota every 60 seconds
-            # Get region data for that date
-            daily_vac_region_origin = region_vaccinated(date_row)
+        # Get region data for that date
+        daily_vac_region_origin = region_vaccinated(date_row)
 
-            for daily_vac_region_origin_index, daily_vac_region_origin_row in daily_vac_region_origin.iterrows():
-                # Generate the label with the sheet format
-                region_label = "daily_" + daily_vac_region_origin_row["code"].split("-")[1].lower()
-                sheet_daily_vac_region = 0 if len(sheet_row) == 0 else int(sheet_row[0][region_label] or 0)
-                daily_vac_region_origin_value = int(daily_vac_region_origin_row["total_vaccinated"].replace(".", ""))
-                if len(sheet_row) == 0:
-                    print("Create Region:" + date_row + " " + region_label + " old: none new:" + str(
-                        daily_vac_region_origin_value))
-                elif sheet_daily_vac_region != daily_vac_region_origin_value:
-                    daily_vac_col_index = get_col_index(sheet_headers, region_label)
-                    print("Update Region:" + date_row + " " + region_label + " idx:" + str(
-                        sheet_row_index) + " old:" + str(sheet_daily_vac_region) + " new:" + str(
-                        daily_vac_region_origin_value))
-                    batch_update_cells.append(
-                        gspread.models.Cell(sheet_row_index, daily_vac_col_index, value=daily_vac_region_origin_value)
-                    )
-                    if daily_vac_region_origin_value < sheet_daily_vac_region:
-                        print("* Warning! decrement! ")
+        for daily_vac_region_origin_index, daily_vac_region_origin_row in daily_vac_region_origin.iterrows():
+            # Generate the label with the sheet format
+            region_label = "daily_" + daily_vac_region_origin_row["code"].split("-")[1].lower()
+            sheet_daily_vac_region = 0 if len(sheet_row) == 0 else int(sheet_row[0][region_label] or 0)
+            daily_vac_region_origin_value = int(daily_vac_region_origin_row["total_vaccinated"].replace(".", ""))
+            if len(sheet_row) == 0:
+                print("Create Region:" + date_row + " " + region_label + " old: none new:" + str(
+                    daily_vac_region_origin_value))
+            elif sheet_daily_vac_region != daily_vac_region_origin_value:
+                daily_vac_col_index = get_col_index(sheet_headers, region_label)
+                print("Update Region:" + date_row + " " + region_label + " idx:" + str(
+                    sheet_row_index) + " old:" + str(sheet_daily_vac_region) + " new:" + str(
+                    daily_vac_region_origin_value))
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_vac_col_index, value=daily_vac_region_origin_value)
+                )
+                if daily_vac_region_origin_value < sheet_daily_vac_region:
+                    print("* Warning! decrement! ")
 
     if len(batch_update_cells) > 0:
         sheet.update_cells(batch_update_cells)
