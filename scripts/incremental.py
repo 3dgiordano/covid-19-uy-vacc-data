@@ -155,7 +155,7 @@ def main():
         sheet_row = find_row(date_row, sheet_dic)
         if len(sheet_row) == 0:  # If not exist, create the row
             add_formatted_row(sh, sheet, date_row)
-            time.sleep(1)  # Wait for refresh
+            time.sleep(2)  # Wait for refresh
             sheet_dic = sheet.get_all_records()  # Get updated changes
             sheet_row = find_row(date_row, sheet_dic)
 
@@ -238,6 +238,7 @@ def main():
         sheet.update_cells(batch_update_cells)
 
     # Refresh and check results
+    time.sleep(2)  # Wait for refresh
     sheet_dic = sheet.get_all_records()  # Get updated changes
     last_row = sheet_dic[-1]
     last_date = last_row["date"]
