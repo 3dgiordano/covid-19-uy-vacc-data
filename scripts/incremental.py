@@ -165,8 +165,8 @@ def main():
         sheet_daily_vac_pfizer = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_pfizer"] or 0)
 
         daily_vac_origin_value = daily_vac_origin_row["daily_vaccinated"]
-        daily_vac_coronavac_origin_value = daily_vac_origin_row["daily_coronavac"]
-        daily_vac_pfizer_origin_value = daily_vac_origin_row["daily_pfizer"]
+        daily_vac_coronavac_origin_value = int(daily_vac_origin_row["daily_coronavac"])
+        daily_vac_pfizer_origin_value = int(daily_vac_origin_row["daily_pfizer"])
 
         sheet_row_index = -1 if len(sheet_row) == 0 else get_row_index(sheet_dic, sheet_row[0])
 
@@ -247,7 +247,8 @@ def main():
                     print("* Warning! decrement! ")
 
     if len(batch_update_cells) > 0:
-        sheet.update_cells(batch_update_cells)
+        update_data = sheet.update_cells(batch_update_cells)
+        print("To update cells:" + str(len(batch_update_cells)) + " Updated:" + str(update_data["updatedCells"]))
 
     # Refresh and check results
     time.sleep(2)  # Wait for refresh
