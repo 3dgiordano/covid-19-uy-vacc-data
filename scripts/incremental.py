@@ -215,7 +215,6 @@ def main():
                 )
 
             if int(daily_vac_pfizer_origin_value) != sheet_daily_vac_pfizer:
-
                 print("Update Pfizer:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
                     sheet_daily_vac_pfizer) + " new:" + str(daily_vac_pfizer_origin_value))
 
@@ -246,9 +245,37 @@ def main():
                 if daily_vac_region_origin_value < sheet_daily_vac_region:
                     print("* Warning! decrement! ")
 
-    if len(batch_update_cells) > 0:
+    to_update = len(batch_update_cells)
+    if to_update > 0:
         update_data = sheet.update_cells(batch_update_cells)
-        print("To update cells:" + str(len(batch_update_cells)) + " Updated:" + str(update_data["updatedCells"]))
+        updated = update_data["updatedCells"]
+        print("To update cells:" + str(to_update) + " Updated:" + str(updated))
+
+        if to_update != updated:
+            # Find difference and force to update
+            address = []
+            rows = []
+            cols = []
+            values = []
+            for cell in batch_update_cells:
+                rows.append(cell.row)
+                cols.append(cell.col)
+                address.append(cell.address)
+                values.append(cell.value)
+
+            ret_values = sheet.batch_get(address)
+            force_cells = []
+            for index, val in enumerate(ret_values):
+                if int(val[0][0]) != values[index]:
+                    print("Not updated:" + address[index] + " Val:" + str(values[index]) + " S:" + str(int(val[0][0])))
+                    force_cells.append(
+                        gspread.models.Cell(rows[index], cols[index], value=values[index])
+                    )
+            to_update = len(force_cells)
+            if to_update > 0:
+                update_data = sheet.update_cells(force_cells)
+                updated = update_data["updatedCells"]
+                print("Force to update cells:" + str(to_update) + " Updated:" + str(updated))
 
     # Refresh and check results
     time.sleep(2)  # Wait for refresh
