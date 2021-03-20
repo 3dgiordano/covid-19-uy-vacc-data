@@ -293,14 +293,15 @@ def update():
 
 
 if __name__ == "__main__":
-    limit_retry = 5
-    num_retry = 0
+    limit_retry = 10
+    num_retry = 1
     while num_retry <= limit_retry:
+        print("Update:" + str(num_retry))
         if not update():
             print("Update finished")
             break
         print("Updated data, retrying to ensure no pending data...")
         num_retry += 1
 
-    if num_retry == limit_retry:
+    if num_retry > limit_retry:
         print("Retry limit reached")
