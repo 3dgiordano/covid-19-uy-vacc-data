@@ -111,7 +111,9 @@ def transform_date(date_str):
     return date_str
 
 
-def main():
+def update():
+    updates = False
+
     daily_vac_origin = daily_vaccinated()
 
     today = transform_date(daily_vac_origin.tail(1)["date"].values[0])
@@ -247,6 +249,7 @@ def main():
 
     to_update = len(batch_update_cells)
     if to_update > 0:
+        updates = True
         update_data = sheet.update_cells(batch_update_cells)
         updated = update_data["updatedCells"]
         print("To update cells:" + str(to_update) + " Updated:" + str(updated))
@@ -286,6 +289,18 @@ def main():
     if last_date == today:
         print("Source Total:" + str(last_row["total_vaccinations"]) + " Final Total:" + str(today_total_vaccinations))
 
+    return updates
+
 
 if __name__ == "__main__":
-    main()
+    limit_retry = 5
+    num_retry = 0
+    while num_retry <= limit_retry:
+        if not update():
+            print("Update finished")
+            break
+        print("Updated data, retrying to ensure no pending data...")
+        num_retry += 1
+
+    if num_retry == limit_retry:
+        print("Retry limit reached")
