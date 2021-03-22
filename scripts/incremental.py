@@ -7,6 +7,11 @@ import pandas as pd
 
 monitor_url = 'https://monitor.uruguaysevacuna.gub.uy/plugin/cda/api/doQuery?'
 
+region_letter = {
+    "A": "ar", "B": "ca", "C": "cl", "D": "co", "E": "du", "F": "fs", "G": "fd", "H": "la", "I": "ma", "J": "mo",
+    "K": "pa", "L": "rn", "M": "rv", "N": "ro", "O": "sa", "P": "sj", "Q": "so", "R": "ta", "S": "tt", "X": "unk"
+}
+
 
 def find_row(date, data_dic):
     return [elem for elem in data_dic if elem["date"] == date]
@@ -40,6 +45,12 @@ def region_vaccinated(date):
            b"VacunasCovid.cda&dataAccessId=sql_vacunas_depto_vacunatorio&outputIndexId=1&pageSize=0&" \
            b"pageStart=0&sortBy=&paramsearchBox="
     return get_data(data, ['code', 'total_vaccinated', 'name', 'scale'])
+
+
+def region_vaccination_centers():
+    data = b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
+           b"dataAccessId=sql_filtro_centro_vacuna&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
+    return get_data(data, ['code', 'name'])
 
 
 def date_agenda(date):
@@ -112,6 +123,16 @@ def transform_date(date_str):
 
 
 def update():
+    # region_vacc_centers = region_vaccination_centers()
+
+    # for region_vacc_center_index, region_vacc_center in region_vacc_centers.iterrows():
+    #    name = region_vacc_center["name"]
+    #    print(name)
+    #    #print(name.split(" ")[0])
+
+    #    # print(region_vacc_center)
+    # return False
+
     updates = False
 
     daily_vac_origin = daily_vaccinated()
@@ -192,18 +213,19 @@ def update():
 
         if len(sheet_row) == 0:  # Extra control
             print("Create:" + date_row + " old: none new:" + str(daily_vac_origin_value))
-        elif sheet_daily_vac != daily_vac_origin_value:
+        else:
+            if sheet_daily_vac != daily_vac_origin_value:
 
-            print("Update:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
-                sheet_daily_vac) + " new:" + str(daily_vac_origin_value))
+                print("Update:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_daily_vac) + " new:" + str(daily_vac_origin_value))
 
-            if int(daily_vac_origin_value) < sheet_daily_vac:
-                print("* Warning! decrement!")
+                if int(daily_vac_origin_value) < sheet_daily_vac:
+                    print("* Warning! decrement!")
 
-            if int(daily_vac_origin_value) != sheet_daily_vac:
-                batch_update_cells.append(
-                    gspread.models.Cell(sheet_row_index, daily_vac_col_index, value=daily_vac_origin_value)
-                )
+                if int(daily_vac_origin_value) != sheet_daily_vac:
+                    batch_update_cells.append(
+                        gspread.models.Cell(sheet_row_index, daily_vac_col_index, value=daily_vac_origin_value)
+                    )
 
             if int(daily_vac_coronavac_origin_value) != sheet_daily_vac_coronavac:
                 # Update daily vaccinated by type
@@ -225,27 +247,27 @@ def update():
                                         value=daily_vac_pfizer_origin_value)
                 )
 
-        # Get region data for that date
-        daily_vac_region_origin = region_vaccinated(date_row)
+            # Get region data for that date
+            daily_vac_region_origin = region_vaccinated(date_row)
 
-        for daily_vac_region_origin_index, daily_vac_region_origin_row in daily_vac_region_origin.iterrows():
-            # Generate the label with the sheet format
-            region_label = "daily_" + daily_vac_region_origin_row["code"].split("-")[1].lower()
-            sheet_daily_vac_region = 0 if len(sheet_row) == 0 else int(sheet_row[0][region_label] or 0)
-            daily_vac_region_origin_value = int(daily_vac_region_origin_row["total_vaccinated"].replace(".", ""))
-            if len(sheet_row) == 0:
-                print("Create Region:" + date_row + " " + region_label + " old: none new:" + str(
-                    daily_vac_region_origin_value))
-            elif sheet_daily_vac_region != daily_vac_region_origin_value:
-                daily_vac_col_index = get_col_index(sheet_headers, region_label)
-                print("Update Region:" + date_row + " " + region_label + " idx:" + str(
-                    sheet_row_index) + " old:" + str(sheet_daily_vac_region) + " new:" + str(
-                    daily_vac_region_origin_value))
-                batch_update_cells.append(
-                    gspread.models.Cell(sheet_row_index, daily_vac_col_index, value=daily_vac_region_origin_value)
-                )
-                if daily_vac_region_origin_value < sheet_daily_vac_region:
-                    print("* Warning! decrement! ")
+            for daily_vac_region_origin_index, daily_vac_region_origin_row in daily_vac_region_origin.iterrows():
+                # Generate the label with the sheet format
+                region_label = "daily_" + daily_vac_region_origin_row["code"].split("-")[1].lower()
+                sheet_daily_vac_region = 0 if len(sheet_row) == 0 else int(sheet_row[0][region_label] or 0)
+                daily_vac_region_origin_value = int(daily_vac_region_origin_row["total_vaccinated"].replace(".", ""))
+                if len(sheet_row) == 0:
+                    print("Create Region:" + date_row + " " + region_label + " old: none new:" + str(
+                        daily_vac_region_origin_value))
+                elif sheet_daily_vac_region != daily_vac_region_origin_value:
+                    daily_vac_col_index = get_col_index(sheet_headers, region_label)
+                    print("Update Region:" + date_row + " " + region_label + " idx:" + str(
+                        sheet_row_index) + " old:" + str(sheet_daily_vac_region) + " new:" + str(
+                        daily_vac_region_origin_value))
+                    batch_update_cells.append(
+                        gspread.models.Cell(sheet_row_index, daily_vac_col_index, value=daily_vac_region_origin_value)
+                    )
+                    if daily_vac_region_origin_value < sheet_daily_vac_region:
+                        print("* Warning! decrement! ")
 
     to_update = len(batch_update_cells)
     if to_update > 0:
