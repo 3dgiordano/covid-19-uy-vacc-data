@@ -25,6 +25,8 @@
     </td>
   </tr>
 </table>
+<img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=857919432&format=image">
+
 <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=1322547223&format=image">
 
 <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=842189614&format=image">
