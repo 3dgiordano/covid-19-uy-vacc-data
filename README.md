@@ -1,4 +1,4 @@
-## Current data
+<h1>Uruguay COVID-19 vaccination data</bold></h1>
 <table>
   <tr>
     <td>
