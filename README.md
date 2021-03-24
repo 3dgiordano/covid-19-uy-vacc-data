@@ -60,6 +60,8 @@ All data is public, you can access the raw data and create your own reports if y
 
 The data generated is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and the Source Code under [MIT](https://github.com/3dgiordano/covid-19-uy-vacc-data/blob/main/LICENSE)
 
+[View this project on GitHub](https://github.com/3dgiordano/covid-19-uy-vacc-data)
+
 ## Google Spreadsheet
 
 [Spreadsheet Website (Dashboard, Data and Project info)](https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubhtml?widget=true&headers=false&chrome=false)
