@@ -1,5 +1,4 @@
 # Uruguay COVID-19 vaccination data
-## Real-time data (refresh page to update graphs)
 
 <table>
   <tr>
