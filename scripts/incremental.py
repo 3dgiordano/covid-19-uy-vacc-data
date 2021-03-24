@@ -143,6 +143,8 @@ def update():
 
     today_vac_status = today_status(today)
 
+    today_uodate_time = today + " " + today_vac_status["update_time"].values[0]
+
     today_total_vaccinations = int(today_vac_status["total_vaccinations"].item() or 0)
 
     gc = gspread.service_account()
@@ -310,6 +312,10 @@ def update():
 
     if last_date == today:
         print("Source Total:" + str(last_row["total_vaccinations"]) + " Final Total:" + str(today_total_vaccinations))
+
+        # Update date time data
+        sheet_data = sh.worksheet("Data")
+        sheet_data.update_cell(6, 10, today_uodate_time)
 
     return updates
 
