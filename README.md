@@ -1,4 +1,4 @@
-<h1>Uruguay COVID-19 vaccination data</bold></h1>
+<h1>Uruguay COVID-19 vaccination data</h1>
 <table>
   <tr>
     <td>
