@@ -1,4 +1,4 @@
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+<link rel="shortcut icon" type="image/x-icon" href="{{ "/favicon.ico"  | absolute_url }}">
 <h1>Uruguay COVID-19 vaccination data</h1>
 <table>
   <tr>
