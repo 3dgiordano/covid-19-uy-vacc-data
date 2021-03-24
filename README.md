@@ -1,4 +1,4 @@
-# Uruguay COVID-19 vaccination data
+# 
 <table>
   <tr>
     <td>
