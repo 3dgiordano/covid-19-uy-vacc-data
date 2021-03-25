@@ -51,7 +51,7 @@ It was born as a collaboration to provide updated data to [Our World in Data](ht
 
 Thanks to Edouard Mathieu [@edomt](https://github.com/edomt) Head of Data at [@owid](https://github.com/owid) for trusting in this project.
 
-Data gattered from Ministry of Public Health of Uruguay. https://monitor.uruguaysevacuna.gub.uy/
+Data gattered from Ministry of Public Health of Uruguay. [https://monitor.uruguaysevacuna.gub.uy/](https://monitor.uruguaysevacuna.gub.uy/)
 
 Our World in Data takes our data to publish it on its portal [Uruguay Covid-19 Vaccinations in Our World in Data](https://ourworldindata.org/covid-vaccinations?country=~URY)
 
