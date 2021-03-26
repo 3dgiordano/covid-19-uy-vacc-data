@@ -76,6 +76,10 @@ The data generated is licensed under [CC BY 4.0](https://creativecommons.org/lic
 
 [View this project on GitHub](https://github.com/3dgiordano/covid-19-uy-vacc-data)
 
+If you enjoy my content, please consider supporting what I do.
+
+[Buy a Coffee :coffee: for David Giordano :heart:](https://ko-fi.com/davidgiordano) 
+
 ## Google Spreadsheet
 
 [Spreadsheet Website (Dashboard, Data and Project info)](https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubhtml?widget=true&headers=false&chrome=false)
