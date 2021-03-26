@@ -85,5 +85,3 @@ If you enjoy my content, please consider supporting what I do.
 [Spreadsheet Website (Dashboard, Data and Project info)](https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubhtml?widget=true&headers=false&chrome=false)
 
 [Spreadsheet](https://docs.google.com/spreadsheets/d/1ktfI1cEm-VyvRbiFkXvzTixrDrCG-85Et9Clz69QBp8/edit?usp=sharing)
-
-<img src="https://www.google-analytics.com/collect?v=1&tid=G-XS5387YHC3&cid=555&aip=1&t=event&ec=site&ea=open&dp=%2Fsite&dt=site">
