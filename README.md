@@ -78,7 +78,7 @@ The data generated is licensed under [CC BY 4.0](https://creativecommons.org/lic
 
 If you enjoy my content, please consider supporting what I do.
 
-[Buy a Coffee :coffee: for David Giordano :heart:](https://ko-fi.com/davidgiordano) 
+[Buy a Coffee ☕ for David Giordano ❤️](https://ko-fi.com/davidgiordano) 
 
 ## Google Spreadsheet
 
