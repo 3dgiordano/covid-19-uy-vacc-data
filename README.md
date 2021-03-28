@@ -66,7 +66,7 @@
 
 > \* Estimated data, based on experiences from other countries.
 > 
-> An estimated 80% of the population is vaccinated in the second dose 28 days after the first dose. Awaiting official data.
+> An estimated 80% of the population is vaccinated in the second dose 28 days after the first dose.
 > 
 > Awaiting official data regarding the population with a given vaccine and people with a second dose given.
 
