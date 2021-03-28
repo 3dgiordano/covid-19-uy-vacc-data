@@ -2,13 +2,16 @@
 
 <table>
   <tr>
-    <td align="right" colspan=2>
+    <td align="right" colspan=3>
       <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=857919432&format=image"><img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=851362461&format=image">
     </td>
   </tr>
   <tr>
     <td>
 <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=1329486679&format=image">
+    </td>
+    <td>
+      <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=827148403&format=image">
       <br>
       <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=1848022003&format=image">
     </td>
@@ -26,9 +29,14 @@
     <td>
       <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=603335823&format=image">
     </td>
+    <td>
+      <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=1683681566&format=image">
+    </td>
   </tr>
   <tr><td colspan=2></td></tr>
   <tr>
+    <td>
+    </td>
     <td>
       <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=2063902375&format=image">
     </td>
@@ -55,6 +63,13 @@
 <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=105471492&format=image">
 
 <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=2095693594&format=image">
+
+> \* Estimated data, based on experiences from other countries.
+> 
+> An estimated 80% of the population is vaccinated in the second dose 28 days after the first dose. Awaiting official data.
+> 
+> Awaiting official data regarding the population with a given vaccine and people with a second dose given.
+
 
 ## About
 
