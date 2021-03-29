@@ -1,5 +1,5 @@
 <h1>COVID-19 vaccination in Uruguay</h1>
-
+<!--
 <table>
   <tr>
     <td>
@@ -11,6 +11,7 @@ The general data is correct and up-to-date.
     </td>
   </tr>
 </table>
+-->
 
 <table>
   <tr>
@@ -59,6 +60,8 @@ The general data is correct and up-to-date.
 </table>
 
 <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=1322547223&format=image">
+
+<img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=731574492&format=image">
 
 <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=842189614&format=image">
 
