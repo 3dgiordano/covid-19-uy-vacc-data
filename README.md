@@ -2,6 +2,18 @@
 
 <table>
   <tr>
+    <td>
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/maintenance.jpg">
+    </td>
+    <td>
+      Currently the data by region may present inconsistencies, we are working on incorporating the concept of vaccinated people and fully vaccinated people by region.
+The general data is correct and up-to-date.
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
     <td align="right" colspan=3>
       <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=857919432&format=image"><img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=851362461&format=image">
     </td>
