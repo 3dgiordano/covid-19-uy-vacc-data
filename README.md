@@ -83,6 +83,8 @@ The general data is correct and up-to-date.
 > 
 > An estimated 80% of the population is vaccinated in the second dose 28 days after the first dose.
 > 
+> Vaccinated people will be adjusted throughout the day with the final values. It is calculated based on vaccinated on the day and vaccinated in the second dose. Since the second dose advances its calculation, it affects the calculation of vaccinated people.
+> 
 > Awaiting official data regarding the population with a given vaccine and people with a second dose given.
 
 
