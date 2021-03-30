@@ -79,11 +79,7 @@ The general data is correct and up-to-date.
 
 <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/2095693594.png">
 
-> \* Estimated data for the end of the day, based on experiences from other countries.
-> 
-> An estimated 80% of the population is vaccinated in the second dose 28 days after the first dose.
-> 
-> Vaccinated people will be adjusted throughout the day with the final values. It is calculated based on vaccinated on the day and vaccinated in the second dose. Since the second dose advances its calculation, it affects the calculation of vaccinated people.
+> \* Estimated data, based on experiences from other countries.
 > 
 > Awaiting official data regarding the population with a given vaccine and people with a second dose given.
 
