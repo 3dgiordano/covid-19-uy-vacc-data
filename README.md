@@ -3,7 +3,7 @@
 <table>
   <tr>
     <td>
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/maintenance.jpg" width=50%>
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/maintenance.jpg" width="50%">
     </td>
     <td>
       There are currently problems in the data by region provided by the ministry of public health. Inconsistencies in the data will be resolved soon.
