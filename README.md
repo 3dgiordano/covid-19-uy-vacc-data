@@ -16,34 +16,34 @@ The general data is correct and up-to-date.
 <table>
   <tr>
     <td align="right" colspan=3>
-      <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=857919432&format=image"><img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=851362461&format=image">
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/857919432.png"><img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/851362461.png">
     </td>
   </tr>
   <tr>
     <td>
-<img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=1329486679&format=image">
+<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1329486679.png">
     </td>
     <td>
-      <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=827148403&format=image">
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/827148403.png">
       <br>
-      <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=1848022003&format=image">
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1848022003.png">
     </td>
     <td>
-      <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=2077796175&format=image">
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/2077796175.png">
       <br>
-      <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=1978363820&format=image">
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1978363820.png">
     </td>
   </tr>
   <tr><td colspan=2></td></tr>
   <tr>
     <td>
-      <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=1038688506&format=image">
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1038688506.png">
     </td>
     <td>
-      <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=603335823&format=image">
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/603335823.png">
     </td>
     <td>
-      <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=1683681566&format=image">
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1683681566.png">
     </td>
   </tr>
   <tr><td colspan=2></td></tr>
@@ -51,33 +51,33 @@ The general data is correct and up-to-date.
     <td>
     </td>
     <td>
-      <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=2063902375&format=image">
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/2063902375.png">
     </td>
     <td>
-      <img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=1821951025&format=image">
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1821951025.png">
     </td>
   </tr>
 </table>
 
-<img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=1322547223&format=image">
+<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1322547223.png">
 
-<img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=731574492&format=image">
+<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/731574492.png">
 
-<img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=842189614&format=image">
+<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/842189614.png">
 
-<img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=1047100711&format=image">
+<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1047100711.png">
 
-<img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=132326038&format=image">
+<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/132326038.png">
 
-<img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=122662822&format=image">
+<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/122662822.png">
 
-<img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=987529461&format=image">
+<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/987529461.png">
 
-<img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=454080210&format=image">
+<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/454080210.png">
 
-<img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=105471492&format=image">
+<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/105471492.png">
 
-<img src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubchart?oid=2095693594&format=image">
+<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/2095693594.png">
 
 > \* Estimated data, based on experiences from other countries.
 > 
