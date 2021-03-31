@@ -1,5 +1,5 @@
 <h1>COVID-19 vaccination in Uruguay</h1>
-<!--
+
 <table>
   <tr>
     <td>
@@ -10,7 +10,7 @@
     </td>
   </tr>
 </table>
--->
+
 <table>
   <tr>
     <td align="right" colspan=3>
@@ -79,7 +79,7 @@
 
 <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/2095693594.png">
 
-> \* Estimated data, based on experiences from other countries.
+> \* Estimated data.
 > 
 > Awaiting official data regarding the population with a given vaccine and people with a second dose given.
 
