@@ -63,6 +63,15 @@ def date_agenda(date):
     return get_data(data, ['future', 'today'])
 
 
+def date_agenda_second_dose(date):
+    # Date format YYYYMMDD
+    today_str = bytes(date.replace("-", "").encode())
+    data = b"paramp_periodo_desde_sk=" + today_str + b"&paramp_periodo_hasta_sk=" + today_str + \
+           b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
+           b"dataAccessId=sql_indicadores_gral_agenda_dosis2&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
+    return get_data(data, ['future', 'today'])
+
+
 def today_status(date):
     # Date format YYYYMMDD
     today_str = bytes(date.replace("-", "").encode())
@@ -148,6 +157,8 @@ def update():
     today = transform_date(daily_vac_origin.tail(1)["date"].values[0])
 
     day_agenda = int(date_agenda(today)["today"].item() or 0)
+    # Increment to the total day agenda the second dose
+    day_agenda += int(date_agenda_second_dose(today)["today"].item() or 0)
 
     today_vac_status = today_status(today)
 
