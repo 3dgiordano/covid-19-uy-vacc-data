@@ -27,7 +27,6 @@ def get_col_index(headers, label):
 
 def get_data(data, columns):
     json_origin = json.loads(urlopen(Request(monitor_url, data=data)).read().decode())
-    print(json_origin)
     return pd.DataFrame(json_origin["resultset"], columns=columns).fillna(0)
 
 
@@ -154,7 +153,11 @@ def update():
 
     today_uodate_time = today + " " + today_vac_status["update_time"].values[0]
 
-    today_total_vaccinations = int(today_vac_status["total_vaccinations"].item() or 0)
+    # TODO: The api began to misinform the total, it is calculated with people first and second dose
+    # today_total_vaccinations = int(today_vac_status["total_vaccinations"].item() or 0)
+    today_total_people_vaccinations = int(today_vac_status["first_dose"].item() or 0)
+    today_total_fully_vaccinations = int(today_vac_status["second_dose"].item() or 0)
+    today_total_vaccinations = today_total_people_vaccinations + today_total_fully_vaccinations
 
     gc = gspread.service_account()
     sh = gc.open("CoronavirusUY - Vaccination monitor")
@@ -162,6 +165,9 @@ def update():
     sheet = sh.worksheet("Uruguay")
     sheet_dic = sheet.get_all_records()
     sheet_headers = sheet.row_values(1)
+
+    daily_people_vaccinated_col_index = get_col_index(sheet_headers, "people_vaccinated")
+    daily_people_fully_vaccinated_col_index = get_col_index(sheet_headers, "people_fully_vaccinated")
 
     daily_vac_total_col_index = get_col_index(sheet_headers, "daily_vaccinated")
     daily_coronavac_col_index = get_col_index(sheet_headers, "daily_coronavac")
@@ -173,11 +179,11 @@ def update():
     last_row = sheet_dic[-1]
     last_date = last_row["date"]
 
-    # if last_date == today:
-    #     if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
-    #         print("* Execution Excluded! Corrupt source data? Last valid:" + str(
-    #             last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
-    #         return
+    if last_date == today:
+        if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
+            print("* Execution Excluded! Corrupt source data? Last valid:" + str(
+                last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
+            return
 
     batch_update_cells = []
 
@@ -260,6 +266,7 @@ def update():
 
             if today == date_row:
                 # Get region data for that date
+                # TODO: The api lost the filter by date
                 daily_vac_region_origin = region_vaccinated(date_row)
 
                 for daily_vac_region_origin_index, daily_vac_region_origin_row in daily_vac_region_origin.iterrows():
@@ -279,11 +286,8 @@ def update():
 
                     daily_vac_region_origin_people_value = int(population * daily_vac_region_origin_p_first_value)
                     daily_vac_region_origin_fully_value = int(population * daily_vac_region_origin_p_second_value)
-                    daily_vac_region_origin_total_value = daily_vac_region_origin_people_value + \
-                                                          daily_vac_region_origin_fully_value
-
-                    # daily_vac_region_origin_value = int(daily_vac_region_origin_row["first_dose"])
-                    # daily_vac_region_origin_value += int(daily_vac_region_origin_row["second_dose"])
+                    daily_vac_region_origin_total_value = daily_vac_region_origin_people_value
+                    daily_vac_region_origin_total_value += daily_vac_region_origin_fully_value
 
                     if len(sheet_row) == 0:
                         print("Create Region:" + date_row + " " + region_total_label + " old: none new:" + str(
@@ -358,6 +362,16 @@ def update():
         # Update date time data
         sheet_data = sh.worksheet("Data")
         sheet_data.update_cell(6, 10, today_uodate_time)
+
+        # Update People vaccinated and Fully vaccinated
+        batch_update_cells.append(
+            gspread.models.Cell(sheet_row_index, daily_people_vaccinated_col_index,
+                                value=today_total_people_vaccinations)
+        )
+        batch_update_cells.append(
+            gspread.models.Cell(sheet_row_index, daily_people_fully_vaccinated_col_index,
+                                value=today_total_fully_vaccinations)
+        )
 
     return updates
 
