@@ -277,7 +277,6 @@ def update():
 
     to_update = len(batch_update_cells)
     if to_update > 0:
-        quit()
         updates = True
         update_data = sheet.update_cells(batch_update_cells)
         updated = update_data["updatedCells"]
