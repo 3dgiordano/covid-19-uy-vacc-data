@@ -1,5 +1,5 @@
 <h1>COVID-19 vaccination in Uruguay</h1>
-
+<!--
 <table>
   <tr>
     <td>
@@ -10,6 +10,7 @@
     </td>
   </tr>
 </table>
+-->
 
 <table>
   <tr>
