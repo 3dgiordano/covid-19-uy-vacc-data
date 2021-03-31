@@ -1,9 +1,12 @@
 import urllib.request as req
+import os
 
 base_url = "https://docs.google.com/spreadsheets/d/e/"
 sheet = "2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D"
 
 images = [
+    "1939554456",
+    "744871918",
     "1201195179",
     "857919432",
     "851362461",
@@ -31,5 +34,9 @@ images = [
 
 for img in images:
     oid = img
+    print(f"Object id:{oid}")
     img_url = f"{base_url}{sheet}/pubchart?oid={oid}&format=image"
-    req.urlretrieve(img_url, f"../web/charts/{oid}.png")
+    image_file = os.path.abspath(f"../web/charts/{oid}.png")
+    if os.path.exists(image_file):
+        os.remove(image_file)
+    req.urlretrieve(img_url, image_file)
