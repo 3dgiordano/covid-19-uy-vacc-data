@@ -27,6 +27,7 @@ def get_col_index(headers, label):
 
 def get_data(data, columns):
     json_origin = json.loads(urlopen(Request(monitor_url, data=data)).read().decode())
+    print(json_origin)
     return pd.DataFrame(json_origin["resultset"], columns=columns).fillna(0)
 
 
@@ -44,7 +45,8 @@ def region_vaccinated(date):
            b"paramp_ncto_hasta_sk=0&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2F" \
            b"VacunasCovid.cda&dataAccessId=sql_vacunas_depto_vacunatorio&outputIndexId=1&pageSize=0&" \
            b"pageStart=0&sortBy=&paramsearchBox="
-    return get_data(data, ['code', 'total_vaccinated', 'name', 'scale'])
+    return get_data(data, [
+        'code', 'p_first_dose', 'name', 'scale', 'first_dose', 'population', 'second_dose', 'p_second_dose'])
 
 
 def region_vaccination_centers():
@@ -69,7 +71,7 @@ def today_status(date):
            b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunas" \
            b"Covid.cda&dataAccessId=sql_indicadores_generales&outputIndexId=1&pageSize=0&pageStart=0&" \
            b"sortBy=&paramsearchBox="
-    return get_data(data, ['total_vaccinations', 'today_vaccinations', 'centers', 'update_time'])
+    return get_data(data, ['total_vaccinations', 'today_vaccinations', 'first_dose', 'second_dose', 'update_time'])
 
 
 def add_formatted_row(spreadsheet, sheet, date):
@@ -164,11 +166,11 @@ def update():
     last_row = sheet_dic[-1]
     last_date = last_row["date"]
 
-    if last_date == today:
-        if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
-            print("* Execution Excluded! Corrupt source data? Last valid:" + str(
-                last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
-            return
+    # if last_date == today:
+    #     if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
+    #         print("* Execution Excluded! Corrupt source data? Last valid:" + str(
+    #             last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
+    #         return
 
     batch_update_cells = []
 
@@ -249,30 +251,33 @@ def update():
                                         value=daily_vac_pfizer_origin_value)
                 )
 
-            # Get region data for that date
-            daily_vac_region_origin = region_vaccinated(date_row)
+            if 1 == 2:
+                # Get region data for that date
+                daily_vac_region_origin = region_vaccinated(date_row)
 
-            for daily_vac_region_origin_index, daily_vac_region_origin_row in daily_vac_region_origin.iterrows():
-                # Generate the label with the sheet format
-                region_label = "daily_" + daily_vac_region_origin_row["code"].split("-")[1].lower()
-                sheet_daily_vac_region = 0 if len(sheet_row) == 0 else int(sheet_row[0][region_label] or 0)
-                daily_vac_region_origin_value = int(daily_vac_region_origin_row["total_vaccinated"].replace(".", ""))
-                if len(sheet_row) == 0:
-                    print("Create Region:" + date_row + " " + region_label + " old: none new:" + str(
-                        daily_vac_region_origin_value))
-                elif sheet_daily_vac_region != daily_vac_region_origin_value:
-                    daily_vac_col_index = get_col_index(sheet_headers, region_label)
-                    print("Update Region:" + date_row + " " + region_label + " idx:" + str(
-                        sheet_row_index) + " old:" + str(sheet_daily_vac_region) + " new:" + str(
-                        daily_vac_region_origin_value))
-                    batch_update_cells.append(
-                        gspread.models.Cell(sheet_row_index, daily_vac_col_index, value=daily_vac_region_origin_value)
-                    )
-                    if daily_vac_region_origin_value < sheet_daily_vac_region:
-                        print("* Warning! decrement! ")
+                for daily_vac_region_origin_index, daily_vac_region_origin_row in daily_vac_region_origin.iterrows():
+                    # Generate the label with the sheet format
+                    region_label = "daily_" + daily_vac_region_origin_row["code"].split("-")[1].lower()
+                    sheet_daily_vac_region = 0 if len(sheet_row) == 0 else int(sheet_row[0][region_label] or 0)
+                    daily_vac_region_origin_value = int(daily_vac_region_origin_row["first_dose"])
+                    daily_vac_region_origin_value += int(daily_vac_region_origin_row["second_dose"])
+                    if len(sheet_row) == 0:
+                        print("Create Region:" + date_row + " " + region_label + " old: none new:" + str(
+                            daily_vac_region_origin_value))
+                    elif sheet_daily_vac_region != daily_vac_region_origin_value:
+                        daily_vac_col_index = get_col_index(sheet_headers, region_label)
+                        print("Update Region:" + date_row + " " + region_label + " idx:" + str(
+                            sheet_row_index) + " old:" + str(sheet_daily_vac_region) + " new:" + str(
+                            daily_vac_region_origin_value))
+                        batch_update_cells.append(
+                            gspread.models.Cell(sheet_row_index, daily_vac_col_index, value=daily_vac_region_origin_value)
+                        )
+                        if daily_vac_region_origin_value < sheet_daily_vac_region:
+                            print("* Warning! decrement! ")
 
     to_update = len(batch_update_cells)
     if to_update > 0:
+        quit()
         updates = True
         update_data = sheet.update_cells(batch_update_cells)
         updated = update_data["updatedCells"]
