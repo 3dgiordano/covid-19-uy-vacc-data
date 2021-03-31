@@ -213,6 +213,9 @@ def update():
         sheet_agenda_ini = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda_ini"] or 0)
         sheet_agenda = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda"] or 0)
 
+        sheet_people_vaccinated = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_vaccinated"] or 0)
+        sheet_fully_vaccinations = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_fully_vaccinated"] or 0)
+
         if today == date_row:
             if sheet_agenda_ini == 0 and day_agenda > 0:
                 # Set the ini agenda value
@@ -226,6 +229,18 @@ def update():
                     sheet_agenda) + " new:" + str(day_agenda))
                 batch_update_cells.append(
                     gspread.models.Cell(sheet_row_index, daily_agenda_col_index, value=day_agenda)
+                )
+
+            # Update People vaccinated and Fully vaccinated
+            if sheet_people_vaccinated != today_total_people_vaccinations:
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_people_vaccinated_col_index,
+                                        value=today_total_people_vaccinations)
+                )
+            if sheet_fully_vaccinations != today_total_fully_vaccinations:
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_people_fully_vaccinated_col_index,
+                                        value=today_total_fully_vaccinations)
                 )
 
         if len(sheet_row) == 0:  # Extra control
@@ -265,6 +280,7 @@ def update():
                 )
 
             if today == date_row:
+
                 # Get region data for that date
                 # TODO: The api lost the filter by date
                 daily_vac_region_origin = region_vaccinated(date_row)
@@ -362,16 +378,6 @@ def update():
         # Update date time data
         sheet_data = sh.worksheet("Data")
         sheet_data.update_cell(6, 10, today_uodate_time)
-
-        # Update People vaccinated and Fully vaccinated
-        batch_update_cells.append(
-            gspread.models.Cell(sheet_row_index, daily_people_vaccinated_col_index,
-                                value=today_total_people_vaccinations)
-        )
-        batch_update_cells.append(
-            gspread.models.Cell(sheet_row_index, daily_people_fully_vaccinated_col_index,
-                                value=today_total_fully_vaccinations)
-        )
 
     return updates
 
