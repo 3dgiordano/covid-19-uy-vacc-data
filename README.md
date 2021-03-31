@@ -48,12 +48,14 @@
   <tr><td colspan=2></td></tr>
   <tr>
     <td>
-    </td>
-    <td>
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/2063902375.png">
     </td>
     <td>
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1821951025.png">
+    </td>
+    <td>
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1939554456.png"><br>
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/744871918.png">
     </td>
   </tr>
 </table>
