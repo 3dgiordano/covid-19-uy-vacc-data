@@ -80,11 +80,6 @@
 
 <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/2095693594.png">
 
-> \* Estimated data.
-> 
-> Awaiting official data regarding the population with a given vaccine and people with a second dose given.
-
-
 ## About
 
 This project was created by [@3dgiordano](https://github.com/3dgiordano) to publicize the Covid-19 vaccination information carried out in Uruguay.
