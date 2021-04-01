@@ -112,7 +112,7 @@ def add_formatted_row(spreadsheet, sheet, date):
     sheet_headers = sheet.row_values(1)
     date_index = get_col_index(sheet_headers, "date")
     sheet.update_cell(int(last_row + 1), date_index, date)
-    init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_ar", "daily_agenda_ini", "daily_agenda",
+    init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_agenda_ini", "daily_agenda",
                  "total_ar", "total_ca", "total_cl", "total_co", "total_du", "total_fd", "total_fs",
                  "total_la", "total_ma", "total_mo", "total_pa", "total_rn", "total_ro", "total_rv", "total_sa",
                  "total_sj", "total_so", "total_ta", "total_tt",
