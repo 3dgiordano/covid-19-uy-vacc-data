@@ -1,4 +1,4 @@
-<h1>COVID-19 vaccination in Uruguay</h1>
+
 <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
 <!--
 <table>
