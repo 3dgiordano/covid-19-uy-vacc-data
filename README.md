@@ -13,7 +13,7 @@
 </table>
 -->
 
-<table>
+<table id="dashboard">
   <tr>
     <td align="right" colspan=3>
       <table id="date_header">
