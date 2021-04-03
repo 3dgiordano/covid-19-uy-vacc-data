@@ -43,7 +43,6 @@
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1978363820.png">
     </td>
   </tr>
-  <tr><td colspan=2></td></tr>
   <tr>
     <td>
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1038688506.png">
@@ -55,7 +54,6 @@
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1683681566.png">
     </td>
   </tr>
-  <tr><td colspan=2></td></tr>
   <tr>
     <td>
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/2063902375.png">
