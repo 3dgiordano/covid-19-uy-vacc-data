@@ -16,7 +16,7 @@
 <table>
   <tr>
     <td align="right" colspan=3>
-      <table border=0>
+      <table id="date_header">
         <tr>
           <td>
             <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/857919432.png">
