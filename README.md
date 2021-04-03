@@ -29,39 +29,39 @@
     </td>
   </tr>
   <tr>
-    <td>
+    <td align="center">
 <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1329486679.png">
     </td>
-    <td>
+    <td align="center">
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/827148403.png">
       <br>
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1848022003.png">
     </td>
-    <td>
+    <td align="center">
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/2077796175.png">
       <br>
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1978363820.png">
     </td>
   </tr>
   <tr>
-    <td>
+    <td align="center">
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1038688506.png">
     </td>
-    <td>
+    <td align="center">
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/603335823.png">
     </td>
-    <td>
+    <td align="center">
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1683681566.png">
     </td>
   </tr>
   <tr>
-    <td>
+    <td align="center">
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/2063902375.png">
     </td>
-    <td>
+    <td align="center">
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1821951025.png">
     </td>
-    <td>
+    <td align="center">
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1939554456.png"><br>
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/744871918.png">
     </td>
