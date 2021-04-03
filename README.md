@@ -1,5 +1,8 @@
 
 <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+<!-- 
+<img src="https://github.com/3dgiordano/covid-19-uy-vacc-data/raw/main/web/favicon-32x32.png">
+-->
 <!--
 <table>
   <tr>
