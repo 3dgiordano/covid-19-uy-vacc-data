@@ -18,10 +18,10 @@
     <td align="right" colspan=3>
       <table id="date_header">
         <tr>
-          <td>
+          <td align="right">
             <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/857919432.png">
           </td>
-          <td>
+          <td align="center">
             <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/851362461.png">
           </td>
         </tr>
