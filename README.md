@@ -16,7 +16,16 @@
 <table>
   <tr>
     <td align="right" colspan=3>
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/857919432.png"><img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/851362461.png">
+      <table border=0>
+        <tr>
+          <td>
+            <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/857919432.png">
+          </td>
+          <td>
+            <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/851362461.png">
+          </td>
+        </tr>
+      </table>
     </td>
   </tr>
   <tr>
