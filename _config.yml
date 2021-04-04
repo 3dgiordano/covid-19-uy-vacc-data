@@ -4,3 +4,8 @@ author:
   email: 3dgiordano@gmail.com
 description: Uruguay COVID-19 Vaccination Monitor by @3dgiordano
 remote_theme: jekyll/minima
+
+minima:
+  social_links:
+    twitter: 3dgiordano
+    github: 3dgiordano
