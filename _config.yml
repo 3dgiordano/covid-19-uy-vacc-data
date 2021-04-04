@@ -5,12 +5,6 @@ author:
 description: Uruguay COVID-19 Vaccination Monitor by @3dgiordano
 remote_theme: jekyll/minima
 
-languages: ["en", "es"]
-exclude_from_localizations: ["web"]
-
-plugins:
-  - jekyll-multiple-languages-plugin
-  
 minima:
   social_links:
     twitter: 3dgiordano
