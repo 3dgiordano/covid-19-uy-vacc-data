@@ -1,3 +1,9 @@
+---
+title: Welcome
+layout: home
+lang: en
+lang-ref: home
+---
 
 <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
 <!-- 
