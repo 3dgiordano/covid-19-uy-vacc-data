@@ -83,32 +83,26 @@ permalink: /es/
 
 <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/2095693594.png">
 
-## About
+## Acerca de
 
-This project was created by [@3dgiordano](https://github.com/3dgiordano) to publicize the Covid-19 vaccination information carried out in Uruguay.
+Este proyecto fue creado por [@3dgiordano](https://github.com/3dgiordano) para dar a conocer la información de vacunación Covid-19 realizada en Uruguay.
 
-It was born as a collaboration to provide updated data to [Our World in Data](https://ourworldindata.org/)
+Nació como una colaboración para proporcionar datos actualizados a [Our World in Data](https://ourworldindata.org/)
 
-Thanks to Edouard Mathieu [@edomt](https://github.com/edomt) Head of Data at [@owid](https://github.com/owid) for trusting in this project.
+Gracias a Edouard Mathieu [@edomt](https://github.com/edomt) Jefe de Datos en [@owid](https://github.com/owid) por confiar en este proyecto.
 
-Data gathered from Ministry of Public Health of Uruguay. [https://monitor.uruguaysevacuna.gub.uy/](https://monitor.uruguaysevacuna.gub.uy/)
+Datos recopilados del Ministerio de Salud Pública de Uruguay. [https://monitor.uruguaysevacuna.gub.uy/](https://monitor.uruguaysevacuna.gub.uy/)
 
-Our World in Data takes our data to publish it on its portal [Uruguay Covid-19 Vaccinations in Our World in Data](https://ourworldindata.org/covid-vaccinations?country=~URY)
+Our World in Data toma nuestros datos para publicarlos en su portal [Uruguay Covid-19 Vaccinations in Our World in Data](https://ourworldindata.org/covid-vaccinations?country=~URY)
 
-Today, the project also collects more data, such as detailed daily vaccination data for each region, as well as the expected daily agenda.
+Hoy, el proyecto también recopila más datos, como datos detallados de vacunación diaria para cada región, así como la agenda diaria esperada.
 
-All data is public, you can access the raw data and create your own reports if you want [/data/Uruguay.csv](https://github.com/3dgiordano/covid-19-uy-vacc-data/blob/main/data/Uruguay.csv)
+Todos los datos son públicos, puede acceder a los datos sin procesar y crear sus propios informes si lo desea [/data/Uruguay.csv](https://github.com/3dgiordano/covid-19-uy-vacc-data/blob/main/data/Uruguay.csv)
 
-The data generated is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and the Source Code under [MIT](https://github.com/3dgiordano/covid-19-uy-vacc-data/blob/main/LICENSE)
+Los datos generados están bajo licencia [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) y el código fuente bajo licencia [MIT](https://github.com/3dgiordano/covid-19- uy-vac-data/blob/main/LICENSE)
 
-[View this project on GitHub](https://github.com/3dgiordano/covid-19-uy-vacc-data)
+[Ver este proyecto en GitHub](https://github.com/3dgiordano/covid-19-uy-vacc-data)
 
-If you enjoy my content, please consider supporting what I do.
+Si disfrutas de mi contenido, considera apoyar el trabajo que hago.
+[Compre un café ☕ para David Giordano ❤️](https://ko-fi.com/davidgiordano)
 
-[Buy a Coffee ☕ for David Giordano ❤️](https://ko-fi.com/davidgiordano) 
-
-## Google Spreadsheet
-
-[Spreadsheet Website (Dashboard, Data and Project info)](https://docs.google.com/spreadsheets/d/e/2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D/pubhtml?widget=true&headers=false&chrome=false)
-
-[Spreadsheet](https://docs.google.com/spreadsheets/d/1ktfI1cEm-VyvRbiFkXvzTixrDrCG-85Et9Clz69QBp8/edit?usp=sharing)
