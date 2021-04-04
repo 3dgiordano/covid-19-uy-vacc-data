@@ -57,16 +57,21 @@
   gtag('config', 'G-XS5387YHC3');
 </script>
 
-{% for lang in site.languages %}
-    {% assign lang_name = site.data[lang].l10n.lang_name %}
-    {% if lang == site.active_lang %}
-{{ lang_name }}
-    {% else %}
-        {% if lang == site.default_lang %}
-<a href=" {{ page.url }}">{{ lang_name }}</a>
-        {% else %}
-<a href="/{{ lang }}{{ page.url }}">{{ lang_name }}</a>
-        {% endif %}
-    {% endif %}
-{% endfor %}
+<!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+
+<!-- 
+<img src="https://github.com/3dgiordano/covid-19-uy-vacc-data/raw/main/web/favicon-32x32.png">
+-->
+<!--
+<table>
+  <tr>
+    <td>
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/maintenance.jpg" width="50%">
+    </td>
+    <td>
+      There are currently problems in the data provided by the ministry of public health. Inconsistencies in the data will be resolved soon.
+    </td>
+  </tr>
+</table>
+-->
 
