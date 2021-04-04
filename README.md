@@ -1,6 +1,6 @@
 
 
-## About
+## covid-19-uy-vacc-data
 
 This project was created by [@3dgiordano](https://github.com/3dgiordano) to publicize the Covid-19 vaccination information carried out in Uruguay.
 
@@ -17,8 +17,6 @@ Today, the project also collects more data, such as detailed daily vaccination d
 All data is public, you can access the raw data and create your own reports if you want [/data/Uruguay.csv](https://github.com/3dgiordano/covid-19-uy-vacc-data/blob/main/data/Uruguay.csv)
 
 The data generated is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and the Source Code under [MIT](https://github.com/3dgiordano/covid-19-uy-vacc-data/blob/main/LICENSE)
-
-[View this project on GitHub](https://github.com/3dgiordano/covid-19-uy-vacc-data)
 
 If you enjoy my content, please consider supporting what I do.
 
