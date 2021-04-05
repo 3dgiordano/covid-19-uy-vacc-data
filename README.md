@@ -2,7 +2,7 @@
 
 ## covid-19-uy-vacc-data
 
-Website: [English](https://chaustress.com/) - [Spanish](https://chaustress.com/es/)
+Website: [English](https://vacuna.uy/en/) - [Spanish](https://vacuna.uy/)
 
 This project was created by [@3dgiordano](https://github.com/3dgiordano) to publicize the Covid-19 vaccination information carried out in Uruguay.
 
