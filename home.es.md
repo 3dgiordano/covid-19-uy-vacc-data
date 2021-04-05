@@ -1,7 +1,9 @@
 ---
 permalink: /es/
 ---
-
+<div id="lang_selector">
+  <a href="/en/">English</a>
+</div>
 <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
 
 <table id="dashboard">
