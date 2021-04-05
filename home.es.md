@@ -13,7 +13,7 @@ permalink: /es/
             <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/425905901.png">
           </td>
           <td align="center">
-            <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/851362461.png">
+            <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1299383115.png">
           </td>
         </tr>
       </table>
