@@ -59,7 +59,7 @@ permalink: /es/
   </tr>
 </table>
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1201195179.png">
+<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1744392307.png">
 
 <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/574263984.png">
 
