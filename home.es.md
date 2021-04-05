@@ -36,7 +36,7 @@ permalink: /es/
   </tr>
   <tr>
     <td align="center">
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1038688506.png">
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/591742088.png">
     </td>
     <td align="center">
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/603335823.png">
