@@ -1,7 +1,9 @@
 ---
-permalink: /
+permalink: /en/
 ---
-
+<div id="lang_selector">
+  <a href="/">Spanish</a>
+</div>
 <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
 
 <table id="dashboard">
