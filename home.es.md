@@ -1,5 +1,5 @@
 ---
-permalink: /es/
+permalink: /
 ---
 <div id="lang_selector">
   <a href="/en/">English</a>
