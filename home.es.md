@@ -85,7 +85,7 @@ permalink: /es/
 
 ## Acerca de
 
-Este proyecto fue creado por [@3dgiordano](https://github.com/3dgiordano) para dar a conocer la información de vacunación Covid-19 realizada en Uruguay.
+El proyecto fue creado por [@3dgiordano](https://github.com/3dgiordano) para dar a conocer la información de vacunación Covid-19 realizada en Uruguay.
 
 Nació como una colaboración para proporcionar datos actualizados a [Our World in Data](https://ourworldindata.org/)
 
