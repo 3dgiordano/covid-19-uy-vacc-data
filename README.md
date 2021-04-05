@@ -2,6 +2,8 @@
 
 ## covid-19-uy-vacc-data
 
+Website: [English](https://chaustress.com/) - [Spanish](https://chaustress.com/es/)
+
 This project was created by [@3dgiordano](https://github.com/3dgiordano) to publicize the Covid-19 vaccination information carried out in Uruguay.
 
 It was born as a collaboration to provide updated data to [Our World in Data](https://ourworldindata.org/)
