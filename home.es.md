@@ -91,13 +91,13 @@ permalink: /
 | 1/3/21 | Personal esencial | Policías, bomberos, militares, trabajadores de la educación e INAU, en actividad y todos ellos menores de 60 años. |
 | 8/3/21 | 50 a 70 años | De 55 a 59 años, luego se extendió la franja a 50 a 70 años en cinco ciudades fronterizas y finalmente se extendió a personas de esta edad en todo el país.|
 | 12/3/21 | Vulnerables | Personas privadas de libertad y al personal de establecimientos de reclusión (habiendo comenzado por establecimientos de mujeres e INISA).|
-| 16/3/21 | Vulnerables |Vacunación a domicilio de personas que viven y trabajan en residenciales (ELEPEM).|
 | 15/3/21 | Personal de la salud | Personal de la salud priorizado (CTI y servicios anexos, hisopadores-vacunadores, servicios de puerta y emergencia intra y extra hospitalario y centros de hemodiálisis).|
+| 16/3/21 | Vulnerables |Vacunación a domicilio de personas que viven y trabajan en residenciales (ELEPEM).|
 | 22/3/21 | Personal de la salud | Todo el personal de la salud del área asistencial (odontólogos, psicólogos, fisioterapeutas y clínicas de diversas especialidades). Finalizada esta etapa se vacunará al personal administrativo de la salud.|
 | 22/3/21 | Vulnerables | Continuación vacunación a domicilio de personas que viven y trabajan en residenciales (ELEPEM).|
 | 22/3/21 | Mayores 80 años | Vacunación para personas mayores de 80 años auto válidos.|
 | 29/3/21 | 18 a 70 años | Público en general entre 18 a 70 años.|
-| 10/4/21 | 71 a 79 años | De 71 a 79 años. Mayores de 18 años en adelante.|
+| 10/4/21 | 71 a 79 años | De 71 a 79 años. Mayores de 18 años en adelante. `* Fecha aún no confirmada por medios oficiales`  |
 
 Fuente: [Comunicado sobre Plan de Vacunación contra COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/comunicado-sobre-plan-vacunacion-contra-covid-19)
 
