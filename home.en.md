@@ -1,6 +1,5 @@
 ---
 permalink: /en/
-title: Uruguay COVID-19 Vaccination Monitor by @3dgiordano
 ---
 <div id="lang_selector">
   <a href="/">Spanish</a>
