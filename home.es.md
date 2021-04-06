@@ -84,7 +84,7 @@ permalink: /
 
 <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/134138183.png">
 
-### Registro de arrivos de vacunas
+### Registro de llegada de vacunas
 
 <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/861619954.png">
 
