@@ -84,6 +84,10 @@ permalink: /en/
 
 <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/2095693594.png">
 
+### Vaccine arrival record
+
+<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/648030237.png">
+
 ## About
 
 This project was created by [@3dgiordano](https://github.com/3dgiordano) to publicize the Covid-19 vaccination information carried out in Uruguay.
