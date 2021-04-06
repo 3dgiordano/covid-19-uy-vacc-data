@@ -79,7 +79,8 @@ def today_status(date):
            b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunas" \
            b"Covid.cda&dataAccessId=sql_indicadores_generales&outputIndexId=1&pageSize=0&pageStart=0&" \
            b"sortBy=&paramsearchBox="
-    return get_data(data, ['total_vaccinations', 'today_vaccinations', 'first_dose', 'second_dose', 'update_time'])
+    return get_data(data, ['total_vaccinations', 'today_vaccinations', 'first_dose', 'second_dose', 'update_time',
+                           'country_doses'])
 
 
 def add_formatted_row(spreadsheet, sheet, date):
