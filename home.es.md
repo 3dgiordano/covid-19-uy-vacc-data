@@ -1,6 +1,5 @@
 ---
 permalink: /
-title: Monitor de vacunación COVID-19 de Uruguay por @3dgiordano
 ---
 <div id="lang_selector">
   <a href="/en/">English</a>
