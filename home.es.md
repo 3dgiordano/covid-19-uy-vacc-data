@@ -92,7 +92,7 @@ permalink: /
 
 | **Fecha**  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Grupo**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Descripción** |
 | :----: | :----: | :----------- |
-| 27/2/21 | Personal esencial | Personal de vacunación | 
+| 27/2/21 | Personal esencial | Personal de vacunación. | 
 | 1/3/21 | Personal esencial | Menores a 60 años en actividad. Policías, bomberos, militares, trabajadores de la educación e INAU. |
 | 8/3/21 | 50 a 70 años | Primera etapa de 55 a 59 años, posteriormente franja de 50 a 70 años en cinco ciudades fronterizas. Se finaliza extendiendo a toda persona de franja etarea de 50 a 70 años en todo el país.|
 | 12/3/21 | Vulnerables | Personas privadas de libertad y personal de establecimientos de reclusión (se inició en establecimientos de mujeres e INISA).|
