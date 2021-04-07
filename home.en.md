@@ -30,9 +30,9 @@ permalink: /en/
       <img src="/web/charts/1848022003.png">
     </td>
     <td align="center">
-      <img src="./web/charts/2077796175.png">
+      <img src="/web/charts/2077796175.png">
       <br>
-      <img src="./web/charts/1978363820.png">
+      <img src="/web/charts/1978363820.png">
     </td>
   </tr>
   <tr>
