@@ -88,6 +88,24 @@ permalink: /en/
 
 <img src="/web/charts/648030237.png">
 
+### Vaccination plan against COVID-19
+
+| **Date**  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Group**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
+| :----: | :----: | :----------- |
+| 2/27/21 | Essential staff | Vaccination staff. | 
+| 3/1/21 | Essential staff | Under 60 years of age in activity. Police, firefighters, military, education workers and INAU.|
+| 3/8/21 | 50 to 70 years | First stage from 55 to 59 years, later range from 50 to 70 years in five border cities. It ends by extending it to everyone in the 50 to 70 age group throughout the country.|
+| 3/12/21 | Vulnerable | Persons deprived of liberty and staff of detention facilities (it began in women's facilities and INISA).|
+| 3/15/21 | Health personnel | Prioritized health personnel (ICC and related services, test personnel, vaccinators, hemodialysis centers, intra and extra hospital door and emergency services).|
+| 3/16/21 | Vulnerable |Home vaccination of people who live and work in residential areas (ELEPEM).|
+| 3/22/21 | Health personnel | All health personnel in the healthcare area (dentists, psychologists, physiotherapists and clinics of various specialties). Administrative health personnel at the end of the previous stage.|
+| 3/22/21 | Vulnerable | Continuation of home vaccination of people who live and work in residential areas (ELEPEM).|
+| 3/22/21 | Over 80 years | Vaccination for people over 80 years of age.|
+| 3/29/21 | 18 to 70 years | General public between 18 to 70 years old.|
+| 4/10/21 | 71 to 79 years | Vaccination of people in the range of 71 to 79 years.|
+
+Source: [Comunicado sobre Plan de Vacunación contra COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/comunicado-sobre-plan-vacunacion-contra-covid-19)
+
 ## About
 
 This project was created by [@3dgiordano](https://github.com/3dgiordano) to publicize the Covid-19 vaccination information carried out in Uruguay.
