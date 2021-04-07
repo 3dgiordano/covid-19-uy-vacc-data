@@ -102,7 +102,7 @@ permalink: /
 | 22/3/21 | Vulnerables | Continuación de vacunación a domicilio de personas que viven y trabajan en residenciales (ELEPEM).|
 | 22/3/21 | Mayores 80 años | Vacunación a personas mayores de 80 años auto válidos.|
 | 29/3/21 | 18 a 70 años | Público en general entre 18 a 70 años.|
-| 10/4/21 | 71 a 79 años | De 71 a 79 años. Se continúa con agenda habilitada para toda población mayor a 18 años. `* Fecha aún no confirmada por medios oficiales`  |
+| 10/4/21 | 71 a 79 años | Vacunación a personas en la franja de 71 a 79 años. `* Fecha aún no confirmada por medios oficiales`  |
 
 Fuente: [Comunicado sobre Plan de Vacunación contra COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/comunicado-sobre-plan-vacunacion-contra-covid-19)
 
