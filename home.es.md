@@ -11,10 +11,10 @@ permalink: /
       <table id="date_header">
         <tr>
           <td align="right">
-            <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/425905901.png">
+            <img src="/web/charts/425905901.png">
           </td>
           <td align="center">
-            <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1299383115.png">
+            <img src="/web/charts/1299383115.png">
           </td>
         </tr>
       </table>
@@ -22,71 +22,71 @@ permalink: /
   </tr>
   <tr>
     <td align="center">
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1492441660.png">
+<img src="/web/charts/1492441660.png">
     </td>
     <td align="center">
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/22096209.png">
+      <img src="/web/charts/22096209.png">
       <br>
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/873256307.png">
+      <img src="/web/charts/873256307.png">
     </td>
     <td align="center">
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1058712731.png">
+      <img src="/web/charts/1058712731.png">
       <br>
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1357338484.png">
+      <img src="/web/charts/1357338484.png">
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/591742088.png">
+      <img src="/web/charts/591742088.png">
     </td>
     <td align="center">
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1958520312.png">
+      <img src="/web/charts/1958520312.png">
     </td>
     <td align="center">
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/373318070.png">
+      <img src="/web/charts/373318070.png">
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1924052371.png">
+      <img src="/web/charts/1924052371.png">
     </td>
     <td align="center">
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1074834619.png">
+      <img src="/web/charts/1074834619.png">
     </td>
     <td align="center">
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/141578891.png"><br>
-      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/2074125212.png">
+      <img src="/web/charts/141578891.png"><br>
+      <img src="/web/charts/2074125212.png">
     </td>
   </tr>
 </table>
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1744392307.png">
+<img src="/web/charts/1744392307.png">
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1320291746.png">
+<img src="/web/charts/1320291746.png">
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/682972572.png">
+<img src="/web/charts/682972572.png">
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/119707745.png">
+<img src="/web/charts/119707745.png">
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1158305404.png">
+<img src="/web/charts/1158305404.png">
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1781225090.png">
+<img src="/web/charts/1781225090.png">
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/259061157.png">
+<img src="/web/charts/259061157.png">
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/121562673.png">
+<img src="/web/charts/121562673.png">
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/395420450.png">
+<img src="/web/charts/395420450.png">
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1279668502.png">
+<img src="/web/charts/1279668502.png">
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/1092961723.png">
+<img src="/web/charts/1092961723.png">
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/134138183.png">
+<img src="/web/charts/134138183.png">
 
 ### Registro de llegada de vacunas
 
-<img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/charts/861619954.png">
+<img src="/web/charts/861619954.png">
 
 ### Plan de vacunación contra COVID-19
 
