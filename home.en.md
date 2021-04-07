@@ -11,10 +11,10 @@ permalink: /en/
       <table id="date_header">
         <tr>
           <td align="right">
-            <img src="./web/charts/857919432.png">
+            <img src="/web/charts/857919432.png">
           </td>
           <td align="center">
-            <img src="./web/charts/851362461.png">
+            <img src="/web/charts/851362461.png">
           </td>
         </tr>
       </table>
@@ -22,12 +22,12 @@ permalink: /en/
   </tr>
   <tr>
     <td align="center">
-<img src="./web/charts/1329486679.png">
+<img src="/web/charts/1329486679.png">
     </td>
     <td align="center">
-      <img src="./web/charts/827148403.png">
+      <img src="/web/charts/827148403.png">
       <br>
-      <img src="./web/charts/1848022003.png">
+      <img src="/web/charts/1848022003.png">
     </td>
     <td align="center">
       <img src="./web/charts/2077796175.png">
@@ -37,56 +37,56 @@ permalink: /en/
   </tr>
   <tr>
     <td align="center">
-      <img src="./web/charts/1038688506.png">
+      <img src="/web/charts/1038688506.png">
     </td>
     <td align="center">
-      <img src="./web/charts/603335823.png">
+      <img src="/web/charts/603335823.png">
     </td>
     <td align="center">
-      <img src="./web/charts/1683681566.png">
+      <img src="/web/charts/1683681566.png">
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="./web/charts/2063902375.png">
+      <img src="/web/charts/2063902375.png">
     </td>
     <td align="center">
-      <img src="./web/charts/1821951025.png">
+      <img src="/web/charts/1821951025.png">
     </td>
     <td align="center">
-      <img src="./web/charts/1939554456.png"><br>
-      <img src="./web/charts/744871918.png">
+      <img src="/web/charts/1939554456.png"><br>
+      <img src="/web/charts/744871918.png">
     </td>
   </tr>
 </table>
 
-<img src="./web/charts/1201195179.png">
+<img src="/web/charts/1201195179.png">
 
-<img src="./web/charts/574263984.png">
+<img src="/web/charts/574263984.png">
 
-<img src="./web/charts/1322547223.png">
+<img src="/web/charts/1322547223.png">
 
-<img src="./web/charts/731574492.png">
+<img src="/web/charts/731574492.png">
 
-<img src="./web/charts/842189614.png">
+<img src="/web/charts/842189614.png">
 
-<img src="./web/charts/1047100711.png">
+<img src="/web/charts/1047100711.png">
 
-<img src="./web/charts/132326038.png">
+<img src="/web/charts/132326038.png">
 
-<img src="./web/charts/122662822.png">
+<img src="/web/charts/122662822.png">
 
-<img src="./web/charts/987529461.png">
+<img src="/web/charts/987529461.png">
 
-<img src="./web/charts/454080210.png">
+<img src="/web/charts/454080210.png">
 
-<img src="./web/charts/105471492.png">
+<img src="/web/charts/105471492.png">
 
-<img src="./web/charts/2095693594.png">
+<img src="/web/charts/2095693594.png">
 
 ### Vaccine arrival record
 
-<img src="./web/charts/648030237.png">
+<img src="/web/charts/648030237.png">
 
 ## About
 
