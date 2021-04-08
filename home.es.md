@@ -22,7 +22,9 @@ permalink: /
   </tr>
   <tr>
     <td align="center">
-<img src="/web/charts/1492441660.png">
+      <img src="/web/charts/1492441660.png">
+      <br>
+      <img src="/web/charts/736411819.png">
     </td>
     <td align="center">
       <img src="/web/charts/22096209.png">
