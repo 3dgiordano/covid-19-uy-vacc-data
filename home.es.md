@@ -86,6 +86,10 @@ permalink: /
 
 <img src="/web/charts/134138183.png">
 
+<img src="/web/charts/1785941673.png">
+
+<img src="/web/charts/824007235.png">
+
 ### Registro de llegada de vacunas
 
 <img src="/web/charts/861619954.png">
