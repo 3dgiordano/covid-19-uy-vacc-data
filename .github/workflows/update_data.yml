@@ -46,7 +46,7 @@ jobs:
         rm -rf ./.git/index.lock
         git config --local user.email "covid-19-uy-vacc-data[action]@users.noreply.github.com"
         git config --local user.name "covid-19-uy-vacc-data[action]"
-        git add data/Uruguay.csv
+        git add data/*
         git add web/charts/*
         git diff-index --quiet HEAD || git commit -m "Update"
     - name: Push changes
