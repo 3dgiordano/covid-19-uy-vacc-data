@@ -7,6 +7,21 @@ import pandas as pd
 
 monitor_url = 'https://monitor.uruguaysevacuna.gub.uy/plugin/cda/api/doQuery?'
 
+uy_init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_agenda_ini", "daily_agenda",
+                "total_ar", "total_ca", "total_cl", "total_co", "total_du", "total_fd", "total_fs",
+                "total_la", "total_ma", "total_mo", "total_pa", "total_rn", "total_ro", "total_rv", "total_sa",
+                "total_sj", "total_so", "total_ta", "total_tt",
+                "people_ar", "people_ca", "people_cl", "people_co", "people_du", "people_fd", "people_fs",
+                "people_la", "people_ma", "people_mo", "people_pa", "people_rn", "people_ro", "people_rv", "people_sa",
+                "people_sj", "people_so", "people_ta", "people_tt",
+                "fully_ar", "fully_ca", "fully_cl", "fully_co", "fully_du", "fully_fd", "fully_fs",
+                "fully_la", "fully_ma", "fully_mo", "fully_pa", "fully_rn", "fully_ro", "fully_rv", "fully_sa",
+                "fully_sj", "fully_so", "fully_ta", "fully_tt",
+                ]
+
+segment_init_cols = ["daily_teachers", "daily_elepem", "daily_chronic", "daily_undefined", "daily_dialysis",
+                     "daily_health", "daily_deprived_liberty", "daily_essential", "daily_no_risk"]
+
 region_letter = {
     "A": "ar", "B": "ca", "C": "cl", "D": "co", "E": "du", "F": "fs", "G": "fd", "H": "la", "I": "ma", "J": "mo",
     "K": "pa", "L": "rn", "M": "rv", "N": "ro", "O": "sa", "P": "sj", "Q": "so", "R": "ta", "S": "tt", "X": "unk"
@@ -83,7 +98,30 @@ def today_status(date):
                            'country_doses'])
 
 
-def add_formatted_row(spreadsheet, sheet, date):
+def segment_vaccination(date):
+    # Date format YYYYMMDD
+    today_str = bytes(date.replace("-", "").encode())
+    data = b"paramp_periodo_desde_sk=" + today_str + b"&paramp_periodo_hasta_sk=" + today_str + \
+           b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunas" \
+           b"Covid.cda&dataAccessId=sql_vacunas_poblacion&outputIndexId=1&pageSize=0&pageStart=0&" \
+           b"sortBy=&paramsearchBox="
+
+    data = get_data(data, ['segment', 'vaccinations'])
+    # Replace segment names
+    data["segment"].replace({"Docentes": "teachers"}, inplace=True)
+    data["segment"].replace({"ELEPEM": "elepem"}, inplace=True)
+    data["segment"].replace({"Enfermedad crónica": "chronic"}, inplace=True)
+    data["segment"].replace({"No Definido": "undefined"}, inplace=True)
+    data["segment"].replace({"Pacientes en diálisis": "dialysis"}, inplace=True)
+    data["segment"].replace({"Personal de salud": "health"}, inplace=True)
+    data["segment"].replace({"Personas privadas de libertad": "deprived_liberty"}, inplace=True)
+    data["segment"].replace({"Servicios esenciales": "essential"}, inplace=True)
+    data["segment"].replace({"Sin factores de riesgo": "no_risk"}, inplace=True)
+
+    return data
+
+
+def add_formatted_row(spreadsheet, sheet, date, init_cols):
     sheet_id = sheet.id
     last_row = len(list(filter(None, sheet.col_values(1))))
     last_col = sheet.col_count
@@ -113,17 +151,6 @@ def add_formatted_row(spreadsheet, sheet, date):
     sheet_headers = sheet.row_values(1)
     date_index = get_col_index(sheet_headers, "date")
     sheet.update_cell(int(last_row + 1), date_index, date)
-    init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_agenda_ini", "daily_agenda",
-                 "total_ar", "total_ca", "total_cl", "total_co", "total_du", "total_fd", "total_fs",
-                 "total_la", "total_ma", "total_mo", "total_pa", "total_rn", "total_ro", "total_rv", "total_sa",
-                 "total_sj", "total_so", "total_ta", "total_tt",
-                 "people_ar", "people_ca", "people_cl", "people_co", "people_du", "people_fd", "people_fs",
-                 "people_la", "people_ma", "people_mo", "people_pa", "people_rn", "people_ro", "people_rv", "people_sa",
-                 "people_sj", "people_so", "people_ta", "people_tt",
-                 "fully_ar", "fully_ca", "fully_cl", "fully_co", "fully_du", "fully_fd", "fully_fs",
-                 "fully_la", "fully_ma", "fully_mo", "fully_pa", "fully_rn", "fully_ro", "fully_rv", "fully_sa",
-                 "fully_sj", "fully_so", "fully_ta", "fully_tt",
-                 ]
 
     batch_update_cells = []
     for col_ini in init_cols:
@@ -178,6 +205,12 @@ def update():
     sheet_dic = sheet.get_all_records()
     sheet_headers = sheet.row_values(1)
 
+    sheet_segment = sh.worksheet("Segment")
+    sheet_segment_dic = sheet_segment.get_all_records()
+    print(sheet_segment_dic)
+    sheet_segment_headers = sheet_segment.row_values(1)
+    last_segment_row = sheet_segment_dic[-1]
+
     daily_people_vaccinated_col_index = get_col_index(sheet_headers, "people_vaccinated")
     daily_people_fully_vaccinated_col_index = get_col_index(sheet_headers, "people_fully_vaccinated")
 
@@ -198,6 +231,7 @@ def update():
             return
 
     batch_update_cells = []
+    batch_update_segment_cells = []
 
     for daily_vac_origin_index, daily_vac_origin_row in daily_vac_origin.iterrows():
 
@@ -206,7 +240,7 @@ def update():
 
         sheet_row = find_row(date_row, sheet_dic)
         if len(sheet_row) == 0:  # If not exist, create the row
-            add_formatted_row(sh, sheet, date_row)
+            add_formatted_row(sh, sheet, date_row, uy_init_cols)
             time.sleep(2)  # Wait for refresh
             sheet_dic = sheet.get_all_records()  # Get updated changes
             sheet_row = find_row(date_row, sheet_dic)
@@ -292,6 +326,29 @@ def update():
                 )
 
             if today == date_row:
+                segment = segment_vaccination(date_row)
+                sheet_segment_row = find_row(date_row, sheet_segment_dic)
+                if len(sheet_segment_row) == 0:  # If not exist, create the row
+                    add_formatted_row(sh, sheet_segment, date_row, segment_init_cols)
+                    time.sleep(2)  # Wait for refresh
+                    sheet_segment_dic = sheet_segment.get_all_records()  # Get updated changes
+                    sheet_segment_row = find_row(date_row, sheet_segment_dic)
+
+                sheet_segment_row_index = -1 if len(sheet_segment_row) == 0 else get_row_index(sheet_segment_dic,
+                                                                                               sheet_segment_row[0])
+
+                for daily_segment_origin_index, daily_segment_origin_row in segment.iterrows():
+                    segment_label = "daily_" + daily_segment_origin_row["segment"]
+                    segment_daily = int(daily_segment_origin_row["vaccinations"])
+
+                    daily_segment_col_index = get_col_index(sheet_segment_headers, segment_label)
+
+                    batch_update_segment_cells.append(
+                        gspread.models.Cell(sheet_segment_row_index, daily_segment_col_index,
+                                            value=segment_daily)
+                    )
+
+            if today == date_row:
 
                 # Get region data for that date
                 # TODO: The api lost the filter by date
@@ -344,6 +401,11 @@ def update():
                         )
                         if daily_vac_region_origin_total_value < sheet_total_vac_region:
                             print("* Warning! decrement! ")
+
+    to_update_segment = len(batch_update_segment_cells)
+    if to_update_segment > 0:
+        update_data = sheet_segment.update_cells(batch_update_segment_cells)
+        # TODO: Implement a generic method to update batch of a sheet with retries
 
     to_update = len(batch_update_cells)
     if to_update > 0:
