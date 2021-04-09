@@ -86,6 +86,10 @@ permalink: /en/
 
 <img src="/web/charts/2095693594.png">
 
+<img src="/web/charts/4849953.png">
+
+<img src="/web/charts/1189791692.png">
+
 ### Vaccine arrival record
 
 <img src="/web/charts/648030237.png">
