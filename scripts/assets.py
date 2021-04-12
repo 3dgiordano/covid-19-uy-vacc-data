@@ -1,5 +1,6 @@
 import concurrent.futures
 import os
+import time
 import urllib.request as req
 
 base_url = "https://docs.google.com/spreadsheets/d/e/"
@@ -58,3 +59,6 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=None) as executor:
             print("Saving image {} generated an exception: {}".format(image_arg, exc))
         else:
             print("Image {} saved successfully.".format(image_arg))
+
+# Paused to give git time to recognize changes
+time.sleep(2)
