@@ -207,7 +207,7 @@ def update():
 
     sheet_segment = sh.worksheet("Segment")
     sheet_segment_dic = sheet_segment.get_all_records()
-    print(sheet_segment_dic)
+
     sheet_segment_headers = sheet_segment.row_values(1)
     last_segment_row = sheet_segment_dic[-1]
 
@@ -228,7 +228,7 @@ def update():
         if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
             print("* Execution Excluded! Corrupt source data? Last valid:" + str(
                 last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
-            return
+            return False
 
     batch_update_cells = []
     batch_update_segment_cells = []
@@ -244,6 +244,15 @@ def update():
             time.sleep(2)  # Wait for refresh
             sheet_dic = sheet.get_all_records()  # Get updated changes
             sheet_row = find_row(date_row, sheet_dic)
+
+            last_row = sheet_dic[-1]
+            last_date = last_row["date"]
+
+            if last_date == today:
+                if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
+                    print("* New date, Execution Excluded! Corrupt source data? Last valid:" + str(
+                        last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
+                    return False
 
         sheet_daily_vac = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_vaccinated"] or 0)
 
