@@ -240,6 +240,13 @@ def update():
 
         sheet_row = find_row(date_row, sheet_dic)
         if len(sheet_row) == 0:  # If not exist, create the row
+
+            if date_row == today:
+                if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
+                    print("* New date, Execution Excluded! Corrupt source data? Last valid:" + str(
+                        last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
+                    return False
+
             add_formatted_row(sh, sheet, date_row, uy_init_cols)
             time.sleep(2)  # Wait for refresh
             sheet_dic = sheet.get_all_records()  # Get updated changes
@@ -248,11 +255,6 @@ def update():
             last_row = sheet_dic[-1]
             last_date = last_row["date"]
 
-            if last_date == today:
-                if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
-                    print("* New date, Execution Excluded! Corrupt source data? Last valid:" + str(
-                        last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
-                    return False
 
         sheet_daily_vac = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_vaccinated"] or 0)
 
