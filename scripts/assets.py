@@ -1,8 +1,18 @@
+import concurrent.futures
 import os
 import urllib.request as req
 
 base_url = "https://docs.google.com/spreadsheets/d/e/"
 sheet = "2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D"
+
+
+def save_img(oid):
+    img_url = f"{base_url}{sheet}/pubchart?oid={oid}&format=image"
+    image_file = os.path.abspath(f"../web/charts/{oid}.png")
+    if os.path.exists(image_file):
+        os.remove(image_file)
+    req.urlretrieve(img_url, image_file)
+
 
 images = [
     "574263984", "1320291746",
@@ -37,11 +47,14 @@ images = [
     "4849953", "1785941673"
 ]
 
-for img in images:
-    oid = img
-    print(f"Object id:{oid}")
-    img_url = f"{base_url}{sheet}/pubchart?oid={oid}&format=image"
-    image_file = os.path.abspath(f"../web/charts/{oid}.png")
-    if os.path.exists(image_file):
-        os.remove(image_file)
-    req.urlretrieve(img_url, image_file)
+with concurrent.futures.ThreadPoolExecutor(max_workers=None) as executor:
+    futures = {executor.submit(save_img, img): img for img in images}
+
+    for future in concurrent.futures.as_completed(futures):
+        image_arg = futures[future]
+        try:
+            result = future.result()
+        except Exception as exc:
+            print("Saving image {} generated an exception: {}".format(image_arg, exc))
+        else:
+            print("Image {} saved successfully.".format(image_arg))
