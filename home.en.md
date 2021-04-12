@@ -5,6 +5,17 @@ permalink: /en/
   <a href="/">Spanish</a>
 </div>
 <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/maintenance.jpg" width="50%">
+    </td>
+    <td>
+      Currently there are problems in the data provided by the ministry of public health.<br>
+      As soon as they solve your problems, the data will be updated automatically.
+    </td>
+  </tr>
+</table>
 <table id="dashboard">
   <tr>
     <td align="right" colspan=3>
