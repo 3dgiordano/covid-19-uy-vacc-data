@@ -8,7 +8,7 @@ permalink: /
 
 <table>
   <tr>
-    <td>
+    <td align="center">
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/maintenance.jpg" width="50%">
     </td>
     <td>
