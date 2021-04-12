@@ -5,6 +5,19 @@ permalink: /
   <a href="/en/">English</a>
 </div>
 <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+
+<table>
+  <tr>
+    <td>
+      <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/maintenance.jpg" width="50%">
+    </td>
+    <td>
+      Actualmente existen problemas en los datos proporcionados por el Ministerio de Salud Pública.<br>
+      Los datos se actualizarán automáticamente en cuanto ellos resuelvan sus problemas.
+    </td>
+  </tr>
+</table>
+
 <table id="dashboard">
   <tr>
     <td align="right" colspan=3>
