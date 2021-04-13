@@ -16,7 +16,7 @@ Our World in Data takes our data to publish it on its portal [Uruguay Covid-19 V
 
 Today, the project also collects more data, such as detailed daily vaccination data for each region, as well as the expected daily agenda.
 
-All data is public, you can access the raw data and create your own reports if you want [/data/Uruguay.csv](https://github.com/3dgiordano/covid-19-uy-vacc-data/blob/main/data/Uruguay.csv)
+All data is public, you can access the raw data and create your own reports if you want [/data/](https://github.com/3dgiordano/covid-19-uy-vacc-data/blob/main/data/)
 
 The data generated is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and the Source Code under [MIT](https://github.com/3dgiordano/covid-19-uy-vacc-data/blob/main/LICENSE)
 
