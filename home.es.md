@@ -124,7 +124,11 @@ permalink: /
 | 29/3/21 | 18 a 70 años | Público en general entre 18 a 70 años.|
 | 10/4/21 | 71 a 79 años | Vacunación a personas en la franja de 71 a 79 años.|
 
-Fuente: [Comunicado sobre Plan de Vacunación contra COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/comunicado-sobre-plan-vacunacion-contra-covid-19)
+Fuentes:
+
+[Comunicado sobre Plan de Vacunación contra COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/comunicado-sobre-plan-vacunacion-contra-covid-19)
+
+[Priorización y Escalonamiento de la Vacunación COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/priorizacion-escalonamiento-vacunacion-covid-19)
 
 ## Acerca de
 
