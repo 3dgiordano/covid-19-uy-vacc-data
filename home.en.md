@@ -124,7 +124,11 @@ permalink: /en/
 | 3/29/21 | 18 to 70 years | General public between 18 to 70 years old.|
 | 4/10/21 | 71 to 79 years | Vaccination of people in the range of 71 to 79 years.|
 
-Source: [Comunicado sobre Plan de Vacunación contra COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/comunicado-sobre-plan-vacunacion-contra-covid-19)
+Sources:
+
+[Comunicado sobre Plan de Vacunación contra COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/comunicado-sobre-plan-vacunacion-contra-covid-19)
+
+[Priorización y Escalonamiento de la Vacunación COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/priorizacion-escalonamiento-vacunacion-covid-19)
 
 ## About
 
