@@ -112,13 +112,13 @@ permalink: /
 
 | **Fecha**  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Grupo**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Descripción** |
 | :----: | :----: | :----------- |
-| 27/2/21 | Personal esencial | Personal de vacunación. | 
-| 1/3/21 | Personal esencial | Menores a 60 años en actividad. Policías, bomberos, militares, trabajadores de la educación e INAU. |
+| 27/2/21 | Personal Esencial | Personal de vacunación. | 
+| 1/3/21 | Personal Esencial | Menores a 60 años en actividad. Policías, bomberos, militares, trabajadores de la educación e INAU. |
 | 8/3/21 | 50 a 70 años | Primera etapa de 55 a 59 años, posteriormente franja de 50 a 70 años en cinco ciudades fronterizas. Se finaliza extendiendo a toda persona de franja etarea de 50 a 70 años en todo el país.|
 | 12/3/21 | Vulnerables | Personas privadas de libertad y personal de establecimientos de reclusión (se inició en establecimientos de mujeres e INISA).|
-| 15/3/21 | Personal de la salud | Personal de la salud priorizado (CTI y servicios anexos, hisopadores-vacunadores, centros de hemodiálisis, servicios de puerta y emergencia intra y extra hospitalario).|
+| 15/3/21 | Personal Salud | Personal de la salud priorizado (CTI y servicios anexos, hisopadores-vacunadores, centros de hemodiálisis, servicios de puerta y emergencia intra y extra hospitalario).|
 | 16/3/21 | Vulnerables |Vacunación a domicilio de personas que viven y trabajan en residenciales (ELEPEM).|
-| 22/3/21 | Personal de la salud | Todo el personal de la salud del área asistencial (odontólogos, psicólogos, fisioterapeutas y clínicas de diversas especialidades). Personal administrativo de la salud al finalizar la anterior etapa.|
+| 22/3/21 | Personal Salud | Todo el personal de la salud del área asistencial (odontólogos, psicólogos, fisioterapeutas y clínicas de diversas especialidades). Personal administrativo de la salud al finalizar la anterior etapa.|
 | 22/3/21 | Vulnerables | Continuación de vacunación a domicilio de personas que viven y trabajan en residenciales (ELEPEM).|
 | 22/3/21 | Mayores 80 años | Vacunación a personas mayores de 80 años auto válidos.|
 | 29/3/21 | 18 a 70 años | Público en general entre 18 a 70 años.|
