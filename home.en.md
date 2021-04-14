@@ -110,7 +110,7 @@ permalink: /en/
 
 ### Vaccination plan against COVID-19
 
-| **Date**  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Group**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
+| **Date**  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Group**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
 | :----: | :----: | :----------- |
 | 2/27/21 | Essential staff | Vaccination staff. | 
 | 3/1/21 | Essential staff | Under 60 years of age in activity. Police, firefighters, military, education workers and INAU.|
