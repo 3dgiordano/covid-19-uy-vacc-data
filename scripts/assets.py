@@ -48,7 +48,7 @@ images = [
     "4849953", "1785941673"
 ]
 
-with concurrent.futures.ThreadPoolExecutor(max_workers=None) as executor:
+with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
     futures = {executor.submit(save_img, img): img for img in images}
 
     for future in concurrent.futures.as_completed(futures):
