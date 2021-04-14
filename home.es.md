@@ -110,7 +110,7 @@ permalink: /
 
 ### Plan de vacunación contra COVID-19
 
-| **Fecha**  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Grupo**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Descripción** |
+| **Fecha**  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Grupo**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Descripción** |
 | :----: | :----: | :----------- |
 | 27/2/21 | Personal esencial | Personal de vacunación. | 
 | 1/3/21 | Personal esencial | Menores a 60 años en actividad. Policías, bomberos, militares, trabajadores de la educación e INAU. |
