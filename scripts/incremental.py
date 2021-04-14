@@ -1,5 +1,6 @@
 import json
 import time
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 import gspread
@@ -7,7 +8,8 @@ import pandas as pd
 
 monitor_url = 'https://monitor.uruguaysevacuna.gub.uy/plugin/cda/api/doQuery?'
 
-uy_init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_agenda_ini", "daily_agenda",
+uy_init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_astrazeneca",
+                "daily_agenda_ini", "daily_agenda",
                 "total_ar", "total_ca", "total_cl", "total_co", "total_du", "total_fd", "total_fs",
                 "total_la", "total_ma", "total_mo", "total_pa", "total_rn", "total_ro", "total_rv", "total_sa",
                 "total_sj", "total_so", "total_ta", "total_tt",
@@ -184,9 +186,12 @@ def update():
 
     today = transform_date(daily_vac_origin.tail(1)["date"].values[0])
 
-    day_agenda = int(date_agenda(today)["today"].item() or 0)
-    # Increment to the total day agenda the second dose
-    day_agenda += int(date_agenda_second_dose(today)["today"].item() or 0)
+    try:
+        day_agenda = int(date_agenda(today)["today"].item() or 0)
+        # Increment to the total day agenda the second dose
+        day_agenda += int(date_agenda_second_dose(today)["today"].item() or 0)
+    except HTTPError as e:
+        day_agenda = 0
 
     today_vac_status = today_status(today)
 
@@ -254,7 +259,6 @@ def update():
 
             last_row = sheet_dic[-1]
             last_date = last_row["date"]
-
 
         sheet_daily_vac = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_vaccinated"] or 0)
 
