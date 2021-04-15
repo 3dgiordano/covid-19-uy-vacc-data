@@ -84,11 +84,20 @@ def segments():
     df.to_csv("../data/Segments.csv", index=False)
 
 
+def age():
+    df = pd.read_csv(
+        f"{base_seet}Age"
+    )
+
+    df.to_csv("../data/Age.csv", index=False)
+
+
 def main():
     uruguay()
     regions()
     segments()
     subnational()
+    age()
 
 
 if __name__ == "__main__":
