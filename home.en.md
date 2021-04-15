@@ -104,9 +104,9 @@ permalink: /en/
 
 <img src="/web/charts/1189791692.png">
 
-<img src="/web/charts/784232676.png">
-
 <img src="/web/charts/1133283679.png">
+
+<img src="/web/charts/784232676.png">
 
 ### Vaccine arrival record
 
