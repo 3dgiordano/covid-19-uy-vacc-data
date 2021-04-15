@@ -421,7 +421,7 @@ def update():
                     )
 
             # Age
-            if True or today == date_row:
+            if today == date_row:
                 daily_by_age = daily_vaccinated_by_age(date_row)
                 sheet_age_row = find_row(date_row, sheet_age_dic)
                 if len(sheet_age_row) == 0:  # If not exist, create the row
