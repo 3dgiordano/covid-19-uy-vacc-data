@@ -24,6 +24,10 @@ uy_init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_as
 segment_init_cols = ["daily_teachers", "daily_elepem", "daily_chronic", "daily_undefined", "daily_dialysis",
                      "daily_health", "daily_deprived_liberty", "daily_essential", "daily_no_risk"]
 
+age_init_cols = [
+    "daily_18_24", "daily_25_34", "daily_35_44", "daily_45_54", "daily_55_64", "daily_65_74", "daily_75_115",
+    "daily_undefined"]
+
 region_letter = {
     "A": "ar", "B": "ca", "C": "cl", "D": "co", "E": "du", "F": "fs", "G": "fd", "H": "la", "I": "ma", "J": "mo",
     "K": "pa", "L": "rn", "M": "rv", "N": "ro", "O": "sa", "P": "sj", "Q": "so", "R": "ta", "S": "tt", "X": "unk"
@@ -51,6 +55,51 @@ def daily_vaccinated():
     data = b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_evolucion&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
     return get_data(data, ['date', 'daily_vaccinated', 'daily_coronavac', 'daily_pfizer'])
+
+
+def daily_vaccinated_by_age(date):
+    # Date format YYYYMMDD
+    today_str = bytes(date.replace("-", "").encode())
+    data = b"paramp_periodo_desde_sk=" + today_str + b"&paramp_periodo_hasta_sk=" + \
+           today_str + b"&paramp_rango_tipo=7&" \
+                       b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2F" \
+                       b"VacunasCovid.cda&dataAccessId=sql_vacunas_rango_edad&" \
+                       b"outputIndexId=1&pageSize=0&pageStart=0&" \
+                       b"sortBy=&paramsearchBox="
+    result = get_data(data, ['age', 'value'])
+    result.replace({'age': {
+        u" años": u"",
+        "No Definido": "undefined",
+        "> 18 meses y <= 21 meses": "0",
+        "4 meses": "0",
+        "> 21 meses y <= 2": "0"
+    }}, regex=True, inplace=True)
+
+    daily_ages = {
+        "18_24": 0, "25_34": 0, "35_44": 0, "45_54": 0, "55_64": 0, "65_74": 0, "75_115": 0, "undefined": 0
+    }
+
+    for age_index, age_row in result.iterrows():
+        age = age_row["age"]
+        age_key = "undefined"
+        age_int = 0 if age == "undefined" else int(age)
+        if 18 <= age_int <= 24:
+            age_key = "18_24"
+        elif 25 <= age_int <= 34:
+            age_key = "25_34"
+        elif 35 <= age_int <= 44:
+            age_key = "35_44"
+        elif 45 <= age_int <= 54:
+            age_key = "45_54"
+        elif 55 <= age_int <= 64:
+            age_key = "55_64"
+        elif 65 <= age_int <= 74:
+            age_key = "65_74"
+        elif age_int >= 75:
+            age_key = "75_115"
+        daily_ages[age_key] += age_row["value"]
+
+    return daily_ages
 
 
 def region_vaccinated(date):
@@ -108,19 +157,19 @@ def segment_vaccination(date):
            b"Covid.cda&dataAccessId=sql_vacunas_poblacion&outputIndexId=1&pageSize=0&pageStart=0&" \
            b"sortBy=&paramsearchBox="
 
-    data = get_data(data, ['segment', 'vaccinations'])
+    result = get_data(data, ['segment', 'vaccinations'])
     # Replace segment names
-    data["segment"].replace({"Docentes": "teachers"}, inplace=True)
-    data["segment"].replace({"ELEPEM": "elepem"}, inplace=True)
-    data["segment"].replace({"Enfermedad crónica": "chronic"}, inplace=True)
-    data["segment"].replace({"No Definido": "undefined"}, inplace=True)
-    data["segment"].replace({"Pacientes en diálisis": "dialysis"}, inplace=True)
-    data["segment"].replace({"Personal de salud": "health"}, inplace=True)
-    data["segment"].replace({"Personas privadas de libertad": "deprived_liberty"}, inplace=True)
-    data["segment"].replace({"Servicios esenciales": "essential"}, inplace=True)
-    data["segment"].replace({"Sin factores de riesgo": "no_risk"}, inplace=True)
+    result["segment"].replace({"Docentes": "teachers"}, inplace=True)
+    result["segment"].replace({"ELEPEM": "elepem"}, inplace=True)
+    result["segment"].replace({"Enfermedad crónica": "chronic"}, inplace=True)
+    result["segment"].replace({"No Definido": "undefined"}, inplace=True)
+    result["segment"].replace({"Pacientes en diálisis": "dialysis"}, inplace=True)
+    result["segment"].replace({"Personal de salud": "health"}, inplace=True)
+    result["segment"].replace({"Personas privadas de libertad": "deprived_liberty"}, inplace=True)
+    result["segment"].replace({"Servicios esenciales": "essential"}, inplace=True)
+    result["segment"].replace({"Sin factores de riesgo": "no_risk"}, inplace=True)
 
-    return data
+    return result
 
 
 def add_formatted_row(spreadsheet, sheet, date, init_cols):
@@ -216,6 +265,12 @@ def update():
     sheet_segment_headers = sheet_segment.row_values(1)
     last_segment_row = sheet_segment_dic[-1]
 
+    sheet_age = sh.worksheet("Age")
+    sheet_age_dic = sheet_age.get_all_records()
+
+    sheet_age_headers = sheet_age.row_values(1)
+    last_age_row = sheet_age_dic[-1]
+
     daily_people_vaccinated_col_index = get_col_index(sheet_headers, "people_vaccinated")
     daily_people_fully_vaccinated_col_index = get_col_index(sheet_headers, "people_fully_vaccinated")
 
@@ -237,6 +292,7 @@ def update():
 
     batch_update_cells = []
     batch_update_segment_cells = []
+    batch_update_age_cells = []
 
     for daily_vac_origin_index, daily_vac_origin_row in daily_vac_origin.iterrows():
 
@@ -340,6 +396,7 @@ def update():
                                         value=daily_vac_pfizer_origin_value)
                 )
 
+            # Segment
             if today == date_row:
                 segment = segment_vaccination(date_row)
                 sheet_segment_row = find_row(date_row, sheet_segment_dic)
@@ -361,6 +418,29 @@ def update():
                     batch_update_segment_cells.append(
                         gspread.models.Cell(sheet_segment_row_index, daily_segment_col_index,
                                             value=segment_daily)
+                    )
+
+            # Age
+            if True or today == date_row:
+                daily_by_age = daily_vaccinated_by_age(date_row)
+                sheet_age_row = find_row(date_row, sheet_age_dic)
+                if len(sheet_age_row) == 0:  # If not exist, create the row
+                    add_formatted_row(sh, sheet_age, date_row, age_init_cols)
+                    time.sleep(2)  # Wait for refresh
+                    sheet_age_dic = sheet_age.get_all_records()  # Get updated changes
+                    sheet_age_row = find_row(date_row, sheet_age_dic)
+
+                sheet_age_row_index = -1 if len(sheet_age_row) == 0 else get_row_index(sheet_age_dic,
+                                                                                       sheet_age_row[0])
+
+                for daily_age_key, daily_age_value in daily_by_age.items():
+                    age_label = "daily_" + daily_age_key
+                    age_daily = daily_age_value
+
+                    daily_age_col_index = get_col_index(sheet_age_headers, age_label)
+                    batch_update_age_cells.append(
+                        gspread.models.Cell(sheet_age_row_index, daily_age_col_index,
+                                            value=age_daily)
                     )
 
             if today == date_row:
@@ -420,6 +500,11 @@ def update():
     to_update_segment = len(batch_update_segment_cells)
     if to_update_segment > 0:
         update_data = sheet_segment.update_cells(batch_update_segment_cells)
+        # TODO: Implement a generic method to update batch of a sheet with retries
+
+    to_update_age = len(batch_update_age_cells)
+    if to_update_age > 0:
+        update_data = sheet_age.update_cells(batch_update_age_cells)
         # TODO: Implement a generic method to update batch of a sheet with retries
 
     to_update = len(batch_update_cells)
