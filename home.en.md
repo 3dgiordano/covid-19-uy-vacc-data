@@ -100,29 +100,29 @@ permalink: /en/
 
 <img src="/web/charts/2095693594.png">
 
-### Vaccination acts by segment
+## Vaccination acts by segment
 
 <img src="/web/charts/4849953.png">
 
 <img src="/web/charts/1189791692.png">
 
-### Vaccination acts by age group vaccination
+## Vaccination acts by age group vaccination
 
 <img src="/web/charts/1740954658.png">
 
 <img src="/web/charts/1880002572.png">
 
-### Vaccination acts by age range
+## Vaccination acts by age range
 
 <img src="/web/charts/1133283679.png">
 
 <img src="/web/charts/784232676.png">
 
-### Vaccine arrival record
+## Vaccine arrival record
 
 <img src="/web/charts/648030237.png">
 
-### Vaccination plan against COVID-19
+## Vaccination plan against COVID-19
 
 | **Date**  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Group**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
 | :----: | :----: | :----------- |
@@ -138,7 +138,7 @@ permalink: /en/
 | 3/29/21 | 18 to 70 years | General public between 18 to 70 years old.|
 | 4/10/21 | 71 to 79 years | Vaccination of people in the range of 71 to 79 years.|
 
-Sources:
+### Sources:
 
 [Comunicado sobre Plan de Vacunación contra COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/comunicado-sobre-plan-vacunacion-contra-covid-19)
 
