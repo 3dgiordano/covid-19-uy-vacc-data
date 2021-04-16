@@ -100,9 +100,19 @@ permalink: /
 
 <img src="/web/charts/134138183.png">
 
+### Actos vacunales por segmento
+
 <img src="/web/charts/1785941673.png">
 
 <img src="/web/charts/824007235.png">
+
+### Actos vacunales por grupo de vacunación etario 
+
+<img src="/web/charts/655562320.png">
+
+<img src="/web/charts/1515424457.png">
+
+### Actos vacunales por rango etario
 
 <img src="/web/charts/1140302154.png">
 
