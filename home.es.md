@@ -127,7 +127,7 @@ permalink: /
 | 22/3/21 | Mayores 80 años | Vacunación a personas mayores de 80 años auto válidos.|
 | 29/3/21 | 18 a 70 años | Público en general entre 18 a 70 años.|
 | 10/4/21 | 71 a 79 años | Vacunación a personas en la franja de 71 a 79 años.|
-| 18/4/21 | Departamentos en Riesgo | Vacunación a personas mayores de 60 años con 48.000 dosis de las vacunas Oxford/Astrazeneca en Artigas, Rivera, Cerro Largo, Rocha, Río Negro, Canelones, Salto y Paysandú. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacuna-oxfordastrazeneca-departamentos-mayor-riesgo)
+| 18/4/21 | Localidad en Riesgo | Vacunación a personas mayores de 60 años con 48.000 dosis de las vacunas Oxford/Astrazeneca en Artigas, Rivera, Cerro Largo, Rocha, Río Negro, Canelones, Salto y Paysandú. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacuna-oxfordastrazeneca-departamentos-mayor-riesgo)
 
 Fuentes:
 
