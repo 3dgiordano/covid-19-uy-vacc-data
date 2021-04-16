@@ -100,19 +100,19 @@ permalink: /
 
 <img src="/web/charts/134138183.png">
 
-### Actos vacunales por segmento
+## Actos vacunales por segmento
 
 <img src="/web/charts/1785941673.png">
 
 <img src="/web/charts/824007235.png">
 
-### Actos vacunales por grupo de vacunación etario 
+## Actos vacunales por grupo de vacunación etario 
 
 <img src="/web/charts/655562320.png">
 
 <img src="/web/charts/1515424457.png">
 
-### Actos vacunales por rango etario
+## Actos vacunales por rango etario
 
 <img src="/web/charts/1140302154.png">
 
@@ -122,7 +122,7 @@ permalink: /
 
 <img src="/web/charts/861619954.png">
 
-### Plan de vacunación contra COVID-19
+## Plan de vacunación contra COVID-19
 
 | **Fecha**  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Grupo**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Descripción** |
 | :----: | :----: | :----------- |
@@ -142,7 +142,7 @@ permalink: /
 | 16/4/21 | Vulnerables | Personas mayores de 18 años con Síndrome de Down en Montevideo, días 16 y 17 de abril. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacunacion-contra-covid-19-para-personas-sindrome-down)  |
 | 18/4/21 | Localidad en Riesgo | Vacunación a personas mayores de 60 años con 48.000 dosis de las vacunas Oxford/Astrazeneca en Artigas, Rivera, Cerro Largo, Rocha, Río Negro, Canelones, Salto y Paysandú. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacuna-oxfordastrazeneca-departamentos-mayor-riesgo) |
 
-Fuentes:
+### Fuentes:
 
 [Comunicado sobre Plan de Vacunación contra COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/comunicado-sobre-plan-vacunacion-contra-covid-19)
 
