@@ -136,6 +136,8 @@ Fuentes:
 
 [Priorización y Escalonamiento de la Vacunación COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/priorizacion-escalonamiento-vacunacion-covid-19)
 
+[Plan estratégico de vacunación contra Covid-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/plan-estrategico-vacunacion-contra-covid-19)
+
 ## Acerca de
 
 El proyecto fue creado por [@3dgiordano](https://github.com/3dgiordano) para dar a conocer la información de vacunación Covid-19 realizada en Uruguay.
