@@ -100,9 +100,19 @@ permalink: /en/
 
 <img src="/web/charts/2095693594.png">
 
+### Vaccination acts by segment
+
 <img src="/web/charts/4849953.png">
 
 <img src="/web/charts/1189791692.png">
+
+### Vaccination acts by age group vaccination
+
+<img src="/web/charts/1740954658.png">
+
+<img src="/web/charts/1880002572.png">
+
+### Vaccination acts by age range
 
 <img src="/web/charts/1133283679.png">
 
