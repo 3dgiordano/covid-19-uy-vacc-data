@@ -130,6 +130,7 @@ permalink: /
 | 1/3/21 | Personal Esencial | Menores a 60 años en actividad. Policías, bomberos, militares, trabajadores de la educación e INAU. |
 | 1/3/21 | Vulnerables | Personas en Hemodiálisis menores a 60 años, y personas en Pretrasplante de 55 a 59 años, habilitado hasta 13 de Marzo. |
 | 8/3/21 | 50 a 70 años | Primera etapa de 55 a 59 años, posteriormente franja de 50 a 70 años en cinco ciudades fronterizas. Se finaliza extendiendo a toda persona de franja etarea de 50 a 70 años en todo el país.|
+| 11/3/21 | Localidad en Riesgo | Se vacuna en ciudades fronterizas con sobrante de Sinovac a personas de 18 a 55 años con comorbilidades comprobadas. |
 | 12/3/21 | Vulnerables | Personas privadas de libertad y personal de establecimientos de reclusión (se inició en establecimientos de mujeres e INISA).|
 | 15/3/21 | Personal Salud | Personal de la salud priorizado (CTI y servicios anexos, hisopadores-vacunadores, centros de hemodiálisis, servicios de puerta y emergencia intra y extra hospitalario).|
 | 16/3/21 | Vulnerables |Vacunación a domicilio de personas que viven y trabajan en residenciales (ELEPEM).|
