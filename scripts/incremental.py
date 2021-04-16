@@ -26,7 +26,7 @@ segment_init_cols = ["daily_teachers", "daily_elepem", "daily_chronic", "daily_u
 
 age_init_cols = [
     "daily_18_24", "daily_25_34", "daily_35_44", "daily_45_54", "daily_55_64", "daily_65_74", "daily_75_115",
-    "daily_undefined"]
+    "daily_undefined", "daily_18_49", "daily_50_70", "daily_71_79", "daily_80_115"]
 
 region_letter = {
     "A": "ar", "B": "ca", "C": "cl", "D": "co", "E": "du", "F": "fs", "G": "fd", "H": "la", "I": "ma", "J": "mo",
@@ -76,12 +76,14 @@ def daily_vaccinated_by_age(date):
     }}, regex=True, inplace=True)
 
     daily_ages = {
-        "18_24": 0, "25_34": 0, "35_44": 0, "45_54": 0, "55_64": 0, "65_74": 0, "75_115": 0, "undefined": 0
+        "18_24": 0, "25_34": 0, "35_44": 0, "45_54": 0, "55_64": 0, "65_74": 0, "75_115": 0, "undefined": 0,
+        "18_49": 0, "50_70": 0, "71_79": 0, "80_115": 0
     }
 
     for age_index, age_row in result.iterrows():
         age = age_row["age"]
         age_key = "undefined"
+        age_key2 = age_key
         age_int = 0 if age == "undefined" else int(age)
         if 18 <= age_int <= 24:
             age_key = "18_24"
@@ -97,7 +99,20 @@ def daily_vaccinated_by_age(date):
             age_key = "65_74"
         elif age_int >= 75:
             age_key = "75_115"
+
         daily_ages[age_key] += age_row["value"]
+
+        if age_key != "undefined":
+            if 18 <= age_int <= 49:
+                age_key2 = "18_49"
+            elif 50 <= age_int <= 70:
+                age_key2 = "50_70"
+            elif 71 <= age_int <= 79:
+                age_key2 = "71_79"
+            elif age_int >= 80:
+                age_key2 = "80_115"
+
+        daily_ages[age_key2] += age_row["value"]
 
     return daily_ages
 
@@ -240,6 +255,7 @@ def update():
         # Increment to the total day agenda the second dose
         day_agenda += int(date_agenda_second_dose(today)["today"].item() or 0)
     except HTTPError as e:
+        print("Agenda error!")
         day_agenda = 0
 
     today_vac_status = today_status(today)
