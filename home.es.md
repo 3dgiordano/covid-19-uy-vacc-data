@@ -130,7 +130,7 @@ permalink: /
 | 1/3/21 | Personal Esencial | Menores a 60 años en actividad. Policías, bomberos, militares, trabajadores de la educación e INAU. |
 | 1/3/21 | Vulnerables | Personas en Hemodiálisis menores a 60 años, y personas en Pretrasplante de 55 a 59 años, habilitado hasta 13 de Marzo. |
 | 8/3/21 | 50 a 70 años | Primera etapa de 55 a 59 años, posteriormente franja de 50 a 70 años en cinco ciudades fronterizas. Se finaliza extendiendo a toda persona de franja etarea de 50 a 70 años en todo el país.|
-| 11/3/21 | Localidad en Riesgo | Se vacuna en ciudades fronterizas con sobrante de Sinovac a personas de 18 a 55 años con comorbilidades comprobadas. |
+| 11/3/21 | Localidad en Riesgo | Se vacuna en ciudades fronterizas con sobrante de Sinovac, sobrantes del día para personas de 18 a 55 años con comorbilidades comprobadas. |
 | 12/3/21 | Vulnerables | Personas privadas de libertad y personal de establecimientos de reclusión (se inició en establecimientos de mujeres e INISA).|
 | 15/3/21 | Personal Salud | Personal de la salud priorizado (CTI y servicios anexos, hisopadores-vacunadores, centros de hemodiálisis, servicios de puerta y emergencia intra y extra hospitalario).|
 | 16/3/21 | Vulnerables |Vacunación a domicilio de personas que viven y trabajan en residenciales (ELEPEM).|
@@ -141,7 +141,7 @@ permalink: /
 | 5/4/21 | Vulnerables | Personas en Hemodiálisis en los Centros de diálisis, primera etapa Trasplantados mayores de 70 años y personas entre 16 y 18 años, a partir del 12 de Abril Transplantados de 18 a 70 años. |
 | 10/4/21 | 71 a 79 años | Vacunación a personas en la franja de 71 a 79 años.|
 | 16/4/21 | Vulnerables | Personas mayores de 18 años con Síndrome de Down en Montevideo, días 16 y 17 de abril. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacunacion-contra-covid-19-para-personas-sindrome-down)  |
-| 18/4/21 | Localidad en Riesgo | Vacunación a personas mayores de 60 años con 48.000 dosis de las vacunas Oxford/Astrazeneca en Artigas, Rivera, Cerro Largo, Rocha, Río Negro, Canelones, Salto y Paysandú. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacuna-oxfordastrazeneca-departamentos-mayor-riesgo) |
+| 17/4/21 | Localidad en Riesgo | Vacunación a personas mayores de 60 años con 48.000 dosis de las vacunas Oxford/Astrazeneca en Artigas, Rivera, Cerro Largo, Rocha, Río Negro, Canelones, Salto y Paysandú. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacuna-oxfordastrazeneca-departamentos-mayor-riesgo) |
 
 ### Fuentes:
 
