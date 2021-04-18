@@ -8,7 +8,8 @@ import pandas as pd
 
 monitor_url = 'https://monitor.uruguaysevacuna.gub.uy/plugin/cda/api/doQuery?'
 
-uy_init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_astrazeneca",
+# "daily_astrazeneca",
+uy_init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer",
                 "daily_agenda_ini", "daily_agenda",
                 "total_ar", "total_ca", "total_cl", "total_co", "total_du", "total_fd", "total_fs",
                 "total_la", "total_ma", "total_mo", "total_pa", "total_rn", "total_ro", "total_rv", "total_sa",
