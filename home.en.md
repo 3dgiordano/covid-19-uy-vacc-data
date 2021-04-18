@@ -74,6 +74,17 @@ permalink: /en/
       <img src="/web/charts/744871918.png">
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <img src="/web/charts/446851537.png">
+    </td>
+    <td align="center">
+      <img src="/web/charts/75622886.png">
+    </td>
+    <td align="center">
+      <img src="/web/charts/1972410624.png">
+    </td>
+  </tr>
 </table>
 
 <img src="/web/charts/1201195179.png">
