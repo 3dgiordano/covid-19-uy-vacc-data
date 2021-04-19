@@ -5,7 +5,7 @@ permalink: /en/
   <a href="/">Spanish</a>
 </div>
 <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
-<!-- 
+ 
 <br><br>
 <table>
   <tr>
@@ -14,11 +14,11 @@ permalink: /en/
     </td>
     <td>
       Currently there are problems in the data provided by the ministry of public health.<br>
-      As soon as they solve your problems, the data will be updated automatically.
+      As soon as they solve their problems, the data will be updated automatically.
     </td>
   </tr>
 </table>
--->
+
 <table id="dashboard">
   <tr>
     <td align="right" colspan=3>
