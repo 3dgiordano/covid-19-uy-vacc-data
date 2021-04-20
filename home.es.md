@@ -135,11 +135,11 @@ permalink: /
 
 ## Vacunas
 
-| **Vacuna**  | **Plataforma** | **Eficacia A % (IC95%)** | **Edades límite** | **Pauta administración** | **Poblaciones preferenciales** |
+| **Vacuna**  | **Plataforma** | **Eficacia A % (IC95%)** | &nbsp;&nbsp;&nbsp;&nbsp;**Rango**&nbsp;&nbsp;&nbsp;&nbsp; | **Administración** | **Población preferencial** |
 | :----: | :----: | :----: | :----: | :----: | :----------- |
-| **Coronavac (Sinovac)** | Inactivada | **50,3%** (IC 95: 35.26 - 61.98) infección sintomática, Enfermedad moderada y grave **100%** | 18 - 59 años | 2 dosis (separadas 28 días) | <60 años Personal Esencial, Estudiantes medicina, Enfermería, Carreras técnicas, Personas Privadas de Libertad, Resto de la población. |
-| **Pfizer/BioNtech** | ARN | **95%** (IC 95%: 90.3 - 97.6) | >16 años | 2 dosis (separadas 28 días) | Personal de Salud > 60 años Resto de la población |
-| **Oxford/Astrazeneca** | Vectorial | **82.4%** (62.7-91.7) | >60 años (1) | 2 dosis (separadas 12 semanas) | Personal de Salud >60 años Resto de la población |
+| **Coronavac (Sinovac)** | Inactivada | **50,3%** (35.26 - 61.98) infección sintomática, Enfermedad moderada y grave **100%** | 18-59 años | 2 dosis (separadas 28 días) | <60 años Personal Esencial, Estudiantes medicina, Enfermería, Carreras técnicas, Personas Privadas de Libertad, Resto de la población. |
+| **Pfizer/BioNtech** | ARN | **95%** (90.3 - 97.6) | >16 años | 2 dosis (separadas 28 días) | Personal de Salud > 60 años Resto de la población |
+| **Oxford/Astrazeneca** | Vectorial | **82.4%** (62.7 - 91.7) | >60 años (1) | 2 dosis (separadas 12 semanas) | Personal de Salud >60 años Resto de la población |
 
 (1) La vacuna Oxford/Astrazeneca se encuentra aprobada para mayores de 18 años, sin embargo se han detectado algunos casos extraños de efectos secundarios en menores de 50 años, por esa razón se cambia su rango etareo a mayores de 60 años.
  
