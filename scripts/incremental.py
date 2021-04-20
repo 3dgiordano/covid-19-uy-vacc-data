@@ -127,12 +127,8 @@ def daily_vaccinated_by_age(date):
     return daily_ages
 
 
-def region_vaccinated(date):
-    # Date format YYYYMMDD
-    today_str = bytes(date.replace("-", "").encode())
-    data = b"paramp_periodo_desde_sk=" + today_str + b"&paramp_periodo_hasta_sk=" + today_str + \
-           b"&paramp_ncto_desde_sk=0&" \
-           b"paramp_ncto_hasta_sk=0&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2F" \
+def region_vaccinated():
+    data = b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2F" \
            b"VacunasCovid.cda&dataAccessId=sql_vacunas_depto_vacunatorio&outputIndexId=1&pageSize=0&" \
            b"pageStart=0&sortBy=&paramsearchBox="
     return get_data(data, [
@@ -489,11 +485,10 @@ def update():
                                             value=age_daily)
                     )
 
-            if False and today == date_row:
+            # Regions
+            if today == date_row:
 
-                # Get region data for that date
-                # TODO: The api lost the filter by date
-                daily_vac_region_origin = region_vaccinated(date_row)
+                daily_vac_region_origin = region_vaccinated()
 
                 for daily_vac_region_origin_index, daily_vac_region_origin_row in daily_vac_region_origin.iterrows():
                     # Generate the label with the sheet format
@@ -519,25 +514,26 @@ def update():
                         print("Create Region:" + date_row + " " + region_total_label + " old: none new:" + str(
                             daily_vac_region_origin_total_value))
                     elif sheet_total_vac_region != daily_vac_region_origin_total_value:
-                        daily_vac_total_col_index = get_col_index(sheet_headers, region_total_label)
-                        daily_vac_people_col_index = get_col_index(sheet_headers, region_people_label)
-                        daily_vac_fully_col_index = get_col_index(sheet_headers, region_fully_label)
+                        daily_vac_region_total_col_index = get_col_index(sheet_headers, region_total_label)
+                        daily_vac_region_people_col_index = get_col_index(sheet_headers, region_people_label)
+                        daily_vac_region_fully_col_index = get_col_index(sheet_headers, region_fully_label)
 
                         print("Update Region:" + date_row + " " + region_total_label + " idx:" + str(
                             sheet_row_index) + " old:" + str(sheet_total_vac_region) + " new:" + str(
                             daily_vac_region_origin_total_value))
+
                         batch_update_cells.append(
-                            gspread.models.Cell(sheet_row_index, daily_vac_total_col_index,
+                            gspread.models.Cell(sheet_row_index, daily_vac_region_total_col_index,
                                                 value=daily_vac_region_origin_total_value)
                         )
 
                         # Update people and fully
                         batch_update_cells.append(
-                            gspread.models.Cell(sheet_row_index, daily_vac_people_col_index,
+                            gspread.models.Cell(sheet_row_index, daily_vac_region_people_col_index,
                                                 value=daily_vac_region_origin_people_value)
                         )
                         batch_update_cells.append(
-                            gspread.models.Cell(sheet_row_index, daily_vac_fully_col_index,
+                            gspread.models.Cell(sheet_row_index, daily_vac_region_fully_col_index,
                                                 value=daily_vac_region_origin_fully_value)
                         )
                         if daily_vac_region_origin_total_value < sheet_total_vac_region:
