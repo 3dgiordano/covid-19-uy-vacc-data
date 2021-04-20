@@ -5,7 +5,7 @@ permalink: /
   <a href="/en/">English</a>
 </div>
 <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
-
+<!--
 <br><br>
 <table>
   <tr>
@@ -18,7 +18,7 @@ permalink: /
     </td>
   </tr>
 </table>
-
+-->
 <table id="dashboard">
   <tr>
     <td align="right" colspan=3>
