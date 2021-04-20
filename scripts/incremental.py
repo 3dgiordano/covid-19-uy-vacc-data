@@ -8,8 +8,7 @@ import pandas as pd
 
 monitor_url = 'https://monitor.uruguaysevacuna.gub.uy/plugin/cda/api/doQuery?'
 
-# "daily_astrazeneca",
-uy_init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer",
+uy_init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_astrazeneca",
                 "daily_agenda_ini", "daily_agenda",
                 "total_ar", "total_ca", "total_cl", "total_co", "total_du", "total_fd", "total_fs",
                 "total_la", "total_ma", "total_mo", "total_pa", "total_rn", "total_ro", "total_rv", "total_sa",
@@ -56,6 +55,16 @@ def daily_vaccinated():
     data = b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_evolucion&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
     return get_data(data, ['date', 'daily_vaccinated', 'daily_coronavac', 'daily_pfizer'])
+
+
+def daily_vaccinated2():
+    data = b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
+           b"dataAccessId=sql_evolucion_tabla&outputIndexId=1&pageSize=0&pageStart=0&paramsearchBox="
+    return get_data(data, ['date', 'first_dose', 'second_dose',
+                           'sinovac_first_dose', 'sinovac_second_dose',
+                           'pfizer_first_dose', 'pfizer_second_dose',
+                           'astrazeneca_first_dose', 'astrazeneca_second_dose'
+                           ])
 
 
 def daily_vaccinated_by_age(date):
@@ -247,9 +256,9 @@ def update():
 
     updates = False
 
-    daily_vac_origin = daily_vaccinated()
+    daily_vac_origin = daily_vaccinated2()
 
-    today = transform_date(daily_vac_origin.tail(1)["date"].values[0])
+    today = transform_date(daily_vac_origin.head(1)["date"].values[0])
 
     try:
         day_agenda = int(date_agenda(today)["today"].item() or 0)
@@ -294,6 +303,7 @@ def update():
     daily_vac_total_col_index = get_col_index(sheet_headers, "daily_vaccinated")
     daily_coronavac_col_index = get_col_index(sheet_headers, "daily_coronavac")
     daily_pfizer_col_index = get_col_index(sheet_headers, "daily_pfizer")
+    daily_astrazeneca_col_index = get_col_index(sheet_headers, "daily_astrazeneca")
 
     daily_agenda_ini_col_index = get_col_index(sheet_headers, "daily_agenda_ini")
     daily_agenda_col_index = get_col_index(sheet_headers, "daily_agenda")
@@ -337,10 +347,20 @@ def update():
 
         sheet_daily_vac_coronavac = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_coronavac"] or 0)
         sheet_daily_vac_pfizer = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_pfizer"] or 0)
+        sheet_daily_vac_astrazeneca = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_astrazeneca"] or 0)
 
-        daily_vac_origin_value = daily_vac_origin_row["daily_vaccinated"]
-        daily_vac_coronavac_origin_value = int(daily_vac_origin_row["daily_coronavac"])
-        daily_vac_pfizer_origin_value = int(daily_vac_origin_row["daily_pfizer"])
+        daily_vac_coronavac_origin_value = int(daily_vac_origin_row["sinovac_first_dose"].replace(".", ""))
+        daily_vac_coronavac_origin_value += int(daily_vac_origin_row["sinovac_second_dose"].replace(".", ""))
+
+        daily_vac_pfizer_origin_value = int(daily_vac_origin_row["pfizer_first_dose"].replace(".", ""))
+        daily_vac_pfizer_origin_value += int(daily_vac_origin_row["pfizer_second_dose"].replace(".", ""))
+
+        daily_vac_astrazeneca_origin_value = int(daily_vac_origin_row["astrazeneca_first_dose"].replace(".", ""))
+        # daily_vac_astrazeneca_origin_value += int(daily_vac_origin_row["astrazeneca_second_dose"].replace(".", ""))
+
+        daily_vac_origin_value = daily_vac_coronavac_origin_value
+        daily_vac_origin_value += daily_vac_pfizer_origin_value
+        daily_vac_origin_value += daily_vac_astrazeneca_origin_value
 
         sheet_row_index = -1 if len(sheet_row) == 0 else get_row_index(sheet_dic, sheet_row[0])
 
@@ -411,6 +431,15 @@ def update():
                 batch_update_cells.append(
                     gspread.models.Cell(sheet_row_index, daily_pfizer_col_index,
                                         value=daily_vac_pfizer_origin_value)
+                )
+
+            if int(daily_vac_astrazeneca_origin_value) != sheet_daily_vac_astrazeneca:
+                print("Update AstraZeneca:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_daily_vac_astrazeneca) + " new:" + str(daily_vac_astrazeneca_origin_value))
+
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_astrazeneca_col_index,
+                                        value=daily_vac_astrazeneca_origin_value)
                 )
 
             # Segment
