@@ -489,7 +489,7 @@ def update():
                                             value=age_daily)
                     )
 
-            if today == date_row:
+            if False and today == date_row:
 
                 # Get region data for that date
                 # TODO: The api lost the filter by date
