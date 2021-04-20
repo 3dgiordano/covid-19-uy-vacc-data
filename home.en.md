@@ -129,6 +129,8 @@ permalink: /en/
 
 <img src="/web/charts/784232676.png">
 
+<img src="/web/charts/1466475246.png">
+
 ## Vaccine arrival record
 
 <img src="/web/charts/648030237.png">
