@@ -139,7 +139,7 @@ permalink: /
 
 | **Vacuna**  | **Plataforma** | **Eficacia A % (IC95%)** | &nbsp;&nbsp;&nbsp;&nbsp;**Rango**&nbsp;&nbsp;&nbsp;&nbsp; | **Administración** | **Población preferencial** |
 | :----: | :----: | :----: | :----: | :----: | :----------- |
-| **Coronavac (Sinovac)** | Inactivada | **50,3%** (35.26 - 61.98) infección sintomática, Enfermedad moderada y grave **100%** | 18-59 años | 2 dosis (separadas 28 días) | <60 años Personal Esencial, Estudiantes medicina, Enfermería, Carreras técnicas, Personas Privadas de Libertad, Resto de la población. |
+| **Coronavac (Sinovac)** | Inactivada | **50,3%** (35.26 - 61.98) infección sintomática, Enfermedad moderada y grave **100%** | 18-69 años | 2 dosis (separadas 28 días) | <60 años Personal Esencial, Estudiantes medicina, Enfermería, Carreras técnicas, Personas Privadas de Libertad, Resto de la población. |
 | **Pfizer/BioNtech** | ARN | **95%** (90.3 - 97.6) | >16 años | 2 dosis (separadas 28 días) | Personal de Salud > 60 años Resto de la población |
 | **Oxford/Astrazeneca** | Vectorial | **82.4%** (62.7 - 91.7) | >60 años (1) | 2 dosis (separadas 12 semanas) | Personal de Salud >60 años Resto de la población |
 
