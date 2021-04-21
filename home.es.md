@@ -123,6 +123,12 @@ permalink: /
 
 <img src="/web/charts/1515424457.png">
 
+<img src="/web/charts/519951936.png">
+
+<img src="/web/charts/404093750.png">
+
+Fuente: [Informe de dosis administradas y registradas al 15 de Abril](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/campana-vacunacion-covid-19-informe-dosis-administradas-registradas-vacunas)
+
 ## Actos vacunales por rango etario
 
 <img src="/web/charts/1140302154.png">
@@ -130,6 +136,10 @@ permalink: /
 <img src="/web/charts/661817159.png">
 
 <img src="/web/charts/1082865934.png">
+
+<img src="/web/charts/1598348414.png">
+
+Fuente: [Informe de dosis administradas y registradas al 15 de Abril](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/campana-vacunacion-covid-19-informe-dosis-administradas-registradas-vacunas)
 
 ### Registro de llegada de vacunas
 
