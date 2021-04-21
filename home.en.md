@@ -123,6 +123,12 @@ permalink: /en/
 
 <img src="/web/charts/1880002572.png">
 
+<img src="/web/charts/1576723715.png">
+
+<img src="/web/charts/205213491.png">
+
+Source: [Informe de dosis administradas y registradas al 15 de Abril](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/campana-vacunacion-covid-19-informe-dosis-administradas-registradas-vacunas)
+
 ## Vaccination acts by age range
 
 <img src="/web/charts/1133283679.png">
@@ -130,6 +136,10 @@ permalink: /en/
 <img src="/web/charts/784232676.png">
 
 <img src="/web/charts/1466475246.png">
+
+<img src="/web/charts/1898654916.png">
+
+Source: [Informe de dosis administradas y registradas al 15 de Abril](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/campana-vacunacion-covid-19-informe-dosis-administradas-registradas-vacunas)
 
 ## Vaccine arrival record
 
