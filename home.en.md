@@ -107,6 +107,15 @@ permalink: /en/
 
 <img src="/web/charts/454080210.png">
 
+<img src="/web/charts/10315580.png"><img src="/web/charts/626919126.png"><img src="/web/charts/501510119.png">
+<img src="/web/charts/380999305.png"><img src="/web/charts/1506990494.png"><img src="/web/charts/943690507.png">
+<img src="/web/charts/1778597259.png"><img src="/web/charts/1029004131.png"><img src="/web/charts/2006897410.png">
+<img src="/web/charts/1087191394.png"><img src="/web/charts/1617072188.png"><img src="/web/charts/1745356284.png">
+<img src="/web/charts/1156295619.png"><img src="/web/charts/1908226097.png"><img src="/web/charts/1481111761.png">
+<img src="/web/charts/2049614015.png"><img src="/web/charts/1168479548.png"><img src="/web/charts/1906852652.png">
+<img src="/web/charts/1905047399.png">
+
+
 <img src="/web/charts/105471492.png">
 
 <img src="/web/charts/2095693594.png">
