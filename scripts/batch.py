@@ -36,7 +36,7 @@ def subnational():
         "UY-FS": "Flores",
         "UY-FD": "Florida",
         "UY-LA": "Lavalleja",
-        "UY-MA": "UY-MA",
+        "UY-MA": "Maldonado",
         "UY-MO": "Montevideo",
         "UY-PA": "Paysandu",
         "UY-RN": "Rio Negro",
