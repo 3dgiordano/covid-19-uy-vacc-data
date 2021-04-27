@@ -301,6 +301,14 @@ def update():
     daily_pfizer_col_index = get_col_index(sheet_headers, "daily_pfizer")
     daily_astrazeneca_col_index = get_col_index(sheet_headers, "daily_astrazeneca")
 
+    people_coronavac_col_index = get_col_index(sheet_headers, "people_coronavac")
+    people_pfizer_col_index = get_col_index(sheet_headers, "people_pfizer")
+    people_astrazeneca_col_index = get_col_index(sheet_headers, "people_astrazeneca")
+
+    fully_coronavac_col_index = get_col_index(sheet_headers, "fully_coronavac")
+    fully_pfizer_col_index = get_col_index(sheet_headers, "fully_pfizer")
+    fully_astrazeneca_col_index = get_col_index(sheet_headers, "fully_astrazeneca")
+
     daily_agenda_ini_col_index = get_col_index(sheet_headers, "daily_agenda_ini")
     daily_agenda_col_index = get_col_index(sheet_headers, "daily_agenda")
 
@@ -342,17 +350,31 @@ def update():
         sheet_daily_vac = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_vaccinated"] or 0)
 
         sheet_daily_vac_coronavac = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_coronavac"] or 0)
+        sheet_people_vac_coronavac = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_coronavac"] or 0)
+        sheet_fully_vac_coronavac = 0 if len(sheet_row) == 0 else int(sheet_row[0]["fully_coronavac"] or 0)
+
         sheet_daily_vac_pfizer = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_pfizer"] or 0)
+        sheet_people_vac_pfizer = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_pfizer"] or 0)
+        sheet_fully_vac_pfizer = 0 if len(sheet_row) == 0 else int(sheet_row[0]["fully_pfizer"] or 0)
+
         sheet_daily_vac_astrazeneca = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_astrazeneca"] or 0)
+        sheet_people_vac_astrazeneca = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_astrazeneca"] or 0)
+        sheet_fully_vac_astrazeneca = 0 if len(sheet_row) == 0 else int(sheet_row[0]["fully_astrazeneca"] or 0)
 
-        daily_vac_coronavac_origin_value = int(daily_vac_origin_row["sinovac_first_dose"].replace(".", ""))
-        daily_vac_coronavac_origin_value += int(daily_vac_origin_row["sinovac_second_dose"].replace(".", ""))
+        people_vac_coronavac_origin_value = int(daily_vac_origin_row["sinovac_first_dose"].replace(".", ""))
+        fully_vac_coronavac_origin_value = int(daily_vac_origin_row["sinovac_second_dose"].replace(".", ""))
 
-        daily_vac_pfizer_origin_value = int(daily_vac_origin_row["pfizer_first_dose"].replace(".", ""))
-        daily_vac_pfizer_origin_value += int(daily_vac_origin_row["pfizer_second_dose"].replace(".", ""))
+        daily_vac_coronavac_origin_value = people_vac_coronavac_origin_value + fully_vac_coronavac_origin_value
 
-        daily_vac_astrazeneca_origin_value = int(daily_vac_origin_row["astrazeneca_first_dose"].replace(".", ""))
-        # daily_vac_astrazeneca_origin_value += int(daily_vac_origin_row["astrazeneca_second_dose"].replace(".", ""))
+        people_vac_pfizer_origin_value = int(daily_vac_origin_row["pfizer_first_dose"].replace(".", ""))
+        fully_vac_pfizer_origin_value = int(daily_vac_origin_row["pfizer_second_dose"].replace(".", ""))
+
+        daily_vac_pfizer_origin_value = people_vac_pfizer_origin_value + fully_vac_pfizer_origin_value
+
+        people_vac_astrazeneca_origin_value = int(daily_vac_origin_row["astrazeneca_first_dose"].replace(".", ""))
+        fully_vac_astrazeneca_origin_value = 0  # int(daily_vac_origin_row["astrazeneca_second_dose"].replace(".", ""))
+
+        daily_vac_astrazeneca_origin_value = people_vac_astrazeneca_origin_value + fully_vac_astrazeneca_origin_value
 
         daily_vac_origin_value = daily_vac_coronavac_origin_value
         daily_vac_origin_value += daily_vac_pfizer_origin_value
@@ -412,12 +434,30 @@ def update():
             if int(daily_vac_coronavac_origin_value) != sheet_daily_vac_coronavac:
                 # Update daily vaccinated by type
 
-                print("Update Coronavac:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                print("Update Daily Coronavac:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
                     sheet_daily_vac_coronavac) + " new:" + str(daily_vac_coronavac_origin_value))
 
                 batch_update_cells.append(
                     gspread.models.Cell(sheet_row_index, daily_coronavac_col_index,
                                         value=daily_vac_coronavac_origin_value)
+                )
+
+            if int(people_vac_coronavac_origin_value) != sheet_people_vac_coronavac:
+                print("Update People Coronavac:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_people_vac_coronavac) + " new:" + str(people_vac_coronavac_origin_value))
+
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, people_coronavac_col_index,
+                                        value=people_vac_coronavac_origin_value)
+                )
+
+            if int(fully_vac_coronavac_origin_value) != sheet_fully_vac_coronavac:
+                print("Update Fully Coronavac:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_fully_vac_coronavac) + " new:" + str(fully_vac_coronavac_origin_value))
+
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, fully_coronavac_col_index,
+                                        value=fully_vac_coronavac_origin_value)
                 )
 
             if int(daily_vac_pfizer_origin_value) != sheet_daily_vac_pfizer:
@@ -429,6 +469,24 @@ def update():
                                         value=daily_vac_pfizer_origin_value)
                 )
 
+            if int(people_vac_pfizer_origin_value) != sheet_people_vac_pfizer:
+                print("Update People Pfizer:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_people_vac_pfizer) + " new:" + str(people_vac_pfizer_origin_value))
+
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, people_pfizer_col_index,
+                                        value=people_vac_pfizer_origin_value)
+                )
+
+            if int(fully_vac_pfizer_origin_value) != sheet_fully_vac_pfizer:
+                print("Update Fully Pfizer:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_fully_vac_pfizer) + " new:" + str(fully_vac_pfizer_origin_value))
+
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, fully_pfizer_col_index,
+                                        value=fully_vac_pfizer_origin_value)
+                )
+
             if int(daily_vac_astrazeneca_origin_value) != sheet_daily_vac_astrazeneca:
                 print("Update AstraZeneca:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
                     sheet_daily_vac_astrazeneca) + " new:" + str(daily_vac_astrazeneca_origin_value))
@@ -436,6 +494,24 @@ def update():
                 batch_update_cells.append(
                     gspread.models.Cell(sheet_row_index, daily_astrazeneca_col_index,
                                         value=daily_vac_astrazeneca_origin_value)
+                )
+
+            if int(people_vac_astrazeneca_origin_value) != sheet_people_vac_astrazeneca:
+                print("Update People AstraZeneca:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_people_vac_astrazeneca) + " new:" + str(people_vac_astrazeneca_origin_value))
+
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, people_astrazeneca_col_index,
+                                        value=people_vac_astrazeneca_origin_value)
+                )
+
+            if int(fully_vac_astrazeneca_origin_value) != sheet_fully_vac_astrazeneca:
+                print("Update Fully AstraZeneca:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_fully_vac_astrazeneca) + " new:" + str(fully_vac_astrazeneca_origin_value))
+
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, people_astrazeneca_col_index,
+                                        value=people_vac_astrazeneca_origin_value)
                 )
 
             # Segment
