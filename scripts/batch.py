@@ -92,12 +92,21 @@ def age():
     df.to_csv("../data/Age.csv", index=False)
 
 
+def schedule():
+    df = pd.read_csv(
+        f"{base_seet}Schedule"
+    )
+
+    df.to_csv("../data/Schedule.csv", index=False)
+
+
 def main():
     uruguay()
     regions()
     segments()
     subnational()
     age()
+    schedule()
 
 
 if __name__ == "__main__":
