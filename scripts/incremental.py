@@ -653,7 +653,10 @@ def update():
                 total_disabled = 0
 
                 for schedule_index, schedule_row in schedule.iterrows():
-                    date_row = schedule_row["timestamp"].split("T")[0]
+                    date_schedule = schedule_row["timestamp"].split("T")[0]
+                    if date_row != date_schedule:
+                        print(f"Schedule date not equeal than today {date_schedule} {date_row}")
+                        break
                     region_code = schedule_row["departaments"]["code"]
 
                     scheduled_label = "scheduled_" + schedule_region_iso[region_code]
@@ -678,7 +681,7 @@ def update():
 
                     disabled_label = "disabled_" + schedule_region_iso[region_code]
                     disabled_value = schedule_row["departaments"]["disabled"]
-                    total_disabled = disabled_value
+                    total_disabled += disabled_value
 
                     daily_schedule_col_index = get_col_index(sheet_schedule_headers, disabled_label)
                     batch_update_schedule_cells.append(
