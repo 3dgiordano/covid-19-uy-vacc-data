@@ -100,6 +100,15 @@ def schedule():
     df.to_csv("../data/Schedule.csv", index=False)
 
 
+def deaths():
+    df = pd.read_csv(
+        f"{base_seet}Deaths"
+    )
+
+    df.to_csv("../data/Deaths.csv", index=False)
+
+
+
 def main():
     uruguay()
     regions()
@@ -107,6 +116,7 @@ def main():
     subnational()
     age()
     schedule()
+    deaths()
 
 
 if __name__ == "__main__":
