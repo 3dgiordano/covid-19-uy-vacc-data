@@ -136,7 +136,7 @@ def daily_deaths_by_age():
 gc = gspread.service_account()
 sh = gc.open("CoronavirusUY - Vaccination monitor")
 
-sheet_deaths = sh.worksheet("DeathAges")
+sheet_deaths = sh.worksheet("Deaths")
 sheet_deaths_dic = sheet_deaths.get_all_records()
 sheet_deaths_headers = sheet_deaths.row_values(1)
 
