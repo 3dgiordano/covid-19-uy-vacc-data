@@ -3,8 +3,9 @@ name: Update daily
 on: 
   workflow_dispatch:
   schedule:
-    # Run every day at 7 AM UTC
+    # Run every day at 7 AM UTC and every 30 minutes from 0AM UTC to 4AM UTC
     - cron: '0 10 * * *'
+    - cron: '*/30 0-4 * * *'
 jobs:
   build:
 
