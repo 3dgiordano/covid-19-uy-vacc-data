@@ -62,11 +62,15 @@ def add_formatted_row(spreadsheet, sheet, date, init_cols):
 def daily_deaths_by_age():
     result = pd.read_csv(deaths_url)
 
+    to_date_str = result.tail(1)["fecha"].values[0]
+    ds_to_date = to_date_str.split("/")
+    dt_to_date = datetime.datetime(int(ds_to_date[2]), int(ds_to_date[1]), int(ds_to_date[0]))
+
     daily_dates = {}
 
     dt_prev = datetime.datetime(2021, 2, 26)
     dt_from = datetime.datetime(2021, 2, 27)  # Vaccination begins
-    dt_to = datetime.datetime.today() - datetime.timedelta(1)
+    dt_to = dt_to_date
 
     daily_dates["PREV"] = {
         "18_24": 0, "25_34": 0, "35_44": 0, "45_54": 0, "55_64": 0, "65_74": 0, "75_115": 0, "undefined": 0,
