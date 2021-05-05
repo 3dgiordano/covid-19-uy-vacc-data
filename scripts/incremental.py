@@ -639,74 +639,78 @@ def update():
             if today == date_row:
                 schedule = get_data_schedule()
 
-                sheet_schedule_row = find_row(date_row, sheet_schedule_dic)
-                if len(sheet_schedule_row) == 0:  # If not exist, create the row
-                    add_formatted_row(sh, sheet_schedule, date_row, [])  # schedule_init_cols
-                    time.sleep(2)  # Wait for refresh
-                    sheet_schedule_dic = sheet_schedule.get_all_records()  # Get updated changes
+                date_schedule = schedule.head(1)["timestamp"].values[0].split("T")[0]
+                if date_row != date_schedule:
+                    print(f"Schedule date not equeal than today {date_schedule} {date_row}")
+                else:
+
                     sheet_schedule_row = find_row(date_row, sheet_schedule_dic)
+                    if len(sheet_schedule_row) == 0:  # If not exist, create the row
 
-                sheet_schedule_row_index = -1 if len(sheet_schedule_row) == 0 else get_row_index(sheet_schedule_dic,
-                                                                                                 sheet_schedule_row[0])
-                total_scheduled = 0
-                total_pending = 0
-                total_disabled = 0
+                        add_formatted_row(sh, sheet_schedule, date_row, [])  # schedule_init_cols
+                        time.sleep(2)  # Wait for refresh
+                        sheet_schedule_dic = sheet_schedule.get_all_records()  # Get updated changes
+                        sheet_schedule_row = find_row(date_row, sheet_schedule_dic)
 
-                for schedule_index, schedule_row in schedule.iterrows():
-                    date_schedule = schedule_row["timestamp"].split("T")[0]
-                    if date_row != date_schedule:
-                        print(f"Schedule date not equeal than today {date_schedule} {date_row}")
-                        break
-                    region_code = schedule_row["departaments"]["code"]
+                    sheet_schedule_row_index = -1 if len(sheet_schedule_row) == 0 else get_row_index(sheet_schedule_dic,
+                                                                                                     sheet_schedule_row[0])
+                    total_scheduled = 0
+                    total_pending = 0
+                    total_disabled = 0
 
-                    scheduled_label = "scheduled_" + schedule_region_iso[region_code]
-                    scheduled_value = schedule_row["departaments"]["scheduled"]
-                    total_scheduled += scheduled_value
+                    for schedule_index, schedule_row in schedule.iterrows():
+                        date_schedule = schedule_row["timestamp"].split("T")[0]
 
-                    daily_schedule_col_index = get_col_index(sheet_schedule_headers, scheduled_label)
+                        region_code = schedule_row["departaments"]["code"]
+
+                        scheduled_label = "scheduled_" + schedule_region_iso[region_code]
+                        scheduled_value = schedule_row["departaments"]["scheduled"]
+                        total_scheduled += scheduled_value
+
+                        daily_schedule_col_index = get_col_index(sheet_schedule_headers, scheduled_label)
+                        batch_update_schedule_cells.append(
+                            gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
+                                                value=scheduled_value)
+                        )
+
+                        pending_label = "pending_" + schedule_region_iso[region_code]
+                        pending_value = schedule_row["departaments"]["pending"]
+                        total_pending += pending_value
+
+                        daily_schedule_col_index = get_col_index(sheet_schedule_headers, pending_label)
+                        batch_update_schedule_cells.append(
+                            gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
+                                                value=pending_value)
+                        )
+
+                        disabled_label = "disabled_" + schedule_region_iso[region_code]
+                        disabled_value = schedule_row["departaments"]["disabled"]
+                        total_disabled += disabled_value
+
+                        daily_schedule_col_index = get_col_index(sheet_schedule_headers, disabled_label)
+                        batch_update_schedule_cells.append(
+                            gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
+                                                value=disabled_value)
+                        )
+
+                    # update totals
+                    daily_schedule_col_index = get_col_index(sheet_schedule_headers, "scheduled")
                     batch_update_schedule_cells.append(
                         gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
-                                            value=scheduled_value)
+                                            value=total_scheduled)
                     )
 
-                    pending_label = "pending_" + schedule_region_iso[region_code]
-                    pending_value = schedule_row["departaments"]["pending"]
-                    total_pending += pending_value
-
-                    daily_schedule_col_index = get_col_index(sheet_schedule_headers, pending_label)
+                    daily_schedule_col_index = get_col_index(sheet_schedule_headers, "pending")
                     batch_update_schedule_cells.append(
                         gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
-                                            value=pending_value)
+                                            value=total_pending)
                     )
 
-                    disabled_label = "disabled_" + schedule_region_iso[region_code]
-                    disabled_value = schedule_row["departaments"]["disabled"]
-                    total_disabled += disabled_value
-
-                    daily_schedule_col_index = get_col_index(sheet_schedule_headers, disabled_label)
+                    daily_schedule_col_index = get_col_index(sheet_schedule_headers, "disabled")
                     batch_update_schedule_cells.append(
                         gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
-                                            value=disabled_value)
+                                            value=total_disabled)
                     )
-
-                # update totals
-                daily_schedule_col_index = get_col_index(sheet_schedule_headers, "scheduled")
-                batch_update_schedule_cells.append(
-                    gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
-                                        value=total_scheduled)
-                )
-
-                daily_schedule_col_index = get_col_index(sheet_schedule_headers, "pending")
-                batch_update_schedule_cells.append(
-                    gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
-                                        value=total_pending)
-                )
-
-                daily_schedule_col_index = get_col_index(sheet_schedule_headers, "disabled")
-                batch_update_schedule_cells.append(
-                    gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
-                                        value=total_disabled)
-                )
 
     to_update_segment = len(batch_update_segment_cells)
     if to_update_segment > 0:
@@ -722,7 +726,6 @@ def update():
     if to_update_schedule > 0:
         update_data = sheet_schedule.update_cells(batch_update_schedule_cells)
         # TODO: Implement a generic method to update batch of a sheet with retries
-
 
     to_update = len(batch_update_cells)
     if to_update > 0:
