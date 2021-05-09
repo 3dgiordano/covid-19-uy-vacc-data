@@ -26,7 +26,7 @@ uy_init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_as
                 ]
 
 segment_init_cols = ["daily_teachers", "daily_elepem", "daily_chronic", "daily_undefined", "daily_dialysis",
-                     "daily_health", "daily_deprived_liberty", "daily_essential", "daily_no_risk"]
+                     "daily_health", "daily_deprived_liberty", "daily_essential", "daily_no_risk", "daily_pregnant"]
 
 age_init_cols = [
     "daily_18_24", "daily_25_34", "daily_35_44", "daily_45_54", "daily_55_64", "daily_65_74", "daily_75_115",
@@ -204,6 +204,7 @@ def segment_vaccination(date):
     result["segment"].replace({"Personas privadas de libertad": "deprived_liberty"}, inplace=True)
     result["segment"].replace({"Servicios esenciales": "essential"}, inplace=True)
     result["segment"].replace({"Sin factores de riesgo": "no_risk"}, inplace=True)
+    result["segment"].replace({"Embarazadas": "pregnant"}, inplace=True)
 
     return result
 
