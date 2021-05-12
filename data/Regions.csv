@@ -1,6 +1,6 @@
 Region,Population,Density,Vaccinations,Vaccinated,Fully Vaccinated,% Vaccinated,% Country,% Fully,% Diff Vaccinated,AVG Daily,Today Vacc,% Today,70% 2 doses,80% 2 doses,ISO,id,Unnamed: 17,Unnamed: 18
 Montevideo,1381946,2489.0,816868,485063,331805,35.10%,13.84%,24.01%,11.09%,"10,891.57",0,0.00%,31 Aug 2021,14 Nov 2021,UY-MO,mo,,
-Canelones,588959,114.68,219151,143352,75799,24.34%,4.09%,12.87%,11.47%,"2,922.01",0,0.00%,24 Nov 2021,20 Mar 2022,UY-CA,ca,,
+Canelones,588959,114.68,219209,143352,75857,24.34%,4.09%,12.88%,11.46%,"2,922.79",58,0.01%,24 Nov 2021,20 Mar 2022,UY-CA,ca,,
 Maldonado,190078,34.28,138547,81182,57365,42.71%,2.32%,30.18%,12.53%,"1,847.29",0,0.00%,18 Jul 2021,7 Sep 2021,UY-MA,ma,,
 Rivera,108569,11.04,96104,53600,42504,49.37%,1.53%,39.15%,10.22%,"1,281.39",0,0.00%,3 Jul 2021,18 Aug 2021,UY-RV,rv,,
 Cerro Largo,89587,6.21,65568,36856,28712,41.14%,1.05%,32.05%,9.09%,874.24,0,0.00%,26 Jul 2021,19 Sep 2021,UY-CL,cl,,
