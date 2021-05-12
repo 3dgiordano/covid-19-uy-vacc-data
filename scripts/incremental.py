@@ -13,7 +13,7 @@ schedule_url = "https://agenda.vacunacioncovid.gub.uy/data/schedule/schedule.jso
 uy_init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_astrazeneca",
                 "people_coronavac", "people_pfizer", "people_astrazeneca",
                 "fully_coronavac", "fully_pfizer", "fully_astrazeneca",
-                "daily_agenda_ini", "daily_agenda",
+                "daily_agenda_ini", "daily_agenda", "daily_agenda_first", "daily_agenda_second",
                 "total_ar", "total_ca", "total_cl", "total_co", "total_du", "total_fd", "total_fs",
                 "total_la", "total_ma", "total_mo", "total_pa", "total_rn", "total_ro", "total_rv", "total_sa",
                 "total_sj", "total_so", "total_ta", "total_tt",
@@ -273,11 +273,13 @@ def update():
     today = transform_date(daily_vac_origin.head(1)["date"].values[0])
 
     try:
-        day_agenda = int(date_agenda(today)["today"].item() or 0)
-        # Increment to the total day agenda the second dose
-        day_agenda += int(date_agenda_second_dose(today)["today"].item() or 0)
+        day_agenda_first = int(date_agenda(today)["today"].item() or 0)
+        day_agenda_second = int(date_agenda_second_dose(today)["today"].item() or 0)
+        day_agenda = day_agenda_first + day_agenda_second
     except HTTPError as e:
         print("Agenda error!")
+        day_agenda_first_dose = 0
+        day_agenda_second_dose = 0
         day_agenda = 0
 
     today_vac_status = today_status(today)
@@ -331,6 +333,9 @@ def update():
 
     daily_agenda_ini_col_index = get_col_index(sheet_headers, "daily_agenda_ini")
     daily_agenda_col_index = get_col_index(sheet_headers, "daily_agenda")
+
+    daily_agenda_first_col_index = get_col_index(sheet_headers, "daily_agenda_first")
+    daily_agenda_second_col_index = get_col_index(sheet_headers, "daily_agenda_second")
 
     last_row = sheet_dic[-1]
     last_date = last_row["date"]
@@ -405,6 +410,8 @@ def update():
 
         sheet_agenda_ini = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda_ini"] or 0)
         sheet_agenda = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda"] or 0)
+        sheet_agenda_first = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda_first"] or 0)
+        sheet_agenda_second = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda_second"] or 0)
 
         sheet_people_vaccinated = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_vaccinated"] or 0)
         sheet_fully_vaccinations = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_fully_vaccinated"] or 0)
@@ -422,6 +429,20 @@ def update():
                     sheet_agenda) + " new:" + str(day_agenda))
                 batch_update_cells.append(
                     gspread.models.Cell(sheet_row_index, daily_agenda_col_index, value=day_agenda)
+                )
+
+            if sheet_agenda_first < day_agenda_first:
+                print("Update Agenda First Dose:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_agenda_first) + " new:" + str(day_agenda_first))
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_agenda_first_col_index, value=day_agenda_first)
+                )
+
+            if sheet_agenda_second < day_agenda_second:
+                print("Update Agenda Second Dose:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_agenda_second) + " new:" + str(day_agenda_second))
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_agenda_second_col_index, value=day_agenda_second)
                 )
 
             # Update People vaccinated and Fully vaccinated
@@ -654,7 +675,8 @@ def update():
                         sheet_schedule_row = find_row(date_row, sheet_schedule_dic)
 
                     sheet_schedule_row_index = -1 if len(sheet_schedule_row) == 0 else get_row_index(sheet_schedule_dic,
-                                                                                                     sheet_schedule_row[0])
+                                                                                                     sheet_schedule_row[
+                                                                                                         0])
                     total_scheduled = 0
                     total_pending = 0
                     total_disabled = 0
