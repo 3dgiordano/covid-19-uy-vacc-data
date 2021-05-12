@@ -103,6 +103,8 @@ permalink: /en/
 
 <img src="/web/charts/122662822.png">
 
+<img src="/web/charts/1270929451.png">
+
 <img src="/web/charts/987529461.png">
 
 <img src="/web/charts/454080210.png">
