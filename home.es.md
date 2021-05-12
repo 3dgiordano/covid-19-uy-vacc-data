@@ -101,6 +101,8 @@ permalink: /
 
 <img src="/web/charts/259061157.png">
 
+<img src="/web/charts/1047203349.png">
+
 <img src="/web/charts/121562673.png">
 
 <img src="/web/charts/395420450.png">
