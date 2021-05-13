@@ -278,8 +278,8 @@ def update():
         day_agenda = day_agenda_first + day_agenda_second
     except HTTPError as e:
         print("Agenda error!")
-        day_agenda_first_dose = 0
-        day_agenda_second_dose = 0
+        day_agenda_first = 0
+        day_agenda_second = 0
         day_agenda = 0
 
     today_vac_status = today_status(today)
