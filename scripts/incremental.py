@@ -144,6 +144,14 @@ def daily_vaccinated_by_age(date):
 
 def region_vaccinated():
     data = b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2F" \
+           b"VacunasCovid.cda&dataAccessId=sql_vacunas_depto_vacunatorio_old&outputIndexId=1&pageSize=0&" \
+           b"pageStart=0&sortBy=&paramsearchBox="
+    return get_data(data, [
+        'code', 'p_first_dose', 'name', 'scale', 'first_dose', 'population', 'second_dose', 'p_second_dose'])
+
+
+def region_vaccinated_residence():
+    data = b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2F" \
            b"VacunasCovid.cda&dataAccessId=sql_vacunas_depto_vacunatorio&outputIndexId=1&pageSize=0&" \
            b"pageStart=0&sortBy=&paramsearchBox="
     return get_data(data, [
