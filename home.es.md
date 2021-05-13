@@ -25,10 +25,10 @@ permalink: /
       <table id="date_header">
         <tr>
           <td align="right">
-            <img src="/web/charts/425905901.png">
+            <img src="/web/charts/425905901.png" loading="lazy">
           </td>
           <td align="center">
-            <img src="/web/charts/1299383115.png">
+            <img src="/web/charts/1299383115.png" loading="lazy">
           </td>
         </tr>
       </table>
@@ -36,124 +36,124 @@ permalink: /
   </tr>
   <tr>
     <td align="center">
-      <img src="/web/charts/1492441660.png">
+      <img src="/web/charts/1492441660.png" loading="lazy">
       <br>
-      <img src="/web/charts/736411819.png">
+      <img src="/web/charts/736411819.png" loading="lazy">
     </td>
     <td align="center">
-      <img src="/web/charts/22096209.png">
+      <img src="/web/charts/22096209.png" loading="lazy">
       <br>
-      <img src="/web/charts/873256307.png">
+      <img src="/web/charts/873256307.png" loading="lazy">
     </td>
     <td align="center">
-      <img src="/web/charts/1058712731.png">
+      <img src="/web/charts/1058712731.png" loading="lazy">
       <br>
-      <img src="/web/charts/1357338484.png">
+      <img src="/web/charts/1357338484.png" loading="lazy">
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="/web/charts/591742088.png">
+      <img src="/web/charts/591742088.png" loading="lazy">
     </td>
     <td align="center">
-      <img src="/web/charts/1958520312.png">
+      <img src="/web/charts/1958520312.png" loading="lazy">
     </td>
     <td align="center">
-      <img src="/web/charts/373318070.png">
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="/web/charts/1924052371.png">
-    </td>
-    <td align="center">
-      <img src="/web/charts/1074834619.png">
-    </td>
-    <td align="center">
-      <img src="/web/charts/141578891.png"><br>
-      <img src="/web/charts/2074125212.png">
+      <img src="/web/charts/373318070.png" loading="lazy">
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="/web/charts/1541211770.png">
+      <img src="/web/charts/1924052371.png" loading="lazy">
     </td>
     <td align="center">
-      <img src="/web/charts/1656096582.png">
+      <img src="/web/charts/1074834619.png" loading="lazy">
     </td>
     <td align="center">
-      <img src="/web/charts/770096093.png">
+      <img src="/web/charts/141578891.png" loading="lazy"><br>
+      <img src="/web/charts/2074125212.png" loading="lazy">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="/web/charts/1541211770.png" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="/web/charts/1656096582.png" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="/web/charts/770096093.png" loading="lazy">
     </td>
   </tr>
 </table>
 
-<img src="/web/charts/1744392307.png">
+<img src="/web/charts/1744392307.png" loading="lazy">
 
-<img src="/web/charts/1320291746.png">
+<img src="/web/charts/1320291746.png" loading="lazy">
 
-<img src="/web/charts/682972572.png">
+<img src="/web/charts/682972572.png" loading="lazy">
 
-<img src="/web/charts/119707745.png">
+<img src="/web/charts/119707745.png" loading="lazy">
 
-<img src="/web/charts/1158305404.png">
+<img src="/web/charts/1158305404.png" loading="lazy">
 
-<img src="/web/charts/1781225090.png">
+<img src="/web/charts/1781225090.png" loading="lazy">
 
-<img src="/web/charts/259061157.png">
+<img src="/web/charts/259061157.png" loading="lazy">
 
-<img src="/web/charts/1047203349.png">
+<img src="/web/charts/1047203349.png" loading="lazy">
 
-<img src="/web/charts/121562673.png">
+<img src="/web/charts/121562673.png" loading="lazy">
 
-<img src="/web/charts/395420450.png">
+<img src="/web/charts/395420450.png" loading="lazy">
 
-<img src="/web/charts/1279668502.png">
+<img src="/web/charts/1279668502.png" loading="lazy">
 
-<img src="/web/charts/10315580.png" width="25%"><img src="/web/charts/626919126.png" width="25%"><img src="/web/charts/501510119.png" width="25%"><img src="/web/charts/380999305.png" width="25%"><img src="/web/charts/1506990494.png" width="25%"><img src="/web/charts/943690507.png" width="25%"><img src="/web/charts/1778597259.png" width="25%"><img src="/web/charts/1029004131.png" width="25%"><img src="/web/charts/2006897410.png" width="25%"><img src="/web/charts/1087191394.png" width="25%"><img src="/web/charts/1617072188.png" width="25%"><img src="/web/charts/1745356284.png" width="25%"><img src="/web/charts/1156295619.png" width="25%"><img src="/web/charts/1908226097.png" width="25%"><img src="/web/charts/1481111761.png" width="25%"><img src="/web/charts/2049614015.png" width="25%"><img src="/web/charts/1168479548.png" width="25%"><img src="/web/charts/1906852652.png" width="25%"><img src="/web/charts/1905047399.png" width="25%">
+<img src="/web/charts/10315580.png" width="25%" loading="lazy"><img src="/web/charts/626919126.png" width="25%" loading="lazy"><img src="/web/charts/501510119.png" width="25%" loading="lazy"><img src="/web/charts/380999305.png" width="25%" loading="lazy"><img src="/web/charts/1506990494.png" width="25%" loading="lazy"><img src="/web/charts/943690507.png" width="25%" loading="lazy"><img src="/web/charts/1778597259.png" width="25%" loading="lazy"><img src="/web/charts/1029004131.png" width="25%" loading="lazy"><img src="/web/charts/2006897410.png" width="25%" loading="lazy"><img src="/web/charts/1087191394.png" width="25%" loading="lazy"><img src="/web/charts/1617072188.png" width="25%" loading="lazy"><img src="/web/charts/1745356284.png" width="25%" loading="lazy"><img src="/web/charts/1156295619.png" width="25%" loading="lazy"><img src="/web/charts/1908226097.png" width="25%" loading="lazy"><img src="/web/charts/1481111761.png" width="25%" loading="lazy"><img src="/web/charts/2049614015.png" width="25%" loading="lazy"><img src="/web/charts/1168479548.png" width="25%" loading="lazy"><img src="/web/charts/1906852652.png" width="25%" loading="lazy"><img src="/web/charts/1905047399.png" width="25%" loading="lazy">
 
-<img src="/web/charts/1092961723.png">
+<img src="/web/charts/1092961723.png" loading="lazy">
 
-<img src="/web/charts/134138183.png">
+<img src="/web/charts/134138183.png" loading="lazy">
 
 ## Actos vacunales por segmento
 
-<img src="/web/charts/1785941673.png">
+<img src="/web/charts/1785941673.png" loading="lazy">
 
-<img src="/web/charts/824007235.png">
+<img src="/web/charts/824007235.png" loading="lazy">
 
 ## Actos vacunales por grupo de vacunación etario 
 
-<img src="/web/charts/655562320.png">
+<img src="/web/charts/655562320.png" loading="lazy">
 
-<img src="/web/charts/1515424457.png">
+<img src="/web/charts/1515424457.png" loading="lazy">
 
-<img src="/web/charts/519951936.png">
+<img src="/web/charts/519951936.png" loading="lazy">
 
-<img src="/web/charts/404093750.png">
+<img src="/web/charts/404093750.png" loading="lazy">
 
 Fuente: [Informe de dosis administradas y registradas al 29 de Abril](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/campana-vacunacion-covid-19)
 
 ## Actos vacunales por rango etario
 
-<img src="/web/charts/1140302154.png">
+<img src="/web/charts/1140302154.png" loading="lazy">
 
-<img src="/web/charts/661817159.png">
+<img src="/web/charts/661817159.png" loading="lazy">
 
-<img src="/web/charts/1082865934.png">
+<img src="/web/charts/1082865934.png" loading="lazy">
 
-<img src="/web/charts/1598348414.png">
+<img src="/web/charts/1598348414.png" loading="lazy">
 
 Fuente: [Informe de dosis administradas y registradas al 29 de Abril](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/campana-vacunacion-covid-19)
 
 ### Efecto de vacunación
 
-<img src="/web/charts/494905331.png">
+<img src="/web/charts/494905331.png" loading="lazy">
 
-<img src="/web/charts/1979752349.png">
+<img src="/web/charts/1979752349.png" loading="lazy">
 
 ### Registro de llegada de vacunas
 
-<img src="/web/charts/861619954.png">
+<img src="/web/charts/861619954.png" loading="lazy">
 
 ## Vacunas
 
