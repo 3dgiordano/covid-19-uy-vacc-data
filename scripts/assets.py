@@ -78,6 +78,9 @@ images = [
     "1906852652",
     "1905047399",
 
+    "494905331",
+    "1979752349",
+
 ]
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
