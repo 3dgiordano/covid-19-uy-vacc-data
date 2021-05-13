@@ -5,7 +5,7 @@ permalink: /
   <a href="/en/">English</a>
 </div>
 <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
-<1--
+<!--
 <br><br>
 <table>
   <tr>
