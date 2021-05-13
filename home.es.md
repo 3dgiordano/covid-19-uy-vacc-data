@@ -145,6 +145,12 @@ Fuente: [Informe de dosis administradas y registradas al 29 de Abril](https://ww
 
 Fuente: [Informe de dosis administradas y registradas al 29 de Abril](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/campana-vacunacion-covid-19)
 
+### Efecto de vacunación
+
+<img src="/web/charts/494905331.png">
+
+<img src="/web/charts/1979752349.png">
+
 ### Registro de llegada de vacunas
 
 <img src="/web/charts/861619954.png">
