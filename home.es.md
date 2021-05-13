@@ -14,7 +14,7 @@ permalink: /
     </td>
     <td>
       Actualmente existen problemas en los datos proporcionados por el Ministerio de Salud Pública.<br>
-      Los datos se actualizarán automáticamente en cuanto resuelvan sus problemas.
+      Los datos se actualizarán automáticamente en cuanto resuelvan el problema.
     </td>
   </tr>
 </table>
