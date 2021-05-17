@@ -43,6 +43,16 @@ schedule_region_iso = {
     "16": "sj", "17": "so", "18": "ta", "19": "tt",
 }
 
+range_people = {
+    "18_24": 367930,
+    "25_34": 515451,
+    "35_44": 478705,
+    "45_54": 432164,
+    "55_64": 385957,
+    "65_74": 283920,
+    "75_115": 240209
+}
+
 
 def find_row(date, data_dic):
     return [elem for elem in data_dic if elem["date"] == date]
@@ -140,6 +150,23 @@ def daily_vaccinated_by_age(date):
         daily_ages[age_key2] += age_row["value"]
 
     return daily_ages
+
+
+def current_vaccinated_by_age():
+    data = b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
+           b"dataAccessId=sql_chart_vacunas_rango_edad&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&" \
+           b"paramsearchBox="
+    result = get_data(data, ['range', 'first', 'second'])
+    result.replace({'range': {
+        u"18 a 24": u"18_24",
+        u"25 a 34": u"25_34",
+        u"35 a 44": u"35_44",
+        u"45 a 54": u"45_54",
+        u"55 a 64": u"55_64",
+        u"65 a 74": u"65_74",
+        u"+ 75": u"75_115"
+    }}, regex=False, inplace=True)
+    return result.to_dict("records")
 
 
 def region_vaccinated():
@@ -609,6 +636,26 @@ def update():
                     batch_update_age_cells.append(
                         gspread.models.Cell(sheet_age_row_index, daily_age_col_index,
                                             value=age_daily)
+                    )
+            # Age current progress
+            if today == date_row:
+                current_vacc_data_age = current_vaccinated_by_age()
+                for range_elem in current_vacc_data_age:
+                    range_age = range_elem["range"]
+                    coverage_first = float(range_elem["first"]) / 100
+                    coverage_first_label = "coverage_people_" + range_age
+                    coverage_second = float(range_elem["second"]) / 100
+                    coverage_second_label = "coverage_fully_" + range_age
+
+                    label_col_index = get_col_index(sheet_age_headers, coverage_first_label)
+                    batch_update_age_cells.append(
+                        gspread.models.Cell(sheet_age_row_index, label_col_index,
+                                            value=coverage_first)
+                    )
+                    label_col_index = get_col_index(sheet_age_headers, coverage_second_label)
+                    batch_update_age_cells.append(
+                        gspread.models.Cell(sheet_age_row_index, label_col_index,
+                                            value=coverage_second)
                     )
 
             # Regions
