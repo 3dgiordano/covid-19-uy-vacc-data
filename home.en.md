@@ -142,6 +142,8 @@ Source: [Informe de dosis administradas y registradas al 29 de Abril](https://ww
 
 <img src="/web/charts/1466475246.png" loading="lazy">
 
+<img src="/web/charts/286695041.png" loading="lazy">
+
 <img src="/web/charts/1898654916.png" loading="lazy">
 
 Source: [Informe de dosis administradas y registradas al 29 de Abril](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/campana-vacunacion-covid-19)
