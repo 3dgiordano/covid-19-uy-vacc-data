@@ -13,8 +13,10 @@ permalink: /en/
       <img src="https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/web/maintenance.jpg" width="50%">
     </td>
     <td>
-      Currently there are problems in the data provided by the ministry of public health.<br>
-      As soon as they solve their problems, the data will be updated automatically.
+      <p>
+        Currently there are problems in the data provided by the ministry of public health.<br>
+        As soon as they solve their problems, the data will be updated automatically.
+      </p>
     </td>
   </tr>
 </table>
@@ -26,9 +28,11 @@ permalink: /en/
       <b>18/05/2021 14:30</b>
     </td>
     <td>
-      From this moment Vacuna.uy updates its population base to the one updated by MSP last week.<br>
-      The change affects the percentages shown. It is reported for the purpose of those who notice the change know the reason.<br>
-      The informational message will be removed on 05/19/2021 at 10AM UYT.
+      <p>
+        From this moment Vacuna.uy updates its population base to the one updated by MSP last week.<br>
+        The change affects the percentages shown. It is reported for the purpose of those who notice the change know the reason.<br>
+        The informational message will be removed on 05/19/2021 at 10AM UYT.
+      </p>
     </td>
   </tr>
 </table>
