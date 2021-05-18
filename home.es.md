@@ -22,17 +22,15 @@ permalink: /
 </table>
 -->
 <br><br>
-<table>
+<table id="info">
   <tr>
     <td align="center">
       <b>18/05/2021 14:30</b>
     </td>
     <td>
-      <p>
-        A partir de este momento el sitio Vacuna.uy actualiza su base población a la actualizada por MSP la semana pasada.<br>
-        El cambio afecta a los porcentajes mostrados, se informa a efectos de quienes noten el cambio sepan el motivo.<br>
-        El mensaje informativo se removerá el día 19/05/2021 a las 10AM UYT.
-      </p>
+      A partir de este momento el sitio Vacuna.uy actualiza su base población a la actualizada por MSP la semana pasada.<br>
+      El cambio afecta a los porcentajes mostrados, se informa a efectos de quienes noten el cambio sepan el motivo.<br>
+      El mensaje informativo se removerá el día 19/05/2021 a las 10AM UYT.
     </td>
   </tr>
 </table>
