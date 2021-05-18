@@ -19,6 +19,19 @@ permalink: /en/
   </tr>
 </table>
 -->
+<br><br>
+<table>
+  <tr>
+    <td align="center">
+      <b>18/05/2021 14:30</b>
+    </td>
+    <td>
+      From this moment VacunaUY updates its population base to the one updated by MSP last week.<br>
+      The change affects the percentages shown. It is reported for the purpose of those who notice the change know the reason.<br>
+      The informational message will be removed on 05/19/2021 at 10AM UYT.
+    </td>
+  </tr>
+</table>
 <table id="dashboard">
   <tr>
     <td align="right" colspan=3>
