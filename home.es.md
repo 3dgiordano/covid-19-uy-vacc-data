@@ -29,7 +29,7 @@ permalink: /
     </td>
     <td>
       El sitio actualiza su base población a la actualizada por MSP la semana pasada.<br>
-      El cambio afecta a los porcentajes mostrados. Éste mensaje se removerá el 19/05/2021 a las 10AM UYT.
+      El cambio afecta a los porcentajes mostrados. El mensaje se removerá el 19/05/2021 a las 10AM UYT.
     </td>
   </tr>
 </table>
