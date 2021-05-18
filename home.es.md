@@ -27,8 +27,8 @@ permalink: /
     </td>
     <td>
       A partir de este momento el sitio VacunaUY actualiza su base población a la actualizada por MSP la semana pasada.<br>
-      El cambio afecta a los porcentajes mostrados, si bien es menor, se informa a efectos de quienes noten el cambio sepan el motivo.<br>
-      El mensaje informativo se removerá el día 19/05/2021 a las 10AM.
+      El cambio afecta a los porcentajes mostrados, se informa a efectos de quienes noten el cambio sepan el motivo.<br>
+      El mensaje informativo se removerá el día 19/05/2021 a las 10AM UYT.
     </td>
   </tr>
 </table>
