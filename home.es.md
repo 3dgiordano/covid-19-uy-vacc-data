@@ -21,6 +21,7 @@ permalink: /
   </tr>
 </table>
 -->
+<!--
 <br><br>
 <table id="info">
   <tr>
@@ -33,6 +34,7 @@ permalink: /
     </td>
   </tr>
 </table>
+-->
 <table id="dashboard">
   <tr>
     <td align="right" colspan=3>
