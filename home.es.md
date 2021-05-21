@@ -5,7 +5,7 @@ permalink: /
   <a href="/en/">English</a>
 </div>
 <div class="sharethis-inline-share-buttons"></div>
-<a href='https://ko-fi.com/L4L542S3I' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi5.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+<a href='https://ko-fi.com/L4L542S3I' target='_blank' style='float: right; margin-top: 10px;margin-bottom: 10px;'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi5.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 <!--
 <br><br>
