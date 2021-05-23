@@ -211,6 +211,7 @@ Fuente: [Informe de dosis administradas y registradas al 29 de Abril](https://ww
 | 12/5/21 | Vulnerables | Se recomienda la vacunación contra COVID-19 al grupo de embarazadas. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/comunicado-vacunacion-embarazadas) |
 | 18/5/21 | Vulnerables | Desde el 18/05 comenzará a emitirse asignación de cupos para la vacunación contra covid-19 a grupos priorizados: embarazadas, personas con diabetes, obesidad y personas oncológicas en tratamiento. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/nuevas-asignaciones-cupos-para-vacuna-contra-covid-19) | 
 | 24/5/21 | Localidad en Riesgo | Desde el 24/05 comenzará la campaña Pueblo a Pueblo. Se realizará mediante vacunatorio móvil a 150.000 personas en localidades alejadas de las capitales departamentales y en pueblos pequeños. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacunatorio-movil-llegara-300-pueblos-posibilitara-150000-personas-se) | 
+
 ### Fuentes:
 
 [Comunicado sobre Plan de Vacunación contra COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/comunicado-sobre-plan-vacunacion-contra-covid-19)
