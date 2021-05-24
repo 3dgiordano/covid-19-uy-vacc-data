@@ -638,7 +638,7 @@ def update():
                                             value=age_daily)
                     )
             # Age current progress
-            if today == date_row:
+            if False:  # today == date_row:
                 current_vacc_data_age = current_vaccinated_by_age()
                 for range_elem in current_vacc_data_age:
                     range_age = range_elem["range"]
