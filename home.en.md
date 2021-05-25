@@ -150,7 +150,7 @@ permalink: /en/
 
 <img src="/web/charts/205213491.png" loading="lazy">
 
-Source: [Informe de dosis administradas y registradas al 29 de Abril](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/campana-vacunacion-covid-19)
+Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www.gub.uy/ministerio-salud-publica/comunicacion/comunicados/informe-dosis-administradas-registradas-del-27-febrero-20-mayo-2021)
 
 ## Vaccination acts by age range
 
@@ -164,7 +164,7 @@ Source: [Informe de dosis administradas y registradas al 29 de Abril](https://ww
 
 <img src="/web/charts/1898654916.png" loading="lazy">
 
-Source: [Informe de dosis administradas y registradas al 29 de Abril](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/campana-vacunacion-covid-19)
+Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www.gub.uy/ministerio-salud-publica/comunicacion/comunicados/informe-dosis-administradas-registradas-del-27-febrero-20-mayo-2021)
 
 ## Vaccine arrival record
 
