@@ -5,7 +5,7 @@ permalink: /en/
   <a href="/" style='margin: 10px;'>Spanish</a>
 </div>
 <div class="sharethis-inline-share-buttons"></div>
-<!--
+
 <br><br>
 <table>
   <tr>
@@ -14,13 +14,17 @@ permalink: /en/
     </td>
     <td>
       <p>
-        Currently there are problems in the data provided by the ministry of public health.<br>
-        As soon as they solve their problems, the data will be updated automatically.
+        05/25/2021 18:00 <br>
+         MSP has disabled access to much of the information that makes the site vaccina.uy possible. <br>
+         The changes prevent us from continuing to report the progress data of our vaccination. <br>
+         Vacuna.uy will stop reporting until MSP provides some information access mechanism <br>
+         If you want to monitor the vaccination status in Uruguay <br>
+         <a href="https://monitor.uruguaysevacuna.gub.uy/"> MSP COVID-19 Data Monitor </a>
       </p>
     </td>
   </tr>
 </table>
--->
+
 <!--
 <br><br>
 <table id="info">
