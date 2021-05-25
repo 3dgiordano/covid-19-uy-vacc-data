@@ -5,7 +5,7 @@ permalink: /
   <a href="/en/" style='margin: 10px;'>English</a>
 </div>
 <div class="sharethis-inline-share-buttons"></div>
-<!--
+
 <br><br>
 <table>
   <tr>
@@ -14,13 +14,17 @@ permalink: /
     </td>
     <td>
       <p>
-        Actualmente existen problemas en los datos proporcionados por el Ministerio de Salud Pública.<br>
-        Los datos se actualizarán automáticamente en cuanto resuelvan el problema.
+        25/05/2021 18:00<br>
+        MSP ha inhabilitado el acceso a gran parte de la información que hace al sitio vacuna.uy posible.<br>
+        Los cambios impiden que pueda seguir informando los datos de avance de nuestra vacunación.<br>
+        Vacuna.uy dejará de informar hasta que MSP brinde algún mecanismo de acceso a la información<br>
+        Si desean tener seguimiento del estado de vacunación en Uruguay <br>
+        <a href="https://monitor.uruguaysevacuna.gub.uy/">Monitor de datos COVID-19 de MSP</a>
       </p>
     </td>
   </tr>
 </table>
--->
+
 <!--
 <br><br>
 <table id="info">
