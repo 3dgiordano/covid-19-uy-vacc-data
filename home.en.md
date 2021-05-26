@@ -102,6 +102,7 @@ permalink: /en/
       <img src="/web/charts/744871918.png" loading="lazy">
     </td>
   </tr>
+<!--
   <tr>
     <td align="center">
       <img src="/web/charts/446851537.png" loading="lazy">
@@ -113,16 +114,20 @@ permalink: /en/
       <img src="/web/charts/1972410624.png" loading="lazy">
     </td>
   </tr>
+-->
 </table>
 
 <img src="/web/charts/1201195179.png" loading="lazy">
 
 <img src="/web/charts/574263984.png" loading="lazy">
 
+<!--
 <img src="/web/charts/1322547223.png" loading="lazy">
+-->
 
 <img src="/web/charts/731574492.png" loading="lazy">
 
+<!--
 <img src="/web/charts/842189614.png" loading="lazy">
 
 <img src="/web/charts/1047100711.png" loading="lazy">
@@ -130,6 +135,7 @@ permalink: /en/
 <img src="/web/charts/132326038.png" loading="lazy">
 
 <img src="/web/charts/122662822.png" loading="lazy">
+-->
 
 <img src="/web/charts/1270929451.png" loading="lazy">
 
@@ -141,24 +147,29 @@ permalink: /en/
 
 <img src="/web/charts/10315580.png" width="25%" loading="lazy"><img src="/web/charts/626919126.png" width="25%" loading="lazy"><img src="/web/charts/501510119.png" width="25%" loading="lazy"><img src="/web/charts/380999305.png" width="25%" loading="lazy"><img src="/web/charts/1506990494.png" width="25%" loading="lazy"><img src="/web/charts/943690507.png" width="25%" loading="lazy"><img src="/web/charts/1778597259.png" width="25%" loading="lazy"><img src="/web/charts/1029004131.png" width="25%" loading="lazy"><img src="/web/charts/2006897410.png" width="25%" loading="lazy"><img src="/web/charts/1087191394.png" width="25%" loading="lazy"><img src="/web/charts/1617072188.png" width="25%" loading="lazy"><img src="/web/charts/1745356284.png" width="25%" loading="lazy"><img src="/web/charts/1156295619.png" width="25%" loading="lazy"><img src="/web/charts/1908226097.png" width="25%" loading="lazy"><img src="/web/charts/1481111761.png" width="25%" loading="lazy"><img src="/web/charts/2049614015.png" width="25%" loading="lazy"><img src="/web/charts/1168479548.png" width="25%" loading="lazy"><img src="/web/charts/1906852652.png" width="25%" loading="lazy"><img src="/web/charts/1905047399.png" width="25%" loading="lazy">
 
-
+<!--
 <img src="/web/charts/105471492.png" loading="lazy">
+-->
 
 <img src="/web/charts/2095693594.png" loading="lazy">
 
+<!--
 ## Vaccination acts by segment
 
 <img src="/web/charts/4849953.png" loading="lazy">
 
 <img src="/web/charts/1189791692.png" loading="lazy">
+-->
 
 ## Vaccination acts by age group vaccination
 
+<!--
 <img src="/web/charts/1740954658.png" loading="lazy">
 
 <img src="/web/charts/1880002572.png" loading="lazy">
 
 <img src="/web/charts/1576723715.png" loading="lazy">
+-->
 
 <img src="/web/charts/205213491.png" loading="lazy">
 
@@ -166,6 +177,7 @@ Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 
 ## Vaccination acts by age range
 
+<!--
 <img src="/web/charts/1133283679.png" loading="lazy">
 
 <img src="/web/charts/784232676.png" loading="lazy">
@@ -173,6 +185,7 @@ Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 <img src="/web/charts/1466475246.png" loading="lazy">
 
 <img src="/web/charts/286695041.png" loading="lazy">
+-->
 
 <img src="/web/charts/1898654916.png" loading="lazy">
 
