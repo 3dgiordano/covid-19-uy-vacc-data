@@ -24,10 +24,16 @@ permalink: /
       <p>
         <b>26/05/2021 12:00</b><br>
         MSP informa que el problema es debido a cambios y mejoras en su servicio.<br>
-        Parte de las mejoras será la publicación de la información mediante la normativa de datos abiertos de Uruguay<br>
+        Parte de las mejoras será la publicación de la información mediante la normativa de datos abiertos de Uruguay.<br>
         En cuanto la migración se haya realizado, se comenzará a trabajar en volver a obtener los datos necesarios desde fuentes oficiales.<br>
-        El proceso puede llevar tiempo, mientras tanto, si desea tener seguimiento del estado de vacunación en Uruguay <br>
+        El proceso puede llevar tiempo, mientras tanto, si desea tener seguimiento del estado de vacunación en Uruguay.<br>
         <a href="https://monitor.uruguaysevacuna.gub.uy/">Monitor de datos COVID-19 de MSP</a>
+      </p>
+      <p>
+        <b>26/05/2021 19:00</b><br>
+        Se realiza adaptaciones momentaneas para lograr tener una versión mínima con los datos que actualmente son accesibles de MSP.<br>
+        Existen datos almacenados e incorporados por vacunaUY que complementan la información.<br>
+        El sitio volverá a su plenitud cuando sea posible acceder nuevamente a toda la información restante.<br>
       </p>
     </td>
   </tr>
@@ -102,6 +108,7 @@ permalink: /
       <img src="/web/charts/2074125212.png" loading="lazy">
     </td>
   </tr>
+<!--
   <tr>
     <td align="center">
       <img src="/web/charts/1541211770.png" loading="lazy">
@@ -113,51 +120,57 @@ permalink: /
       <img src="/web/charts/770096093.png" loading="lazy">
     </td>
   </tr>
+-->
 </table>
 
 <img src="/web/charts/1744392307.png" loading="lazy">
 
 <img src="/web/charts/1320291746.png" loading="lazy">
-
+<!--
 <img src="/web/charts/682972572.png" loading="lazy">
-
+-->
 <img src="/web/charts/119707745.png" loading="lazy">
 
+<!--
 <img src="/web/charts/1158305404.png" loading="lazy">
 
 <img src="/web/charts/1781225090.png" loading="lazy">
 
 <img src="/web/charts/259061157.png" loading="lazy">
+-->
 
 <img src="/web/charts/1047203349.png" loading="lazy">
 
 <img src="/web/charts/1347085705.png" loading="lazy">
-
+<!--
 <img src="/web/charts/121562673.png" loading="lazy">
-
+-->
 <img src="/web/charts/395420450.png" loading="lazy">
 
 <img src="/web/charts/1279668502.png" loading="lazy">
 
 <img src="/web/charts/10315580.png" width="25%" loading="lazy"><img src="/web/charts/626919126.png" width="25%" loading="lazy"><img src="/web/charts/501510119.png" width="25%" loading="lazy"><img src="/web/charts/380999305.png" width="25%" loading="lazy"><img src="/web/charts/1506990494.png" width="25%" loading="lazy"><img src="/web/charts/943690507.png" width="25%" loading="lazy"><img src="/web/charts/1778597259.png" width="25%" loading="lazy"><img src="/web/charts/1029004131.png" width="25%" loading="lazy"><img src="/web/charts/2006897410.png" width="25%" loading="lazy"><img src="/web/charts/1087191394.png" width="25%" loading="lazy"><img src="/web/charts/1617072188.png" width="25%" loading="lazy"><img src="/web/charts/1745356284.png" width="25%" loading="lazy"><img src="/web/charts/1156295619.png" width="25%" loading="lazy"><img src="/web/charts/1908226097.png" width="25%" loading="lazy"><img src="/web/charts/1481111761.png" width="25%" loading="lazy"><img src="/web/charts/2049614015.png" width="25%" loading="lazy"><img src="/web/charts/1168479548.png" width="25%" loading="lazy"><img src="/web/charts/1906852652.png" width="25%" loading="lazy"><img src="/web/charts/1905047399.png" width="25%" loading="lazy">
-
+<!--
 <img src="/web/charts/1092961723.png" loading="lazy">
-
+-->
 <img src="/web/charts/134138183.png" loading="lazy">
-
+<!--
 ## Actos vacunales por segmento
 
 <img src="/web/charts/1785941673.png" loading="lazy">
 
 <img src="/web/charts/824007235.png" loading="lazy">
+-->
 
 ## Actos vacunales por grupo de vacunación etario 
 
+<!--
 <img src="/web/charts/655562320.png" loading="lazy">
 
 <img src="/web/charts/1515424457.png" loading="lazy">
 
 <img src="/web/charts/519951936.png" loading="lazy">
+-->
 
 <img src="/web/charts/404093750.png" loading="lazy">
 
@@ -165,6 +178,7 @@ Fuente: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 
 ## Actos vacunales por rango etario
 
+<!--
 <img src="/web/charts/1140302154.png" loading="lazy">
 
 <img src="/web/charts/661817159.png" loading="lazy">
@@ -172,6 +186,7 @@ Fuente: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 <img src="/web/charts/1082865934.png" loading="lazy">
 
 <img src="/web/charts/1914304220.png" loading="lazy">
+-->
 
 <img src="/web/charts/1598348414.png" loading="lazy">
 
