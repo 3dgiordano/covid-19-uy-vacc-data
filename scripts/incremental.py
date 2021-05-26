@@ -92,6 +92,12 @@ def daily_vaccinated2():
                            ])
 
 
+def daily_doses():
+    data = b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
+           b"dataAccessId=sql_evolucion_dosis&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
+    return get_data(data, ['date', 'first_dose', 'second_dose'])
+
+
 def daily_vaccinated_by_age(date):
     # Date format YYYYMMDD
     today_str = bytes(date.replace("-", "").encode())
@@ -213,9 +219,8 @@ def today_status(date):
     # Date format YYYYMMDD
     today_str = bytes(date.replace("-", "").encode())
     data = b"paramp_periodo_desde_sk=" + today_str + b"&paramp_periodo_hasta_sk=" + today_str + \
-           b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunas" \
-           b"Covid.cda&dataAccessId=sql_indicadores_generales&outputIndexId=1&pageSize=0&pageStart=0&" \
-           b"sortBy=&paramsearchBox="
+           b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
+           b"dataAccessId=sql_indicadores_generales&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
     return get_data(data, ['total_vaccinations', 'today_vaccinations', 'first_dose', 'second_dose', 'update_time',
                            'country_doses'])
 
@@ -288,6 +293,350 @@ def transform_date(date_str):
     if not date_str.startswith("2021-"):
         date_str = "2021-" + date_str  # WA when format is without year
     return date_str
+
+
+def update_minimal():
+    updates = False
+
+    daily_vac_origin = daily_doses().iloc[::-1]
+
+    today = daily_vac_origin.head(1)["date"].values[0]  # transform_date(
+
+    try:
+        day_agenda_first = int(date_agenda(today)["today"].item() or 0)
+        day_agenda_second = int(date_agenda_second_dose(today)["today"].item() or 0)
+        day_agenda = day_agenda_first + day_agenda_second
+    except HTTPError as e:
+        print("Agenda error!")
+        day_agenda_first = 0
+        day_agenda_second = 0
+        day_agenda = 0
+
+    today_vac_status = today_status(today)
+
+    daily_vac_origin_value = int(today_vac_status["today_vaccinations"])
+
+    today_uodate_time = today + " " + today_vac_status["update_time"].values[0]
+
+    # TODO: The api began to misinform the total, it is calculated with people first and second dose
+    # today_total_vaccinations = int(today_vac_status["total_vaccinations"].item() or 0)
+    today_total_people_vaccinations = int(today_vac_status["first_dose"].item() or 0)
+    today_total_fully_vaccinations = int(today_vac_status["second_dose"].item() or 0)
+    today_total_vaccinations = today_total_people_vaccinations + today_total_fully_vaccinations
+
+    gc = gspread.service_account()
+    sh = gc.open("CoronavirusUY - Vaccination monitor")
+
+    sheet = sh.worksheet("Uruguay")
+    sheet_dic = sheet.get_all_records()
+    sheet_headers = sheet.row_values(1)
+
+    sheet_schedule = sh.worksheet("Schedule")
+    sheet_schedule_dic = sheet_schedule.get_all_records()
+    sheet_schedule_headers = sheet_schedule.row_values(1)
+
+    daily_people_vaccinated_col_index = get_col_index(sheet_headers, "people_vaccinated")
+    daily_people_fully_vaccinated_col_index = get_col_index(sheet_headers, "people_fully_vaccinated")
+
+    daily_vac_total_col_index = get_col_index(sheet_headers, "daily_vaccinated")
+
+    daily_agenda_ini_col_index = get_col_index(sheet_headers, "daily_agenda_ini")
+    daily_agenda_col_index = get_col_index(sheet_headers, "daily_agenda")
+
+    daily_agenda_first_col_index = get_col_index(sheet_headers, "daily_agenda_first")
+    daily_agenda_second_col_index = get_col_index(sheet_headers, "daily_agenda_second")
+
+    last_row = sheet_dic[-1]
+    last_date = last_row["date"]
+
+    if last_date == today:
+        if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
+            print("* Execution Excluded! Corrupt source data? Last valid:" + str(
+                last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
+            return False
+
+    batch_update_cells = []
+    batch_update_schedule_cells = []
+
+    for daily_vac_origin_index, daily_vac_origin_row in daily_vac_origin.iterrows():
+
+        # Get date
+        date_row = daily_vac_origin_row["date"]  # transform_date(
+
+        sheet_row = find_row(date_row, sheet_dic)
+        if len(sheet_row) == 0:  # If not exist, create the row
+
+            if date_row == today:
+                if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
+                    print("* New date, Execution Excluded! Corrupt source data? Last valid:" + str(
+                        last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
+                    return False
+
+            add_formatted_row(sh, sheet, date_row, uy_init_cols)
+            time.sleep(2)  # Wait for refresh
+            sheet_dic = sheet.get_all_records()  # Get updated changes
+            sheet_row = find_row(date_row, sheet_dic)
+
+            last_row = sheet_dic[-1]
+            last_date = last_row["date"]
+
+        sheet_daily_vac = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_vaccinated"] or 0)
+
+        daily_origin_first_dose = int(daily_vac_origin_row["first_dose"])
+        daily_origin_second_dose = int(daily_vac_origin_row["second_dose"])
+
+        sheet_row_index = -1 if len(sheet_row) == 0 else get_row_index(sheet_dic, sheet_row[0])
+
+        sheet_agenda_ini = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda_ini"] or 0)
+        sheet_agenda = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda"] or 0)
+        sheet_agenda_first = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda_first"] or 0)
+        sheet_agenda_second = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda_second"] or 0)
+
+        sheet_people_vaccinated = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_vaccinated"] or 0)
+        sheet_fully_vaccinations = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_fully_vaccinated"] or 0)
+
+        if today == date_row:
+            if sheet_agenda_ini == 0 and day_agenda > 0:
+                # Set the ini agenda value
+                print("Update Agenda ini:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_agenda_ini) + " new:" + str(day_agenda))
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_agenda_ini_col_index, value=day_agenda)
+                )
+            if sheet_agenda < day_agenda:
+                print("Update Agenda:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_agenda) + " new:" + str(day_agenda))
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_agenda_col_index, value=day_agenda)
+                )
+
+            if sheet_agenda_first < day_agenda_first:
+                print("Update Agenda First Dose:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_agenda_first) + " new:" + str(day_agenda_first))
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_agenda_first_col_index, value=day_agenda_first)
+                )
+
+            if sheet_agenda_second < day_agenda_second:
+                print("Update Agenda Second Dose:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_agenda_second) + " new:" + str(day_agenda_second))
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_agenda_second_col_index, value=day_agenda_second)
+                )
+
+            # Update People vaccinated and Fully vaccinated
+            if sheet_people_vaccinated != today_total_people_vaccinations:
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_people_vaccinated_col_index,
+                                        value=today_total_people_vaccinations)
+                )
+            if sheet_fully_vaccinations != today_total_fully_vaccinations:
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_people_fully_vaccinated_col_index,
+                                        value=today_total_fully_vaccinations)
+                )
+
+        if len(sheet_row) == 0:  # Extra control
+            print("Create:" + date_row + " old: none new:" + str(daily_vac_origin_value))
+        else:
+            if sheet_daily_vac != daily_vac_origin_value:
+
+                if today == date_row:
+                    print("Update Daily:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                        sheet_daily_vac) + " new:" + str(daily_vac_origin_value))
+
+                    if int(daily_vac_origin_value) < sheet_daily_vac:
+                        print("* Warning! decrement!")
+
+                    if int(daily_vac_origin_value) != sheet_daily_vac:
+                        batch_update_cells.append(
+                            gspread.models.Cell(sheet_row_index, daily_vac_total_col_index, value=daily_vac_origin_value)
+                        )
+
+            # Regions
+            if today == date_row:
+
+                daily_vac_region_origin = region_vaccinated()
+
+                for daily_vac_region_origin_index, daily_vac_region_origin_row in daily_vac_region_origin.iterrows():
+                    # Generate the label with the sheet format
+                    region_id = daily_vac_region_origin_row["code"].split("-")[1].lower()
+                    region_total_label = "total_" + region_id
+                    region_people_label = "people_" + region_id
+                    region_fully_label = "fully_" + region_id
+                    sheet_total_vac_region = 0 if len(sheet_row) == 0 else int(sheet_row[0][region_total_label] or 0)
+
+                    population = int(daily_vac_region_origin_row["population"].replace(".", ""))
+                    daily_vac_region_origin_p_first_value = float(
+                        daily_vac_region_origin_row["p_first_dose"].replace("%", "").replace(",", ".")) / 100
+
+                    daily_vac_region_origin_p_second_value = float(
+                        daily_vac_region_origin_row["p_second_dose"].replace("%", "").replace(",", ".")) / 100
+
+                    daily_vac_region_origin_people_value = int(population * daily_vac_region_origin_p_first_value)
+                    daily_vac_region_origin_fully_value = int(population * daily_vac_region_origin_p_second_value)
+                    daily_vac_region_origin_total_value = daily_vac_region_origin_people_value
+                    daily_vac_region_origin_total_value += daily_vac_region_origin_fully_value
+
+                    if len(sheet_row) == 0:
+                        print("Create Region:" + date_row + " " + region_total_label + " old: none new:" + str(
+                            daily_vac_region_origin_total_value))
+                    elif sheet_total_vac_region != daily_vac_region_origin_total_value:
+                        daily_vac_region_total_col_index = get_col_index(sheet_headers, region_total_label)
+                        daily_vac_region_people_col_index = get_col_index(sheet_headers, region_people_label)
+                        daily_vac_region_fully_col_index = get_col_index(sheet_headers, region_fully_label)
+
+                        print("Update Region:" + date_row + " " + region_total_label + " idx:" + str(
+                            sheet_row_index) + " old:" + str(sheet_total_vac_region) + " new:" + str(
+                            daily_vac_region_origin_total_value))
+
+                        batch_update_cells.append(
+                            gspread.models.Cell(sheet_row_index, daily_vac_region_total_col_index,
+                                                value=daily_vac_region_origin_total_value)
+                        )
+
+                        # Update people and fully
+                        batch_update_cells.append(
+                            gspread.models.Cell(sheet_row_index, daily_vac_region_people_col_index,
+                                                value=daily_vac_region_origin_people_value)
+                        )
+                        batch_update_cells.append(
+                            gspread.models.Cell(sheet_row_index, daily_vac_region_fully_col_index,
+                                                value=daily_vac_region_origin_fully_value)
+                        )
+                        if daily_vac_region_origin_total_value < sheet_total_vac_region:
+                            print("* Warning! decrement! ")
+
+            # Schedule
+            if today == date_row:
+                schedule = get_data_schedule()
+
+                date_schedule = schedule.head(1)["timestamp"].values[0].split("T")[0]
+                if date_row != date_schedule:
+                    print(f"Schedule date not equeal than today {date_schedule} {date_row}")
+                else:
+
+                    sheet_schedule_row = find_row(date_row, sheet_schedule_dic)
+                    if len(sheet_schedule_row) == 0:  # If not exist, create the row
+
+                        add_formatted_row(sh, sheet_schedule, date_row, [])  # schedule_init_cols
+                        time.sleep(2)  # Wait for refresh
+                        sheet_schedule_dic = sheet_schedule.get_all_records()  # Get updated changes
+                        sheet_schedule_row = find_row(date_row, sheet_schedule_dic)
+
+                    sheet_schedule_row_index = -1 if len(sheet_schedule_row) == 0 else get_row_index(sheet_schedule_dic,
+                                                                                                     sheet_schedule_row[
+                                                                                                         0])
+                    total_scheduled = 0
+                    total_pending = 0
+                    total_disabled = 0
+
+                    for schedule_index, schedule_row in schedule.iterrows():
+                        date_schedule = schedule_row["timestamp"].split("T")[0]
+
+                        region_code = schedule_row["departaments"]["code"]
+
+                        scheduled_label = "scheduled_" + schedule_region_iso[region_code]
+                        scheduled_value = schedule_row["departaments"]["scheduled"]
+                        total_scheduled += scheduled_value
+
+                        daily_schedule_col_index = get_col_index(sheet_schedule_headers, scheduled_label)
+                        batch_update_schedule_cells.append(
+                            gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
+                                                value=scheduled_value)
+                        )
+
+                        pending_label = "pending_" + schedule_region_iso[region_code]
+                        pending_value = schedule_row["departaments"]["pending"]
+                        total_pending += pending_value
+
+                        daily_schedule_col_index = get_col_index(sheet_schedule_headers, pending_label)
+                        batch_update_schedule_cells.append(
+                            gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
+                                                value=pending_value)
+                        )
+
+                        disabled_label = "disabled_" + schedule_region_iso[region_code]
+                        disabled_value = schedule_row["departaments"]["disabled"]
+                        total_disabled += disabled_value
+
+                        daily_schedule_col_index = get_col_index(sheet_schedule_headers, disabled_label)
+                        batch_update_schedule_cells.append(
+                            gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
+                                                value=disabled_value)
+                        )
+
+                    # update totals
+                    daily_schedule_col_index = get_col_index(sheet_schedule_headers, "scheduled")
+                    batch_update_schedule_cells.append(
+                        gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
+                                            value=total_scheduled)
+                    )
+
+                    daily_schedule_col_index = get_col_index(sheet_schedule_headers, "pending")
+                    batch_update_schedule_cells.append(
+                        gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
+                                            value=total_pending)
+                    )
+
+                    daily_schedule_col_index = get_col_index(sheet_schedule_headers, "disabled")
+                    batch_update_schedule_cells.append(
+                        gspread.models.Cell(sheet_schedule_row_index, daily_schedule_col_index,
+                                            value=total_disabled)
+                    )
+
+    to_update_schedule = len(batch_update_schedule_cells)
+    if to_update_schedule > 0:
+        update_data = sheet_schedule.update_cells(batch_update_schedule_cells)
+        # TODO: Implement a generic method to update batch of a sheet with retries
+
+    to_update = len(batch_update_cells)
+    if to_update > 0:
+        updates = True
+        update_data = sheet.update_cells(batch_update_cells)
+        updated = update_data["updatedCells"]
+        print("To update cells:" + str(to_update) + " Updated:" + str(updated))
+
+        if to_update != updated:
+            # Find difference and force to update
+            address = []
+            rows = []
+            cols = []
+            values = []
+            for cell in batch_update_cells:
+                rows.append(cell.row)
+                cols.append(cell.col)
+                address.append(cell.address)
+                values.append(cell.value)
+
+            ret_values = sheet.batch_get(address)
+            force_cells = []
+            for index, val in enumerate(ret_values):
+                if int(val[0][0]) != values[index]:
+                    print("Not updated:" + address[index] + " Val:" + str(values[index]) + " S:" + str(int(val[0][0])))
+                    force_cells.append(
+                        gspread.models.Cell(rows[index], cols[index], value=values[index])
+                    )
+            to_update = len(force_cells)
+            if to_update > 0:
+                update_data = sheet.update_cells(force_cells)
+                updated = update_data["updatedCells"]
+                print("Force to update cells:" + str(to_update) + " Updated:" + str(updated))
+
+    # Refresh and check results
+    time.sleep(2)  # Wait for refresh
+    sheet_dic = sheet.get_all_records()  # Get updated changes
+    last_row = sheet_dic[-1]
+    last_date = last_row["date"]
+
+    if last_date == today:
+        print("Source Total:" + str(last_row["total_vaccinations"]) + " Final Total:" + str(today_total_vaccinations))
+
+        # Update date time data
+        sheet_data = sh.worksheet("Data")
+        sheet_data.update_cell(6, 10, today_uodate_time)
+
+    return updates
 
 
 def update():
@@ -855,12 +1204,11 @@ def update():
 
 
 if __name__ == "__main__":
-
     limit_retry = 10
     num_retry = 1
     while num_retry <= limit_retry:
         print("Update:" + str(num_retry))
-        if not update():
+        if not update_minimal():
             print("Update finished")
             break
         print("Updated data, retrying to ensure no pending data...")
