@@ -14,12 +14,10 @@ permalink: /
     </td>
     <td>
       <p>
-        <b>25/05/2021 18:00</b><br>
-        MSP ha inhabilitado el acceso a gran parte de la información que hace al sitio vacuna.uy posible.<br>
-        Los cambios impiden que pueda seguir informando los datos de avance de nuestra vacunación.<br>
-        Vacuna.uy dejará de informar hasta que MSP brinde algún mecanismo de acceso a la información<br>
-        Si desean tener seguimiento del estado de vacunación en Uruguay <br>
-        <a href="https://monitor.uruguaysevacuna.gub.uy/">Monitor de datos COVID-19 de MSP</a>
+        <b>26/05/2021 19:00</b><br>
+        Se realiza adaptaciones momentaneas para lograr tener una versión mínima con los datos que actualmente son accesibles de MSP.<br>
+        Existen datos almacenados e incorporados por vacunaUY que complementan la información.<br>
+        El sitio volverá a su plenitud cuando sea posible acceder nuevamente a toda la información restante.<br>
       </p>
       <p>
         <b>26/05/2021 12:00</b><br>
@@ -30,10 +28,12 @@ permalink: /
         <a href="https://monitor.uruguaysevacuna.gub.uy/">Monitor de datos COVID-19 de MSP</a>
       </p>
       <p>
-        <b>26/05/2021 19:00</b><br>
-        Se realiza adaptaciones momentaneas para lograr tener una versión mínima con los datos que actualmente son accesibles de MSP.<br>
-        Existen datos almacenados e incorporados por vacunaUY que complementan la información.<br>
-        El sitio volverá a su plenitud cuando sea posible acceder nuevamente a toda la información restante.<br>
+        <b>25/05/2021 18:00</b><br>
+        MSP ha inhabilitado el acceso a gran parte de la información que hace al sitio vacuna.uy posible.<br>
+        Los cambios impiden que pueda seguir informando los datos de avance de nuestra vacunación.<br>
+        Vacuna.uy dejará de informar hasta que MSP brinde algún mecanismo de acceso a la información<br>
+        Si desean tener seguimiento del estado de vacunación en Uruguay <br>
+        <a href="https://monitor.uruguaysevacuna.gub.uy/">Monitor de datos COVID-19 de MSP</a>
       </p>
     </td>
   </tr>
