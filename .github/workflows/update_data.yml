@@ -40,7 +40,7 @@ jobs:
         cd ./scripts
         python incremental.py
         python batch.py
-      # python assets.py
+        python assets.py
     - name: Commit changes
       run: |
         rm -rf ./.git/index.lock
