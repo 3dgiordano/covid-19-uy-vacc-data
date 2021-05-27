@@ -5,7 +5,7 @@ permalink: /
   <a href="/en/" style='margin: 10px;'>English</a>
 </div>
 <div class="sharethis-inline-share-buttons"></div>
-
+<!--
 <br><br>
 <table>
   <tr>
@@ -15,30 +15,12 @@ permalink: /
     <td>
       <p>
         <b>26/05/2021 19:00</b><br>
-        Se realiza adaptaciones momentaneas para lograr tener una versión mínima con los datos que actualmente son accesibles de MSP.<br>
-        Existen datos almacenados e incorporados por vacunaUY que complementan la información.<br>
-        El sitio volverá a su plenitud cuando sea posible acceder nuevamente a toda la información restante.<br>
-      </p>
-      <p>
-        <b>26/05/2021 12:00</b><br>
-        MSP informa que el problema es debido a cambios y mejoras en su servicio.<br>
-        Parte de las mejoras será la publicación de la información mediante la normativa de datos abiertos de Uruguay.<br>
-        En cuanto la migración se haya realizado, se comenzará a trabajar en volver a obtener los datos necesarios desde fuentes oficiales.<br>
-        El proceso puede llevar tiempo, mientras tanto, si desea tener seguimiento del estado de vacunación en Uruguay.<br>
-        <a href="https://monitor.uruguaysevacuna.gub.uy/">Monitor de datos COVID-19 de MSP</a>
-      </p>
-      <p>
-        <b>25/05/2021 18:00</b><br>
-        MSP ha inhabilitado el acceso a gran parte de la información que hace al sitio vacuna.uy posible.<br>
-        Los cambios impiden que pueda seguir informando los datos de avance de nuestra vacunación.<br>
-        Vacuna.uy dejará de informar hasta que MSP brinde algún mecanismo de acceso a la información<br>
-        Si desean tener seguimiento del estado de vacunación en Uruguay <br>
-        <a href="https://monitor.uruguaysevacuna.gub.uy/">Monitor de datos COVID-19 de MSP</a>
+        Texto
       </p>
     </td>
   </tr>
 </table>
-
+-->
 <!--
 <br><br>
 <table id="info">
@@ -253,6 +235,37 @@ Fuente: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 [Priorización y Escalonamiento de la Vacunación COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/priorizacion-escalonamiento-vacunacion-covid-19)
 
 [Plan estratégico de vacunación contra Covid-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/plan-estrategico-vacunacion-contra-covid-19)
+
+## Comunicados
+
+<table>
+  <tr>
+    <td>
+      <p>
+        <b>26/05/2021 19:00</b><br>
+        Se realiza adaptaciones momentaneas para lograr tener una versión mínima con los datos que actualmente son accesibles de MSP.<br>
+        Existen datos almacenados e incorporados por vacunaUY que complementan la información.<br>
+        El sitio volverá a su plenitud cuando sea posible acceder nuevamente a toda la información restante.<br>
+      </p>
+      <p>
+        <b>26/05/2021 12:00</b><br>
+        MSP informa que el problema es debido a cambios y mejoras en su servicio.<br>
+        Parte de las mejoras será la publicación de la información mediante la normativa de datos abiertos de Uruguay.<br>
+        En cuanto la migración se haya realizado, se comenzará a trabajar en volver a obtener los datos necesarios desde fuentes oficiales.<br>
+        El proceso puede llevar tiempo, mientras tanto, si desea tener seguimiento del estado de vacunación en Uruguay.<br>
+        <a href="https://monitor.uruguaysevacuna.gub.uy/">Monitor de datos COVID-19 de MSP</a>
+      </p>
+      <p>
+        <b>25/05/2021 18:00</b><br>
+        MSP ha inhabilitado el acceso a gran parte de la información que hace al sitio vacuna.uy posible.<br>
+        Los cambios impiden que pueda seguir informando los datos de avance de nuestra vacunación.<br>
+        Vacuna.uy dejará de informar hasta que MSP brinde algún mecanismo de acceso a la información<br>
+        Si desean tener seguimiento del estado de vacunación en Uruguay <br>
+        <a href="https://monitor.uruguaysevacuna.gub.uy/">Monitor de datos COVID-19 de MSP</a>
+      </p>
+    </td>
+  </tr>
+</table>
 
 ## Acerca de
 
