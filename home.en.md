@@ -5,7 +5,7 @@ permalink: /en/
   <a href="/" style='margin: 10px;'>Spanish</a>
 </div>
 <div class="sharethis-inline-share-buttons"></div>
-
+<!--
 <br><br>
 <table>
   <tr>
@@ -15,30 +15,12 @@ permalink: /en/
     <td>
       <p>
          <b> 05/26/2021 19:00 </b> <br>
-         Momentary adaptations are made to achieve a minimum version with the data that is currently accessible from MSP. <br>
-         There are data stored and incorporated by vaccineUY that complement the information. <br>
-         The site will return to its fullness when all the remaining information is accessible again. <br>
-      </p>
-      <p>
-         <b>05/25/2021 18:00</b><br>
-         MSP has disabled access to much of the information that makes the site vaccina.uy possible. <br>
-         The changes prevent us from continuing to report the progress data of our vaccination. <br>
-         Vacuna.uy will stop reporting until MSP provides some information access mechanism <br>
-         If you want to monitor the vaccination status in Uruguay <br>
-         <a href="https://monitor.uruguaysevacuna.gub.uy/"> MSP COVID-19 Data Monitor </a>
-      </p>
-      <p>
-         <b>05/26/2021 12:00</b><br>
-         MSP reports that the problem is due to changes and improvements in its service. <br>
-         Part of the improvements will be the publication of information through Uruguay's open data regulations.<br>
-         As soon as the migration has been carried out, work will begin on obtaining the necessary data from official sources.<br>
-         The process can take time, in the meantime, if you want to monitor the vaccination status in Uruguay <br>
-         <a href="https://monitor.uruguaysevacuna.gub.uy/"> MSP COVID-19 Data Monitor </a>
+         TEXT
       </p>
     </td>
   </tr>
 </table>
-
+-->
 <!--
 <br><br>
 <table id="info">
@@ -222,6 +204,37 @@ Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 [Comunicado sobre Plan de Vacunación contra COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/comunicado-sobre-plan-vacunacion-contra-covid-19)
 
 [Priorización y Escalonamiento de la Vacunación COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/priorizacion-escalonamiento-vacunacion-covid-19)
+
+## Announcements
+
+<table>
+  <tr>
+    <td>
+      <p>
+         <b> 05/26/2021 19:00 </b> <br>
+         Momentary adaptations are made to achieve a minimum version with the data that is currently accessible from MSP. <br>
+         There are data stored and incorporated by vaccineUY that complement the information. <br>
+         The site will return to its fullness when all the remaining information is accessible again. <br>
+      </p>
+      <p>
+         <b>05/25/2021 18:00</b><br>
+         MSP has disabled access to much of the information that makes the site vaccina.uy possible. <br>
+         The changes prevent us from continuing to report the progress data of our vaccination. <br>
+         Vacuna.uy will stop reporting until MSP provides some information access mechanism <br>
+         If you want to monitor the vaccination status in Uruguay <br>
+         <a href="https://monitor.uruguaysevacuna.gub.uy/"> MSP COVID-19 Data Monitor </a>
+      </p>
+      <p>
+         <b>05/26/2021 12:00</b><br>
+         MSP reports that the problem is due to changes and improvements in its service. <br>
+         Part of the improvements will be the publication of information through Uruguay's open data regulations.<br>
+         As soon as the migration has been carried out, work will begin on obtaining the necessary data from official sources.<br>
+         The process can take time, in the meantime, if you want to monitor the vaccination status in Uruguay <br>
+         <a href="https://monitor.uruguaysevacuna.gub.uy/"> MSP COVID-19 Data Monitor </a>
+      </p>
+    </td>
+  </tr>
+</table>
 
 ## About
 
