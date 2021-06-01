@@ -38,6 +38,7 @@ jobs:
     - name: Run incremental (Update Google Spreadsheets) and batch update (Dump GS to CSV file)
       run: |
         cd ./scripts
+        python historic.py
         python incremental.py
         python batch.py
         python assets.py
