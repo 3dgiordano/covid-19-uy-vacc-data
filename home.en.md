@@ -109,19 +109,17 @@ permalink: /en/
 
 <img src="/web/charts/574263984.png" loading="lazy">
 
-<!--
 <img src="/web/charts/1322547223.png" loading="lazy">
--->
 
 <img src="/web/charts/731574492.png" loading="lazy">
 
-<!--
 <img src="/web/charts/842189614.png" loading="lazy">
 
 <img src="/web/charts/1047100711.png" loading="lazy">
 
 <img src="/web/charts/132326038.png" loading="lazy">
 
+<!--
 <img src="/web/charts/122662822.png" loading="lazy">
 -->
 
