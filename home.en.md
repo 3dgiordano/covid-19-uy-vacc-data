@@ -198,6 +198,15 @@ Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 | 3/22/21 | Over 80 years | Vaccination for people over 80 years of age.|
 | 3/29/21 | 18 to 70 years | General public between 18 to 70 years old.|
 | 4/10/21 | 71 to 79 years | Vaccination of people in the range of 71 to 79 years.|
+| 4/16/21 | Vulnerable | People over 18 years of age with Down Syndrome in Montevideo, April 16 and 17. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacunacion-contra-covid-19-para-personas-sindrome-down)  |
+| 4/17/21 | Locality at Risk | Vaccination of people over 60 years of age with 48,000 doses of Oxford / Astrazeneca vaccines in Artigas, Rivera, Cerro Largo, Rocha, Río Negro, Canelones, Salto and Paysandú. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacuna-oxfordastrazeneca-departamentos-mayor-riesgo) |
+| 4/20/21 | Vulnerable | From April 20 to 23. Vaccination of people between the ages of 18 and 70 who have undergone some type of heart surgery with the Coronavac vaccine from Sinovac.  [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacunacion-contra-covid-19-para-personas-cirugias-cardiacas) | 
+| 5/5/21 | 31 to 70 years | As of 05/05, the allocation of quotas for vaccination against covid-19 will begin to be issued to 500 thousand people aged between 31 and 70 years waiting for the Coronavac vaccine. Start vaccination 05/10 [+info](https://twitter.com/DrDanielSalinas/status/1389921574317330433) |
+| 5/12/21 | General | Start Phase IV with a safety and effectiveness study. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacunacion-ingresa-fase-iv-estudio-seguridad-efectividad) |
+| 5/12/21 | Vulnerable | Vaccination against COVID-19 is recommended for the group of pregnant women. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/comunicado-vacunacion-embarazadas) |
+| 5/18/21 | Vulnerable | As of 05/18, the allocation of quotas for vaccination against covid-19 will begin to be issued to prioritized groups: pregnant women, people with diabetes, obesity and cancer patients undergoing treatment. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/nuevas-asignaciones-cupos-para-vacuna-contra-covid-19) | 
+| 5/24/21 | Locality at Risk | From 05/24 the People to People campaign will begin. It will be carried out through mobile vaccination to 150,000 people in locations far from departmental capitals and in small towns. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacunatorio-movil-llegara-300-pueblos-posibilitara-150000-personas-se) | 
+| 5/27/21 | 18 to 30 years | As of Thursday, May 27, 312,000 new quotas are being assigned for vaccination against covid-19, with the vaccine from the Sinovac laboratory. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/nuevos-cupos-vacunacion-contra-covid-19) | 
 
 ### Sources:
 
