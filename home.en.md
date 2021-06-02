@@ -211,6 +211,12 @@ Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
   <tr>
     <td>
       <p>
+         <b> 06/01/2021 22:30 </b> <br>
+         Historical data processing from Uruguay's open data portal is incorporated. <br>
+         The graphs showing the history of vaccines are again incorporated. <br>
+         Progress in integration continues. <br>
+      </p>
+      <p>
          <b> 05/26/2021 19:00 </b> <br>
          Momentary adaptations are made to achieve a minimum version with the data that is currently accessible from MSP. <br>
          There are data stored and incorporated by vaccineUY that complement the information. <br>
