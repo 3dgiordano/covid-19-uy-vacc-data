@@ -235,11 +235,19 @@ Fuente: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 
 [Plan estratégico de vacunación contra Covid-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/plan-estrategico-vacunacion-contra-covid-19)
 
+[Información para el público en general actualizado al 26 de mayo de 2021 (Comisión Nacional Asesora de Vacunas y Grupo ad hoc)](https://www.gub.uy/ministerio-salud-publica/comunicacion/publicaciones/boletin-cnav-actualizado-26-mayo-2021)
+
 ## Comunicados
 
 <table>
   <tr>
     <td>
+      <p>
+        <b>01/06/2021 22:30</b><br>
+        Se incorpora procesamiento de datos históricos provientes del portal de datos abiertos de Uruguay.<br>
+        Se incorpora nuevamente las gráficas que muestran históricos de vacunas.<br>
+        Se continúa con el avance en la integración.<br>
+      </p>
       <p>
         <b>26/05/2021 19:00</b><br>
         Se realiza adaptaciones momentaneas para lograr tener una versión mínima con los datos que actualmente son accesibles de MSP.<br>
