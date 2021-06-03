@@ -508,7 +508,7 @@ def update_minimal():
                             print("* Warning! decrement! ")
 
             # Schedule
-            if False: # today == date_row:
+            if today == date_row:
                 schedule = get_data_schedule()
 
                 date_schedule = schedule.head(1)["timestamp"].values[0].split("T")[0]
@@ -1062,7 +1062,7 @@ def update():
                             print("* Warning! decrement! ")
 
             # Schedule
-            if False:  # today == date_row:
+            if today == date_row:
                 schedule = get_data_schedule()
 
                 date_schedule = schedule.head(1)["timestamp"].values[0].split("T")[0]
