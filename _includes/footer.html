@@ -48,8 +48,12 @@
 				columns:[ //Define Table Columns
 					{title:"Date", field:"date", width:150},
 					{title:"Daily", field:"daily_vaccinated"},
-					{title:"Coronavac 1st", field:"people_coronavac"},
-					{title:"Coronavac 2nd", field:"fully_coronavac"},
+					{title:"Sinovac 1st", field:"people_coronavac"},
+					{title:"Sinovac 2nd", field:"fully_coronavac"},
+					{title:"Pfizer/BioNTech 1st", field:"people_pfizer"},
+					{title:"Pfizer/BioNTech 2nd", field:"fully_pfizer"},
+					{title:"Oxford/AstraZeneca 1st", field:"people_astrazeneca"},
+					{title:"Oxford/AstraZeneca 2nd", field:"fully_astrazeneca"},
 				],
 				rowClick:function(e, row){ //trigger an alert message when the row is clicked
 				alert("Row " + row.getData().id + " Clicked!!!!");
