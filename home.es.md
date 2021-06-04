@@ -183,6 +183,7 @@ Fuente: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 
 <div id="vaccine-table"></div>
 
+
 ### Efecto de vacunación
 
 <img src="/web/charts/494905331.png" loading="lazy">
