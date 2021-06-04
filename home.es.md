@@ -185,6 +185,10 @@ Fuente: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 
 <img src="/web/charts/1979752349.png" loading="lazy">
 
+## Historia de Actos vacunales
+
+<div id="vaccine-table"></div>
+
 ### Registro de llegada de vacunas
 
 <img src="/web/charts/861619954.png" loading="lazy">
