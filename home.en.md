@@ -179,6 +179,10 @@ Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 
 Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www.gub.uy/ministerio-salud-publica/comunicacion/comunicados/informe-dosis-administradas-registradas-del-27-febrero-20-mayo-2021)
 
+## Data Table Test
+
+<div id="vaccine-table"></div>
+
 ## Vaccine arrival record
 
 <img src="/web/charts/648030237.png" loading="lazy">
