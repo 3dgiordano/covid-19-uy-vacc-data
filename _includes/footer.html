@@ -40,6 +40,7 @@
 	var acts_label = lang_eng ? "Vaccination acts" : "Actos vacunales";
 	var first_dose_label = lang_eng ? "1st" : "1era";
 	var second_dose_label = lang_eng ? "2nd" : "2da";
+	var date_format = lang_eng ? "MM/DD/YY" : "DD/MM/YY";
 	var min_with_cols = 113;
 	Papa.parse("https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/data/Uruguay.csv", {
 		download: true,
@@ -52,7 +53,12 @@
 				data:results.data, 
 				layout:"fitDataFill",
 				columns:[ 
-					{title:date_label, field:"date", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols},
+					{title:date_label, field:"date", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols,
+						formatter:"datetime", formatterParams:{
+							inputFormat:"YYYY-MM-DD",
+							outputFormat:date_format,
+						}
+					},
 					{title:acts_label, field:"daily_vaccinated", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false},
 					{
 						title:"Sinovac", headerHozAlign:"center",
