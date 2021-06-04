@@ -149,7 +149,7 @@ permalink: /en/
 <img src="/web/charts/1189791692.png" loading="lazy">
 -->
 
-## Vaccination acts by age group vaccination
+### Vaccination acts by age group vaccination
 
 <!--
 <img src="/web/charts/1740954658.png" loading="lazy">
@@ -163,7 +163,7 @@ permalink: /en/
 
 Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www.gub.uy/ministerio-salud-publica/comunicacion/comunicados/informe-dosis-administradas-registradas-del-27-febrero-20-mayo-2021)
 
-## Vaccination acts by age range
+### Vaccination acts by age range
 
 <!--
 <img src="/web/charts/1133283679.png" loading="lazy">
@@ -179,15 +179,15 @@ Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 
 Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www.gub.uy/ministerio-salud-publica/comunicacion/comunicados/informe-dosis-administradas-registradas-del-27-febrero-20-mayo-2021)
 
-## History of vaccination acts
+### History of vaccination acts
 
 <div id="vaccine-table"></div>
 
-## Vaccine arrival record
+### Vaccine arrival record
 
 <img src="/web/charts/648030237.png" loading="lazy">
 
-## Vaccination plan against COVID-19
+### Vaccination plan against COVID-19
 
 | **Date**  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Group**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
 | :----: | :----: | :----------- |
