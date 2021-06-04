@@ -46,14 +46,30 @@
 				data:results.data, //assign data to table
 				layout:"fitColumns", //fit columns to width of table (optional)
 				columns:[ //Define Table Columns
-					{title:"Date", field:"date", width:150},
-					{title:"Daily", field:"daily_vaccinated"},
-					{title:"1st Sinovac", field:"people_coronavac"},
-					{title:"2nd Sinovac", field:"fully_coronavac"},
-					{title:"1st Pfizer/BioNTech", field:"people_pfizer"},
-					{title:"2nd Pfizer/BioNTech", field:"fully_pfizer"},
-					{title:"1st Oxford/AstraZeneca", field:"people_astrazeneca"},
-					{title:"2nd Oxford/AstraZeneca", field:"fully_astrazeneca"},
+					{title:"Date", field:"date"},
+					{title:"Daily", field:"daily_vaccinated", headerSort:false},
+					{
+						title:"Sinovac",
+						columns:[
+							{title:"1st", field:"people_coronavac", headerSort:false},
+							title:"2nd", field:"fully_coronavac", headerSort:false},
+						],
+					},
+					{
+						title:"Pfizer/BioNTech",
+						columns:[
+							{title:"1st", field:"people_pfizer", headerSort:false},
+							{title:"2nd", field:"fully_pfizer", headerSort:false},
+						],
+					},
+					{
+						title:"Oxford/AstraZeneca",
+						columns:[
+							{title:"1st", field:"people_astrazeneca", headerSort:false},
+							{title:"2nd", field:"fully_astrazeneca", headerSort:false},
+						],
+					},
+					
 				],
 				initialSort:[
 					{column:"date", dir:"desc"},
