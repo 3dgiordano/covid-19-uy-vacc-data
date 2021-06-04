@@ -179,15 +179,15 @@ Fuente: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 
 Fuente: [Informe de dosis administradas y registradas al 20 de Mayo](https://www.gub.uy/ministerio-salud-publica/comunicacion/comunicados/informe-dosis-administradas-registradas-del-27-febrero-20-mayo-2021)
 
+### Historia de Actos vacunales
+
+<div id="vaccine-table"></div>
+
 ### Efecto de vacunación
 
 <img src="/web/charts/494905331.png" loading="lazy">
 
 <img src="/web/charts/1979752349.png" loading="lazy">
-
-## Historia de Actos vacunales
-
-<div id="vaccine-table"></div>
 
 ### Registro de llegada de vacunas
 
