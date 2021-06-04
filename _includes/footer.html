@@ -42,31 +42,31 @@
 		complete: function(results) {
 			
 			var table = new Tabulator("#vaccine-table", {
-				height:205, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
-				data:results.data, //assign data to table
-				layout:"fitColumns", //fit columns to width of table (optional)
+				height:450, 
+				data:results.data, 
+				layout:"fitColumns", 
 				columns:[ //Define Table Columns
-					{title:"Date", field:"date"},
-					{title:"Daily", field:"daily_vaccinated", headerSort:false},
+					{title:"Date", field:"date", hozAlign:"center"},
+					{title:"Daily", field:"daily_vaccinated", hozAlign:"center", headerSort:false},
 					{
-						title:"Sinovac",
+						title:"Sinovac", hozAlign:"center",
 						columns:[
-							{title:"1st", field:"people_coronavac", headerSort:false},
-							{title:"2nd", field:"fully_coronavac", headerSort:false},
+							{title:"1st", field:"people_coronavac", hozAlign:"center", headerSort:false},
+							{title:"2nd", field:"fully_coronavac", hozAlign:"center", headerSort:false},
 						],
 					},
 					{
-						title:"Pfizer/BioNTech",
+						title:"Pfizer/BioNTech", hozAlign:"center",
 						columns:[
-							{title:"1st", field:"people_pfizer", headerSort:false},
-							{title:"2nd", field:"fully_pfizer", headerSort:false},
+							{title:"1st", field:"people_pfizer", hozAlign:"center", headerSort:false},
+							{title:"2nd", field:"fully_pfizer", hozAlign:"center", headerSort:false},
 						],
 					},
 					{
-						title:"Oxford/AstraZeneca",
+						title:"Oxford/AstraZeneca", hozAlign:"center",
 						columns:[
-							{title:"1st", field:"people_astrazeneca", headerSort:false},
-							{title:"2nd", field:"fully_astrazeneca", headerSort:false},
+							{title:"1st", field:"people_astrazeneca", hozAlign:"center", headerSort:false},
+							{title:"2nd", field:"fully_astrazeneca", hozAlign:"center", headerSort:false},
 						],
 					},
 					
