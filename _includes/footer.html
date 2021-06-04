@@ -41,7 +41,7 @@
 	var first_dose_label = lang_eng ? "1st" : "1era";
 	var second_dose_label = lang_eng ? "2nd" : "2da";
 	var date_format = lang_eng ? "MM/DD/YY" : "DD/MM/YY";
-	var number_format = lang_eng ? {decimal:",",thousand:"."} : {decimal:".",thousand:","};
+	var number_format = lang_eng ? {decimal:",",thousand:".", precision:false} : {decimal:".",thousand:",", precision:false};
 	var min_with_cols = 113;
 	Papa.parse("https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/data/Uruguay.csv", {
 		download: true,
@@ -60,26 +60,26 @@
 							outputFormat:date_format,
 						}
 					},
-					{title:acts_label, field:"daily_vaccinated", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum" , formatter:"money", formatterParams:number_format},
+					{title:acts_label, field:"daily_vaccinated", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format},
 					{
 						title:"Sinovac", headerHozAlign:"center",
 						columns:[
-							{title:first_dose_label, field:"people_coronavac", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum"},
-							{title:second_dose_label, field:"fully_coronavac", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum"},
+							{title:first_dose_label, field:"people_coronavac", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format},
+							{title:second_dose_label, field:"fully_coronavac", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format},
 						],
 					},
 					{
 						title:"Pfizer/BioNTech", headerHozAlign:"center",
 						columns:[
-							{title:first_dose_label, field:"people_pfizer", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum"},
-							{title:second_dose_label, field:"fully_pfizer", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum"},
+							{title:first_dose_label, field:"people_pfizer", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format},
+							{title:second_dose_label, field:"fully_pfizer", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format},
 						],
 					},
 					{
 						title:"Oxford/AstraZeneca", headerHozAlign:"center",
 						columns:[
-							{title:first_dose_label, field:"people_astrazeneca", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum"},
-							{title:second_dose_label, field:"fully_astrazeneca", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum"},
+							{title:first_dose_label, field:"people_astrazeneca", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format},
+							{title:second_dose_label, field:"fully_astrazeneca", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format},
 						],
 					},
 					
