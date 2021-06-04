@@ -44,9 +44,8 @@
 			var table = new Tabulator("#vaccine-table", {
 				height:450, 
 				data:results.data, 
-				layout:"fitColumns", 
 				columns:[ //Define Table Columns
-					{title:"Date", field:"date", hozAlign:"center", headerHozAlign:"center"},
+					{title:"Date", field:"date", hozAlign:"center", headerHozAlign:"center", frozen:true},
 					{title:"Vaccination acts", field:"daily_vaccinated", hozAlign:"center", headerHozAlign:"center", headerSort:false},
 					{
 						title:"Sinovac", headerHozAlign:"center",
