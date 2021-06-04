@@ -211,6 +211,7 @@ Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 | 5/18/21 | Vulnerable | As of 05/18, the allocation of quotas for vaccination against covid-19 will begin to be issued to prioritized groups: pregnant women, people with diabetes, obesity and cancer patients undergoing treatment. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/nuevas-asignaciones-cupos-para-vacuna-contra-covid-19) | 
 | 5/24/21 | Locality at Risk | From 05/24 the People to People campaign will begin. It will be carried out through mobile vaccination to 150,000 people in locations far from departmental capitals and in small towns. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/vacunatorio-movil-llegara-300-pueblos-posibilitara-150000-personas-se) | 
 | 5/27/21 | 18 to 30 years | As of Thursday, May 27, 312,000 new quotas are being assigned for vaccination against covid-19, with the vaccine from the Sinovac laboratory. [+info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/nuevos-cupos-vacunacion-contra-covid-19) | 
+| 3/6/21 | 12 to 17 years | The population between 12 and 17 years of age is entitled to vaccination. According to data from the National Institute of Statistics (INE), it is a population of 289,650 people who will join the immunization plan against Covid-19. [+ info](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/plan-vacunacion-contra-covid-19-incorpora-personas-entre-12-17-anos) |
 
 ### Sources:
 
