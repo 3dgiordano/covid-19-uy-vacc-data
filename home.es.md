@@ -181,7 +181,7 @@ Fuente: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 
 ## Historia de Actos vacunales
 
-<div id="vaccine-table"></div>
+<div id="vaccine-table"></div><br>
 
 ## Efecto de vacunación
 
