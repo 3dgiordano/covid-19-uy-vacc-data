@@ -181,7 +181,7 @@ Source: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 
 ## History of vaccination acts
 
-<div id="vaccine-table"></div>
+<div id="vaccine-table"></div><br>
 
 ## Vaccine arrival record
 
