@@ -35,6 +35,15 @@
   </div>
 
 <script>
+	Papa.parse("https://raw.githubusercontent.com/3dgiordano/covid-19-uy-vacc-data/main/data/Uruguay.csv", {
+		download: true,
+		header: true,
+		dynamicTyping: true,
+		complete: function(results) {
+			console.log(results);
+		}
+	});
+
 	var tabledata = [
 		{id:1, name:"Oli Bob", age:"12", col:"red", dob:""},
 		{id:2, name:"Mary May", age:"1", col:"blue", dob:"14/05/1982"},
