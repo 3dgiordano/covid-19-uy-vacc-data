@@ -238,6 +238,8 @@ Fuente: [Informe de dosis administradas y registradas al 31 de Mayo](https://www
 
 [Priorización y Escalonamiento de la Vacunación COVID-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/priorizacion-escalonamiento-vacunacion-covid-19)
 
+[Estrategia de vacunación para personas con Comorbilidades](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/estrategia-vacunacion-para-personas-comorbilidades)
+
 [Plan estratégico de vacunación contra Covid-19](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/plan-estrategico-vacunacion-contra-covid-19)
 
 [Información para el público en general actualizado al 26 de mayo de 2021 (Comisión Nacional Asesora de Vacunas y Grupo ad hoc)](https://www.gub.uy/ministerio-salud-publica/comunicacion/publicaciones/boletin-cnav-actualizado-26-mayo-2021)
