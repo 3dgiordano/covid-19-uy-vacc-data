@@ -161,7 +161,7 @@ permalink: /
 
 <img src="/web/charts/404093750.png" loading="lazy">
 
-Fuente: [Informe de dosis administradas y registradas al 20 de Mayo](https://www.gub.uy/ministerio-salud-publica/comunicacion/comunicados/informe-dosis-administradas-registradas-del-27-febrero-20-mayo-2021)
+Fuente: [Informe de dosis administradas y registradas al 31 de Mayo](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/informe-dosis-administradas-registradas-del-27-febrero-31-mayo-2021-covid-19)
 
 ## Actos vacunales por rango etario
 
@@ -177,7 +177,7 @@ Fuente: [Informe de dosis administradas y registradas al 20 de Mayo](https://www
 
 <img src="/web/charts/1598348414.png" loading="lazy">
 
-Fuente: [Informe de dosis administradas y registradas al 20 de Mayo](https://www.gub.uy/ministerio-salud-publica/comunicacion/comunicados/informe-dosis-administradas-registradas-del-27-febrero-20-mayo-2021)
+Fuente: [Informe de dosis administradas y registradas al 31 de Mayo](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/informe-dosis-administradas-registradas-del-27-febrero-31-mayo-2021-covid-19)
 
 ## Historia de Actos vacunales
 
