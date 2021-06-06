@@ -368,9 +368,9 @@ def update_minimal():
 
             if date_row == today:
                 if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
-                    print("* New date, Execution Excluded! Corrupt source data? Last valid:" + str(
+                    print("* New date, Execution Warning! Corrupt source data? Last valid:" + str(
                         last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
-                    return False
+                    # return False
 
             add_formatted_row(sh, sheet, date_row, uy_init_cols)
             time.sleep(2)  # Wait for refresh
@@ -745,9 +745,9 @@ def update():
 
             if date_row == today:
                 if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
-                    print("* New date, Execution Excluded! Corrupt source data? Last valid:" + str(
+                    print("* New date, Execution Warning! Corrupt source data? Last valid:" + str(
                         last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
-                    return False
+                    # return False
 
             add_formatted_row(sh, sheet, date_row, uy_init_cols)
             time.sleep(2)  # Wait for refresh
