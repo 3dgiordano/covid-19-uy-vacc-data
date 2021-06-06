@@ -351,9 +351,9 @@ def update_minimal():
 
     if last_date == today:
         if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
-            print("* Execution Excluded! Corrupt source data? Last valid:" + str(
+            print("* Execution Warning! Corrupt source data? Last valid:" + str(
                 last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
-            return False
+            # return False
 
     batch_update_cells = []
     batch_update_schedule_cells = []
@@ -726,9 +726,9 @@ def update():
 
     if last_date == today:
         if (today_total_vaccinations - last_row["total_vaccinations"]) < -1:
-            print("* Execution Excluded! Corrupt source data? Last valid:" + str(
+            print("* Execution Warning! Corrupt source data? Last valid:" + str(
                 last_row["total_vaccinations"]) + " new:" + str(today_total_vaccinations))
-            return False
+            # return False
 
     batch_update_cells = []
     batch_update_segment_cells = []
