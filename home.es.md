@@ -244,6 +244,8 @@ Fuente: [Informe de dosis administradas y registradas al 31 de Mayo](https://www
 
 [Información para el público en general actualizado al 26 de mayo de 2021 (Comisión Nacional Asesora de Vacunas y Grupo ad hoc)](https://www.gub.uy/ministerio-salud-publica/comunicacion/publicaciones/boletin-cnav-actualizado-26-mayo-2021)
 
+[Información sobre las vacunas disponibles en Uruguay - Actualizado al 26 de mayo de 2021](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/informacion-sobre-vacunas-disponibles-uruguay-actualizado-26-mayo-2021)
+
 ## Comunicados
 
 <table>
