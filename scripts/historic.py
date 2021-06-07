@@ -5,6 +5,28 @@ import pandas as pd
 
 historic_url = 'https://catalogodatos.gub.uy/datastore/dump/5c549ba0-126b-45e0-b43f-b0eea72cf2cf?bom=True'
 
+columns_map = {
+    'Montevideo': "mo",
+    'Artigas': "ar",
+    'Canelones': "ca",
+    'Cerro Largo': "cl",
+    'Colonia': "co",
+    'Durazno': "du",
+    'Flores': "fs",
+    'Florida': "fd",
+    'Lavalleja': "la",
+    'Maldonado': "ma",
+    'Paysandú': "pa",
+    'Río Negro': "rn",
+    'Rivera': "rv",
+    'Rocha': "ro",
+    'Salto': "sa",
+    'San José': "sj",
+    'Soriano': "so",
+    'Tacuarembó': "ta",
+    'Treinta y Tres': "tt",
+}
+
 
 def find_row(date, data_dic):
     return [elem for elem in data_dic if elem["date"] == date]
@@ -79,6 +101,8 @@ def update():
 
     curr_date = first_date
 
+    region_result = {}
+
     for element_index, element in historic_data.iterrows():
 
         # date = element["Fecha"].split("T")[0]
@@ -152,7 +176,6 @@ def update():
 
             # Exclude the last date (today?)
             if element_index != 0:
-
                 batch_update_cells = evaluate_row(
                     batch_update_cells,
                     sheet_daily_vac, (daily_first_dose + daily_second_dose),
@@ -236,6 +259,44 @@ def update():
                 sheet_row_index, fully_astrazeneca_col_index,
                 f"Update Fully Astrazeneca: {date_row}"
             )
+
+            # Regions
+            for region_key in columns_map.keys():
+                region_first_dose_key = region_key + " Dosis 1"
+                region_second_dose_key = region_key + " Dosis 2"
+
+                region_first_dosis_value = int(element[region_first_dose_key])
+                region_second_dosis_value = int(element[region_second_dose_key])
+
+                sheet_region_key = columns_map[region_key]
+                if "people_res_" + sheet_region_key not in region_result:
+                    region_result["people_res_" + sheet_region_key] = 0
+                region_result["people_res_" + sheet_region_key] += region_first_dosis_value
+                if "fully_res_" + sheet_region_key not in region_result:
+                    region_result["fully_res_" + sheet_region_key] = 0
+                region_result["fully_res_" + sheet_region_key] += region_second_dosis_value
+
+                people_region_col_index = get_col_index(sheet_headers, "people_res_" + sheet_region_key)
+                fully_region_col_index = get_col_index(sheet_headers, "fully_res_" + sheet_region_key)
+
+                sheet_region_people = 0 if len(sheet_row) == 0 else int(
+                    sheet_row[0]["people_res_" + sheet_region_key] or 0)
+                sheet_region_fully = 0 if len(sheet_row) == 0 else int(
+                    sheet_row[0]["fully_res_" + sheet_region_key] or 0)
+
+                batch_update_cells = evaluate_row(
+                    batch_update_cells,
+                    sheet_region_people, region_result["people_res_" + sheet_region_key],
+                    sheet_row_index, people_region_col_index,
+                    f"Update People {region_key} {sheet_region_key}: {date_row}"
+                )
+
+                batch_update_cells = evaluate_row(
+                    batch_update_cells,
+                    sheet_region_fully, region_result["fully_res_" + sheet_region_key],
+                    sheet_row_index, fully_region_col_index,
+                    f"Update Fully {region_key} {sheet_region_key}: {date_row}"
+                )
 
         curr_date = curr_date + datetime.timedelta(days=1)
 
