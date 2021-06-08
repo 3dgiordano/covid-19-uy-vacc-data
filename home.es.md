@@ -246,6 +246,8 @@ Fuente: [Informe de dosis administradas y registradas al 31 de Mayo](https://www
 
 [Información sobre las vacunas disponibles en Uruguay - Actualizado al 26 de mayo de 2021](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/informacion-sobre-vacunas-disponibles-uruguay-actualizado-26-mayo-2021)
 
+[Estudio de efectividad de vacunación anti SARS-CoV-2 en Uruguay al 8 de junio de 2021](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/segundo-estudio-efectividad-vacunacion-anti-sars-cov-2-uruguay-8-junio-2021)
+
 ## Comunicados
 
 <table>
