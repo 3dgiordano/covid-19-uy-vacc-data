@@ -87,10 +87,19 @@ permalink: /
     </td>
     <td align="center">
       <img src="/web/charts/141578891.png" loading="lazy"><br>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="/web/charts/1498232647.png" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="/web/charts/419313606.png" loading="lazy">
+    </td>
+    <td align="center">
       <img src="/web/charts/2074125212.png" loading="lazy">
     </td>
   </tr>
-<!--
   <tr>
     <td align="center">
       <img src="/web/charts/1541211770.png" loading="lazy">
@@ -102,7 +111,6 @@ permalink: /
       <img src="/web/charts/770096093.png" loading="lazy">
     </td>
   </tr>
--->
 </table>
 
 <img src="/web/charts/1744392307.png" loading="lazy">
