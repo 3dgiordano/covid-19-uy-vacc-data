@@ -36,7 +36,7 @@ def save_img(oid):
 
     stat = ImageStat.Stat(diff)
     diff_ratio = (sum(stat.mean) / (len(stat.mean) * 255)) * 100
-    
+
     if diff_ratio > 0.01687:
         shutil.move(temp_f, image_file)
 
