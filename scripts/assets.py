@@ -1,18 +1,47 @@
 import concurrent.futures
 import os
+import shutil
+import tempfile
 import time
 import urllib.request as req
+
+from PIL import Image, ImageStat
+from PIL import ImageChops
 
 base_url = "https://docs.google.com/spreadsheets/d/e/"
 sheet = "2PACX-1vRSB3_JCKkvYQkgEwYW0PkzMJDovwvMwX28B5ainGuDirimi6n4n1nryc0Pbb0fHCfsZVYAnqobgP8D"
 
 
+def get_tempfile_name(some_id):
+    return os.path.join(tempfile.gettempdir(), next(tempfile._get_candidate_names()) + "_" + some_id)
+
+
 def save_img(oid):
     img_url = f"{base_url}{sheet}/pubchart?oid={oid}&format=image"
+
+    temp_f = get_tempfile_name(".png")
+    if os.path.exists(temp_f):
+        os.remove(temp_f)
+    req.urlretrieve(img_url, temp_f)
+
     image_file = os.path.abspath(f"../web/charts/{oid}.png")
-    if os.path.exists(image_file):
-        os.remove(image_file)
-    req.urlretrieve(img_url, image_file)
+
+    image_org = Image.open(image_file)
+    image_new = Image.open(temp_f)
+
+    diff = ImageChops.difference(image_org, image_new)
+
+    image_org.close()
+    image_new.close()
+
+    stat = ImageStat.Stat(diff)
+    diff_ratio = (sum(stat.mean) / (len(stat.mean) * 255)) * 100
+    
+    if diff_ratio > 0.01687:
+        shutil.move(temp_f, image_file)
+
+    if os.path.exists(temp_f):
+        os.remove(temp_f)
 
 
 images = [
