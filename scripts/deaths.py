@@ -73,6 +73,7 @@ def daily_deaths_by_age():
     dt_to = dt_to_date
 
     daily_dates["PREV"] = {
+        "0_17": 0,
         "18_24": 0, "25_34": 0, "35_44": 0, "45_54": 0, "55_64": 0, "65_74": 0, "75_115": 0, "undefined": 0,
         "18_49": 0, "50_70": 0, "71_79": 0, "80_115": 0
     }
@@ -81,6 +82,7 @@ def daily_deaths_by_age():
     for date_dt in dates_list:
         date_dt_str = date_dt.strftime("%Y-%m-%d")
         daily_dates[date_dt_str] = {
+            "0_17": 0,
             "18_24": 0, "25_34": 0, "35_44": 0, "45_54": 0, "55_64": 0, "65_74": 0, "75_115": 0, "undefined": 0,
             "18_49": 0, "50_70": 0, "71_79": 0, "80_115": 0
         }
@@ -97,6 +99,7 @@ def daily_deaths_by_age():
 
         if date not in daily_dates:
             daily_dates[date] = {
+                "0_17": 0,
                 "18_24": 0, "25_34": 0, "35_44": 0, "45_54": 0, "55_64": 0, "65_74": 0, "75_115": 0, "undefined": 0,
                 "18_49": 0, "50_70": 0, "71_79": 0, "80_115": 0
             }
@@ -105,7 +108,9 @@ def daily_deaths_by_age():
         age_key = "undefined"
         age_key2 = age_key
         age_int = 0 if age == "undefined" else int(age)
-        if 18 <= age_int <= 24:
+        if age_int <= 17:
+            age_key = "0_17"
+        elif 18 <= age_int <= 24:
             age_key = "18_24"
         elif 25 <= age_int <= 34:
             age_key = "25_34"
