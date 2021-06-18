@@ -25,18 +25,20 @@ def save_img(oid):
     req.urlretrieve(img_url, temp_f)
 
     image_file = os.path.abspath(f"../web/charts/{oid}.png")
+    if os.path.exists(image_file):
+        image_org = Image.open(image_file)
+        image_new = Image.open(temp_f)
 
-    image_org = Image.open(image_file)
-    image_new = Image.open(temp_f)
+        diff = ImageChops.difference(image_org, image_new)
 
-    diff = ImageChops.difference(image_org, image_new)
+        image_org.close()
+        image_new.close()
 
-    image_org.close()
-    image_new.close()
+        stat = ImageStat.Stat(diff)
 
-    stat = ImageStat.Stat(diff)
-
-    diff_ratio = (sum(stat.mean) / (len(stat.mean) * 255))
+        diff_ratio = (sum(stat.mean) / (len(stat.mean) * 255))
+    else:
+        diff_ratio = 1.0
     print(diff_ratio)
     if diff_ratio != 0:
         shutil.move(temp_f, image_file)
@@ -117,6 +119,8 @@ images = [
     "1516739352", "1498232647",
 
     "1213501245", "419313606",
+
+    "1720263329", "1475000077",
 
     # From here they need to always be at the end (texts with function calls)
     "1939554456", "141578891",
