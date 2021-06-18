@@ -131,6 +131,8 @@ permalink: /en/
 <img src="/web/charts/122662822.png" loading="lazy">
 -->
 
+<img src="/web/charts/1720263329.png" loading="lazy">
+
 <img src="/web/charts/1270929451.png" loading="lazy">
 
 <img src="/web/charts/2049766195.png" loading="lazy">
