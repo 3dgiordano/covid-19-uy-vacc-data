@@ -127,6 +127,8 @@ permalink: /
 
 <img src="/web/charts/259061157.png" loading="lazy">
 
+<img src="/web/charts/1475000077.png" loading="lazy">
+
 <img src="/web/charts/1047203349.png" loading="lazy">
 
 <img src="/web/charts/1347085705.png" loading="lazy">
