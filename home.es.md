@@ -21,7 +21,7 @@ permalink: /
   </tr>
 </table>
 -->
-
+<!--
 <br><br>
 <table id="info">
   <tr>
@@ -35,7 +35,7 @@ La mención a Vacuna.UY y su colaboración con Our World in Data comienza en el 
     </td>
   </tr>
 </table>
-
+-->
 <table id="dashboard">
   <tr>
     <td align="right" colspan=3>
@@ -276,6 +276,12 @@ Fuente: [Informe de dosis administradas y registradas al 18 de Junio](https://ww
 <table>
   <tr>
     <td>
+      <p>
+        <b>22/06/2021 15:45</b><br>
+        Vacuna.UY fue mencionada en la entrevista realizada a Lucas Rodés-Guirao sobre Our World In Data en "No Toques Nada" de FM DelSol.<br>
+La mención a Vacuna.UY y su colaboración con Our World in Data comienza en el minuto 10:30.<br> Pueden escuchar la entreviste completa en el siguiente
+<a href="https://delsol.uy/notoquennada/entrevistas/entrevista-a-our-world-in-data-impacto-covid-comparaciones-y-limitaciones">link</a>
+      </p>
       <p>
         <b>01/06/2021 22:30</b><br>
         Se incorpora procesamiento de datos históricos provientes del portal de datos abiertos de Uruguay.<br>
