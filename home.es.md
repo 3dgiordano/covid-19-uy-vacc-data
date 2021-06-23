@@ -29,7 +29,7 @@ permalink: /
       <b>22/06/2021 15:45</b>
     </td>
     <td>
-Vacuna.UY fue mencionada en la entrevista realizada a Lucas Rodés-Guirao sobre Our World In Data en "No Toques Nada" de FM del Sol.<br>
+Vacuna.UY fue mencionada en la entrevista realizada a Lucas Rodés-Guirao sobre Our World In Data en "No Toques Nada" de FM DelSol.<br>
 La mención a Vacuna.UY y su colaboración con Our World in Data comienza en el minuto 10:30.<br> Pueden escuchar la entreviste completa en el siguiente
 <a href="https://delsol.uy/notoquennada/entrevistas/entrevista-a-our-world-in-data-impacto-covid-comparaciones-y-limitaciones">link</a>
     </td>
