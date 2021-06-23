@@ -21,20 +21,21 @@ permalink: /
   </tr>
 </table>
 -->
-<!--
+
 <br><br>
 <table id="info">
   <tr>
     <td align="center">
-      <b>18/05/2021 14:30</b>
+      <b>22/06/2021 15:45</b>
     </td>
     <td>
-      El sitio actualiza su base población a la actualizada por MSP la semana pasada.<br>
-      El cambio afecta a los porcentajes mostrados. El mensaje se removerá el 19/05/2021 a las 10AM UYT.
+Vacuna.UY fue mencionada en la entrevista realizada a Lucas Rodés-Guirao sobre Our World In Data en "No Toques Nada" de FM del Sol.<br>
+La mención a Vacuna.UY y su colaboración con Our World in Data comienza en el minuto 10:30.<br> Pueden escuchar la entreviste completa en el siguiente
+<a href="https://delsol.uy/notoquennada/entrevistas/entrevista-a-our-world-in-data-impacto-covid-comparaciones-y-limitaciones">link</a>
     </td>
   </tr>
 </table>
--->
+
 <table id="dashboard">
   <tr>
     <td align="right" colspan=3>
