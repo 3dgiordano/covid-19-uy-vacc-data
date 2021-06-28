@@ -184,7 +184,7 @@ La mención a Vacuna.UY y su colaboración con Our World in Data comienza en el 
 
 <img src="/web/charts/404093750.png" loading="lazy">
 
-Fuente: [Informe de dosis administradas y registradas al 18 de Junio](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/informe-dosis-administradas-registradas-del-27-febrero-18-junio-2021-covid-19)
+Fuente: [Informe de dosis administradas y registradas al 25 de Junio](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/informe-dosis-administradas-registradas-del-27-febrero-25-junio-2021-covid-19)
 
 ## Actos vacunales por rango etario
 
@@ -200,7 +200,7 @@ Fuente: [Informe de dosis administradas y registradas al 18 de Junio](https://ww
 
 <img src="/web/charts/1598348414.png" loading="lazy">
 
-Fuente: [Informe de dosis administradas y registradas al 18 de Junio](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/informe-dosis-administradas-registradas-del-27-febrero-18-junio-2021-covid-19)
+Fuente: [Informe de dosis administradas y registradas al 25 de Junio](https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/informe-dosis-administradas-registradas-del-27-febrero-25-junio-2021-covid-19)
 
 ## Historia de Actos vacunales
 
