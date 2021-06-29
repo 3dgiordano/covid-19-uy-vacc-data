@@ -68,6 +68,7 @@ def get_col_index(headers, label):
 
 def get_data(data, columns):
     json_origin = json.loads(urlopen(Request(monitor_url, data=data)).read().decode())
+    print(json_origin)
     return pd.DataFrame(json_origin["resultset"], columns=columns).fillna(0)
 
 
@@ -203,7 +204,7 @@ def date_agenda(date):
     data = b"paramp_periodo_desde_sk=" + today_str + b"&paramp_periodo_hasta_sk=" + today_str + \
            b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_indicadores_gral_agenda&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
-    return get_data(data, ['future', 'today'])
+    return get_data(data, ['future_first', 'today_first', 'future_second', 'today_second'])
 
 
 def date_agenda_second_dose(date):
@@ -303,8 +304,9 @@ def update_minimal():
     today = daily_vac_origin.head(1)["date"].values[0]  # transform_date(
 
     try:
-        day_agenda_first = int(date_agenda(today)["today"].item() or 0)
-        day_agenda_second = int(date_agenda_second_dose(today)["today"].item() or 0)
+        agenda_data = date_agenda(today)
+        day_agenda_first = int(agenda_data["today_first"].item() or 0)
+        day_agenda_second = int(agenda_data["today_second"].item() or 0)
         day_agenda = day_agenda_first + day_agenda_second
     except HTTPError as e:
         print("Agenda error!")
