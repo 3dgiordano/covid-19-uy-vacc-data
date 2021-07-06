@@ -3,7 +3,8 @@ import datetime
 import gspread
 import pandas as pd
 
-historic_url = 'https://catalogodatos.gub.uy/datastore/dump/5c549ba0-126b-45e0-b43f-b0eea72cf2cf?bom=True'
+historic_url = 'https://catalogodatos.gub.uy/dataset/e766fbf7-0cc5-4b9a-a093-b56e91e88133/resource/' \
+               '5c549ba0-126b-45e0-b43f-b0eea72cf2cf/download/actos_vacunales.csv'
 
 columns_map = {
     'Montevideo': "mo",
@@ -41,7 +42,7 @@ def get_col_index(headers, label):
 
 
 def get_historic():
-    return pd.read_csv(historic_url)
+    return pd.read_csv(historic_url, sep=';')
 
 
 def evaluate_row(batch_update_cells, base_value, new_value, row_index, col_index, update_msg):
@@ -85,8 +86,8 @@ def update():
 
     historic_result = {}
 
-    first_date_v = historic_data.head(1)["Fecha"].values[0].split("T")[0].split("-")
-    first_date = datetime.date(int(first_date_v[0]), int(first_date_v[1]), int(first_date_v[2]))
+    first_date_v = historic_data.head(1)["Fecha"].values[0].split("/")
+    first_date = datetime.date(int(first_date_v[2]), int(first_date_v[1]), int(first_date_v[0]))
 
     total_first_dose = 0
     total_second_dose = 0
