@@ -325,6 +325,7 @@ Nació como una colaboración para proporcionar datos actualizados a [Our World 
 Gracias a Edouard Mathieu [@edomt](https://github.com/edomt) Jefe de Datos en [@owid](https://github.com/owid) por confiar en este proyecto.
 
 Datos recopilados del Ministerio de Salud Pública de Uruguay. [https://monitor.uruguaysevacuna.gub.uy/](https://monitor.uruguaysevacuna.gub.uy/)
+Datos de muertes son obtenidos de "Grupo Uruguayo Interdisciplinario de Análisis de Datos (GUIAD)" [GUIAD-COVID Data on GitHub](https://github.com/GUIAD-COVID/datos-y-visualizaciones-GUIAD/tree/master/datos) 
 
 Our World in Data toma nuestros datos para publicarlos en su portal [Uruguay Covid-19 Vaccinations in Our World in Data](https://ourworldindata.org/covid-vaccinations?country=~URY)
 
