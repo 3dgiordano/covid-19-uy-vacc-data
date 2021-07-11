@@ -284,6 +284,8 @@ Thanks to Edouard Mathieu [@edomt](https://github.com/edomt) Head of Data at [@o
 
 Data gathered from Ministry of Public Health of Uruguay. [https://monitor.uruguaysevacuna.gub.uy/](https://monitor.uruguaysevacuna.gub.uy/)
 
+Data on deaths is obtained from the "Grupo Uruguayo Interdisciplinario de Análisis de Datos (GUIAD)" [GUIAD-COVID Data on GitHub](https://github.com/GUIAD-COVID/datos-y-visualizaciones-GUIAD/tree/master/datos) 
+
 Our World in Data takes our data to publish it on its portal [Uruguay Covid-19 Vaccinations in Our World in Data](https://ourworldindata.org/covid-vaccinations?country=~URY)
 
 Today, the project also collects more data, such as detailed daily vaccination data for each region, as well as the expected daily agenda.
