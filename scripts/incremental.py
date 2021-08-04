@@ -204,7 +204,8 @@ def date_agenda(date):
     data = b"paramp_periodo_desde_sk=" + today_str + b"&paramp_periodo_hasta_sk=" + today_str + \
            b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_indicadores_gral_agenda&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
-    return get_data(data, ['future_first', 'today_first', 'future_second', 'today_second', 'future_boost', 'today_boost'])
+    return get_data(data,
+                    ['future_first', 'today_first', 'future_second', 'today_second', 'future_boost', 'today_boost'])
 
 
 def date_agenda_second_dose(date):
@@ -307,7 +308,8 @@ def update_minimal():
         agenda_data = date_agenda(today)
         day_agenda_first = int(agenda_data["today_first"].item() or 0)
         day_agenda_second = int(agenda_data["today_second"].item() or 0)
-        day_agenda = day_agenda_first + day_agenda_second
+        day_agenda_boost = int(agenda_data["today_boost"].item() or 0)
+        day_agenda = day_agenda_first + day_agenda_second + day_agenda_boost
     except HTTPError as e:
         print("Agenda error!")
         day_agenda_first = 0
@@ -324,7 +326,9 @@ def update_minimal():
     # today_total_vaccinations = int(today_vac_status["total_vaccinations"].item() or 0)
     today_total_people_vaccinations = int(today_vac_status["first_dose"].item() or 0)
     today_total_fully_vaccinations = int(today_vac_status["second_dose"].item() or 0)
+    today_total_boost_vaccinations = int(today_vac_status["boost_dose"].item() or 0)
     today_total_vaccinations = today_total_people_vaccinations + today_total_fully_vaccinations
+    today_total_vaccinations += today_total_boost_vaccinations
 
     gc = gspread.service_account()
     sh = gc.open("CoronavirusUY - Vaccination monitor")
@@ -339,6 +343,7 @@ def update_minimal():
 
     daily_people_vaccinated_col_index = get_col_index(sheet_headers, "people_vaccinated")
     daily_people_fully_vaccinated_col_index = get_col_index(sheet_headers, "people_fully_vaccinated")
+    daily_people_boost_vaccinated_col_index = get_col_index(sheet_headers, "people_boost_vaccinated")
 
     daily_vac_total_col_index = get_col_index(sheet_headers, "daily_vaccinated")
 
@@ -347,6 +352,7 @@ def update_minimal():
 
     daily_agenda_first_col_index = get_col_index(sheet_headers, "daily_agenda_first")
     daily_agenda_second_col_index = get_col_index(sheet_headers, "daily_agenda_second")
+    daily_agenda_boost_col_index = get_col_index(sheet_headers, "daily_agenda_boost")
 
     last_row = sheet_dic[-1]
     last_date = last_row["date"]
@@ -393,9 +399,11 @@ def update_minimal():
         sheet_agenda = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda"] or 0)
         sheet_agenda_first = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda_first"] or 0)
         sheet_agenda_second = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda_second"] or 0)
+        sheet_agenda_boost = 0 if len(sheet_row) == 0 else int(sheet_row[0]["daily_agenda_boost"] or 0)
 
         sheet_people_vaccinated = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_vaccinated"] or 0)
         sheet_fully_vaccinations = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_fully_vaccinated"] or 0)
+        sheet_boost_vaccinations = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_boost_vaccinated"] or 0)
 
         if today == date_row:
             if sheet_agenda_ini == 0 and day_agenda > 0:
@@ -426,6 +434,13 @@ def update_minimal():
                     gspread.models.Cell(sheet_row_index, daily_agenda_second_col_index, value=day_agenda_second)
                 )
 
+            if sheet_agenda_boost < day_agenda_boost:
+                print("Update Agenda Boost Dose:" + date_row + " idx:" + str(sheet_row_index) + " old:" + str(
+                    sheet_agenda_boost) + " new:" + str(day_agenda_boost))
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_agenda_boost_col_index, value=day_agenda_boost)
+                )
+
             # Update People vaccinated and Fully vaccinated
             if sheet_people_vaccinated != today_total_people_vaccinations:
                 batch_update_cells.append(
@@ -438,6 +453,11 @@ def update_minimal():
                                         value=today_total_fully_vaccinations)
                 )
 
+            if sheet_boost_vaccinations != today_total_boost_vaccinations:
+                batch_update_cells.append(
+                    gspread.models.Cell(sheet_row_index, daily_people_boost_vaccinated_col_index,
+                                        value=today_total_boost_vaccinations)
+                )
         if len(sheet_row) == 0:  # Extra control
             print("Create:" + date_row + " old: none new:" + str(daily_vac_origin_value))
         else:
@@ -452,7 +472,8 @@ def update_minimal():
 
                     if int(daily_vac_origin_value) != sheet_daily_vac:
                         batch_update_cells.append(
-                            gspread.models.Cell(sheet_row_index, daily_vac_total_col_index, value=daily_vac_origin_value)
+                            gspread.models.Cell(sheet_row_index, daily_vac_total_col_index,
+                                                value=daily_vac_origin_value)
                         )
 
             # Regions
@@ -703,6 +724,7 @@ def update():
 
     daily_people_vaccinated_col_index = get_col_index(sheet_headers, "people_vaccinated")
     daily_people_fully_vaccinated_col_index = get_col_index(sheet_headers, "people_fully_vaccinated")
+    daily_people_boost_vaccinated_col_index = get_col_index(sheet_headers, "people_boost_vaccinated")
 
     daily_vac_total_col_index = get_col_index(sheet_headers, "daily_vaccinated")
     daily_coronavac_col_index = get_col_index(sheet_headers, "daily_coronavac")
