@@ -11,9 +11,9 @@ monitor_url = 'https://monitor.uruguaysevacuna.gub.uy/plugin/cda/api/doQuery?'
 schedule_url = "https://agenda.vacunacioncovid.gub.uy/data/schedule/schedule.json"
 
 uy_init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_astrazeneca",
-                "people_coronavac", "people_pfizer", "people_astrazeneca",
+                "people_coronavac", "people_pfizer", "people_astrazeneca", "people_boost_vaccinated",
                 "fully_coronavac", "fully_pfizer", "fully_astrazeneca",
-                "daily_agenda_ini", "daily_agenda", "daily_agenda_first", "daily_agenda_second",
+                "daily_agenda_ini", "daily_agenda", "daily_agenda_first", "daily_agenda_second", "daily_agenda_boost",
                 "total_ar", "total_ca", "total_cl", "total_co", "total_du", "total_fd", "total_fs",
                 "total_la", "total_ma", "total_mo", "total_pa", "total_rn", "total_ro", "total_rv", "total_sa",
                 "total_sj", "total_so", "total_ta", "total_tt",
