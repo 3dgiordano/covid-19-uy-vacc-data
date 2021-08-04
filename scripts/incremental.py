@@ -204,7 +204,7 @@ def date_agenda(date):
     data = b"paramp_periodo_desde_sk=" + today_str + b"&paramp_periodo_hasta_sk=" + today_str + \
            b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_indicadores_gral_agenda&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
-    return get_data(data, ['future_first', 'today_first', 'future_second', 'today_second'])
+    return get_data(data, ['future_first', 'today_first', 'future_second', 'today_second', 'future_boost', 'today_boost'])
 
 
 def date_agenda_second_dose(date):
@@ -223,7 +223,7 @@ def today_status(date):
            b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_indicadores_generales&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
     return get_data(data, ['total_vaccinations', 'today_vaccinations', 'first_dose', 'second_dose', 'update_time',
-                           'country_doses'])
+                           'country_doses', 'boost_dose'])
 
 
 def segment_vaccination(date):
