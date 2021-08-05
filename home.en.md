@@ -73,6 +73,9 @@ permalink: /en/
   </tr>
   <tr>
     <td align="center">
+      &nbsp;
+    </td>
+    <td align="center">
       <img src="/web/charts/1038688506.png" loading="lazy">
     </td>
     <td align="center">
@@ -80,9 +83,6 @@ permalink: /en/
     </td>
     <td align="center">
       <img src="/web/charts/1683681566.png" loading="lazy">
-    </td>
-    <td align="center">
-      &nbsp;
     </td>
   </tr>
   <tr>
@@ -101,20 +101,6 @@ permalink: /en/
   </tr>
   <tr>
     <td align="center">
-      <img src="/web/charts/1516739352.png" loading="lazy">
-    </td>
-    <td align="center">
-      <img src="/web/charts/1213501245.png" loading="lazy">
-    </td>
-    <td align="center">
-      &nbsp;
-    </td>
-    <td align="center">
-       &nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
       <img src="/web/charts/446851537.png" loading="lazy">
     </td>
     <td align="center">
@@ -125,6 +111,20 @@ permalink: /en/
     </td>
     <td align="center">
        <img src="/web/charts/1320209318.png" loading="lazy">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+       &nbsp;
+    </td>
+    <td align="center">
+      <img src="/web/charts/1516739352.png" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="/web/charts/1213501245.png" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="/web/charts/1544647241.png" loading="lazy">
     </td>
   </tr>
 </table>
