@@ -38,7 +38,7 @@ La mención a Vacuna.UY y su colaboración con Our World in Data comienza en el 
 -->
 <table id="dashboard">
   <tr>
-    <td align="right" colspan=3>
+    <td align="right" colspan=4>
       <table id="date_header">
         <tr>
           <td align="right">
@@ -67,8 +67,15 @@ La mención a Vacuna.UY y su colaboración con Our World in Data comienza en el 
       <br>
       <img src="/web/charts/1357338484.png" loading="lazy">
     </td>
+    <td align="center">
+      <img src="/web/charts/490781938.png" loading="lazy">
+      <br><br>
+    </td>
   </tr>
   <tr>
+    <td align="center">
+      <img src="/web/charts/1381305065.png" loading="lazy">
+    </td>  
     <td align="center">
       <img src="/web/charts/591742088.png" loading="lazy">
     </td>
@@ -89,16 +96,8 @@ La mención a Vacuna.UY y su colaboración con Our World in Data comienza en el 
     <td align="center">
       <img src="/web/charts/141578891.png" loading="lazy"><br>
     </td>
-  </tr>
-  <tr>
     <td align="center">
-      <img src="/web/charts/1498232647.png" loading="lazy">
-    </td>
-    <td align="center">
-      <img src="/web/charts/419313606.png" loading="lazy">
-    </td>
-    <td align="center">
-      <img src="/web/charts/2074125212.png" loading="lazy">
+      <img src="/web/charts/2074125212.png" loading="lazy"><br>
     </td>
   </tr>
   <tr>
@@ -111,7 +110,25 @@ La mención a Vacuna.UY y su colaboración con Our World in Data comienza en el 
     <td align="center">
       <img src="/web/charts/770096093.png" loading="lazy">
     </td>
+    <td align="center">
+      <img src="/web/charts/771231924.png" loading="lazy">
+    </td>
   </tr>
+  <tr>
+    <td align="center">
+      &nbsp;
+    </td>
+    <td align="center">
+      <img src="/web/charts/1498232647.png" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="/web/charts/419313606.png" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="/web/charts/716653546.png" loading="lazy">
+    </td>
+  </tr>
+  
 </table>
 
 <img src="/web/charts/1744392307.png" loading="lazy">
