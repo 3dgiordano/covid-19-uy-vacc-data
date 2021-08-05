@@ -73,7 +73,7 @@ permalink: /en/
   </tr>
   <tr>
     <td align="center">
-      &nbsp;
+      <img src="/web/charts/709451309.png" loading="lazy">
     </td>
     <td align="center">
       <img src="/web/charts/1038688506.png" loading="lazy">
