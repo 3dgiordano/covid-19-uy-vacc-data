@@ -37,7 +37,7 @@ permalink: /en/
 -->
 <table id="dashboard">
   <tr>
-    <td align="right" colspan=3>
+    <td align="right" colspan=4>
       <table id="date_header">
         <tr>
           <td align="right">
@@ -66,6 +66,10 @@ permalink: /en/
       <br>
       <img src="/web/charts/1978363820.png" loading="lazy">
     </td>
+    <td align="center">
+      <img src="/web/charts/700712437.png" loading="lazy">
+      <br><br>
+    </td>
   </tr>
   <tr>
     <td align="center">
@@ -76,6 +80,9 @@ permalink: /en/
     </td>
     <td align="center">
       <img src="/web/charts/1683681566.png" loading="lazy">
+    </td>
+    <td align="center">
+      &nbsp;
     </td>
   </tr>
   <tr>
@@ -88,6 +95,9 @@ permalink: /en/
     <td align="center">
       <img src="/web/charts/1939554456.png" loading="lazy"><br>
     </td>
+    <td align="center">
+      <img src="/web/charts/744871918.png" loading="lazy">
+    </td>
   </tr>
   <tr>
     <td align="center">
@@ -97,7 +107,10 @@ permalink: /en/
       <img src="/web/charts/1213501245.png" loading="lazy">
     </td>
     <td align="center">
-      <img src="/web/charts/744871918.png" loading="lazy">
+      &nbsp;
+    </td>
+    <td align="center">
+       &nbsp;
     </td>
   </tr>
   <tr>
@@ -109,6 +122,9 @@ permalink: /en/
     </td>
     <td align="center">
       <img src="/web/charts/1972410624.png" loading="lazy">
+    </td>
+    <td align="center">
+       &nbsp;
     </td>
   </tr>
 </table>
