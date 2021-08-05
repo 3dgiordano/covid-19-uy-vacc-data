@@ -124,7 +124,7 @@ permalink: /en/
       <img src="/web/charts/1972410624.png" loading="lazy">
     </td>
     <td align="center">
-       &nbsp;
+       <img src="/web/charts/1320209318.png" loading="lazy">
     </td>
   </tr>
 </table>
