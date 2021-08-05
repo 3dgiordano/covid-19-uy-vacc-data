@@ -11,7 +11,7 @@ monitor_url = 'https://monitor.uruguaysevacuna.gub.uy/plugin/cda/api/doQuery?'
 schedule_url = "https://agenda.vacunacioncovid.gub.uy/data/schedule/schedule.json"
 
 uy_init_cols = ["daily_vaccinated", "daily_coronavac", "daily_pfizer", "daily_astrazeneca",
-                "people_coronavac", "people_pfizer", "people_astrazeneca", "people_boost_vaccinated",
+                "people_coronavac", "people_pfizer", "people_astrazeneca", "total_boosters",
                 "fully_coronavac", "fully_pfizer", "fully_astrazeneca",
                 "daily_agenda_ini", "daily_agenda", "daily_agenda_first", "daily_agenda_second", "daily_agenda_boost",
                 "total_ar", "total_ca", "total_cl", "total_co", "total_du", "total_fd", "total_fs",
@@ -343,7 +343,7 @@ def update_minimal():
 
     daily_people_vaccinated_col_index = get_col_index(sheet_headers, "people_vaccinated")
     daily_people_fully_vaccinated_col_index = get_col_index(sheet_headers, "people_fully_vaccinated")
-    daily_people_boost_vaccinated_col_index = get_col_index(sheet_headers, "people_boost_vaccinated")
+    daily_total_boosters_col_index = get_col_index(sheet_headers, "total_boosters")
 
     daily_vac_total_col_index = get_col_index(sheet_headers, "daily_vaccinated")
 
@@ -403,7 +403,7 @@ def update_minimal():
 
         sheet_people_vaccinated = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_vaccinated"] or 0)
         sheet_fully_vaccinations = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_fully_vaccinated"] or 0)
-        sheet_boost_vaccinations = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_boost_vaccinated"] or 0)
+        sheet_boost_vaccinations = 0 if len(sheet_row) == 0 else int(sheet_row[0]["total_boosters"] or 0)
 
         if today == date_row:
             if sheet_agenda_ini == 0 and day_agenda > 0:
@@ -455,7 +455,7 @@ def update_minimal():
 
             if sheet_boost_vaccinations != today_total_boost_vaccinations:
                 batch_update_cells.append(
-                    gspread.models.Cell(sheet_row_index, daily_people_boost_vaccinated_col_index,
+                    gspread.models.Cell(sheet_row_index, daily_total_boosters_col_index,
                                         value=today_total_boost_vaccinations)
                 )
         if len(sheet_row) == 0:  # Extra control
@@ -724,7 +724,6 @@ def update():
 
     daily_people_vaccinated_col_index = get_col_index(sheet_headers, "people_vaccinated")
     daily_people_fully_vaccinated_col_index = get_col_index(sheet_headers, "people_fully_vaccinated")
-    daily_people_boost_vaccinated_col_index = get_col_index(sheet_headers, "people_boost_vaccinated")
 
     daily_vac_total_col_index = get_col_index(sheet_headers, "daily_vaccinated")
     daily_coronavac_col_index = get_col_index(sheet_headers, "daily_coronavac")
