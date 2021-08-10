@@ -73,7 +73,6 @@ permalink: /en/
     </td>
     <td align="center">
       <img src="/web/charts/700712437.png" loading="lazy">
-      <br><br>
     </td>
   </tr>
   <tr>
