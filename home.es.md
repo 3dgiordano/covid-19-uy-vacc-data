@@ -38,14 +38,11 @@ La mención a Vacuna.UY y su colaboración con Our World in Data comienza en el 
 -->
 <table id="dashboard">
   <tr>
-    <td align="right" colspan=4>
+    <td align="right" colspan=5>
       <table id="date_header">
         <tr>
           <td align="right">
             <img src="/web/charts/425905901.png" loading="lazy">
-          </td>
-          <td align="center">
-            <img src="/web/charts/1299383115.png" loading="lazy">
           </td>
         </tr>
       </table>
@@ -53,23 +50,30 @@ La mención a Vacuna.UY y su colaboración con Our World in Data comienza en el 
   </tr>
   <tr>
     <td align="center">
-      <img src="/web/charts/1492441660.png" loading="lazy">
-      <br>
       <img src="/web/charts/736411819.png" loading="lazy">
     </td>
     <td align="center">
-      <img src="/web/charts/22096209.png" loading="lazy">
-      <br>
       <img src="/web/charts/873256307.png" loading="lazy">
     </td>
     <td align="center">
-      <img src="/web/charts/1058712731.png" loading="lazy">
-      <br>
       <img src="/web/charts/1357338484.png" loading="lazy">
     </td>
     <td align="center">
+      <img src="/web/charts/1299383115.png" loading="lazy">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="/web/charts/1492441660.png" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="/web/charts/22096209.png" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="/web/charts/1058712731.png" loading="lazy">
+    </td>
+    <td align="center">
       <img src="/web/charts/490781938.png" loading="lazy">
-      <br><br>
     </td>
   </tr>
   <tr>
