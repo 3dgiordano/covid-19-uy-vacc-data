@@ -37,14 +37,11 @@ permalink: /en/
 -->
 <table id="dashboard">
   <tr>
-    <td align="right" colspan=4>
+    <td align="right" colspan=5>
       <table id="date_header">
         <tr>
           <td align="right">
             <img src="/web/charts/857919432.png" loading="lazy">
-          </td>
-          <td align="center">
-            <img src="/web/charts/851362461.png" loading="lazy">
           </td>
         </tr>
       </table>
@@ -52,19 +49,27 @@ permalink: /en/
   </tr>
   <tr>
     <td align="center">
-      <img src="/web/charts/1329486679.png" loading="lazy">
-      <br>
       <img src="/web/charts/1720013265.png" loading="lazy">
     </td>
     <td align="center">
-      <img src="/web/charts/827148403.png" loading="lazy">
-      <br>
       <img src="/web/charts/1848022003.png" loading="lazy">
     </td>
     <td align="center">
-      <img src="/web/charts/2077796175.png" loading="lazy">
-      <br>
       <img src="/web/charts/1978363820.png" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="/web/charts/851362461.png" loading="lazy">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="/web/charts/1329486679.png" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="/web/charts/827148403.png" loading="lazy">
+    </td>
+    <td align="center">
+      <img src="/web/charts/2077796175.png" loading="lazy">
     </td>
     <td align="center">
       <img src="/web/charts/700712437.png" loading="lazy">
