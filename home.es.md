@@ -50,7 +50,7 @@ La mención a Vacuna.UY y su colaboración con Our World in Data comienza en el 
   </tr>
   <tr>
     <td align="center">
-      <img src="/web/charts/736411819.png" loading="lazy">
+      <img src="/web/charts/1299383115.png" loading="lazy">
     </td>
     <td align="center">
       <img src="/web/charts/873256307.png" loading="lazy">
@@ -59,7 +59,7 @@ La mención a Vacuna.UY y su colaboración con Our World in Data comienza en el 
       <img src="/web/charts/1357338484.png" loading="lazy">
     </td>
     <td align="center">
-      <img src="/web/charts/1299383115.png" loading="lazy">
+      <img src="/web/charts/736411819.png" loading="lazy">
     </td>
   </tr>
   <tr>
