@@ -49,7 +49,7 @@ permalink: /en/
   </tr>
   <tr>
     <td align="center">
-      <img src="/web/charts/1720013265.png" loading="lazy">
+      <img src="/web/charts/851362461.png" loading="lazy">
     </td>
     <td align="center">
       <img src="/web/charts/1848022003.png" loading="lazy">
@@ -58,7 +58,7 @@ permalink: /en/
       <img src="/web/charts/1978363820.png" loading="lazy">
     </td>
     <td align="center">
-      <img src="/web/charts/851362461.png" loading="lazy">
+      <img src="/web/charts/1720013265.png" loading="lazy">
     </td>
   </tr>
   <tr>
