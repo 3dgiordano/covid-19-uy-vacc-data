@@ -96,7 +96,7 @@ def daily_vaccinated2():
 def daily_doses():
     data = b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_evolucion_dosis&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
-    return get_data(data, ['date', 'first_dose', 'second_dose'])
+    return get_data(data, ['date', 'first_dose', 'second_dose', 'boost_dose'])
 
 
 def daily_vaccinated_by_age(date):
