@@ -82,6 +82,8 @@ def update():
     people_astrazeneca_col_index = get_col_index(sheet_headers, "people_astrazeneca")
     fully_astrazeneca_col_index = get_col_index(sheet_headers, "fully_astrazeneca")
 
+    total_boost_col_index = get_col_index(sheet_headers, "total_boosters")
+
     historic_data = get_historic().iloc[::-1]  # Reverse mode
 
     historic_result = {}
@@ -181,6 +183,8 @@ def update():
             sheet_people_astrazeneca = 0 if len(sheet_row) == 0 else int(sheet_row[0]["people_astrazeneca"] or 0)
             sheet_fully_astrazeneca = 0 if len(sheet_row) == 0 else int(sheet_row[0]["fully_astrazeneca"] or 0)
 
+            sheet_total_boost = 0 if len(sheet_row) == 0 else int(sheet_row[0]["total_boosters"] or 0)
+
             # Exclude the last date (today?)
             if element_index != 0:
                 batch_update_cells = evaluate_row(
@@ -265,6 +269,13 @@ def update():
                 sheet_fully_astrazeneca, daily_astrazeneca_second_dose,
                 sheet_row_index, fully_astrazeneca_col_index,
                 f"Update Fully Astrazeneca: {date_row}"
+            )
+
+            batch_update_cells = evaluate_row(
+                batch_update_cells,
+                sheet_total_boost, total_boost_dose,
+                sheet_row_index, total_boost_col_index,
+                f"Update Total Boost Dose: {date_row}"
             )
 
             # Regions
