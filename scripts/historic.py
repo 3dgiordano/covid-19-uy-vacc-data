@@ -91,6 +91,7 @@ def update():
 
     total_first_dose = 0
     total_second_dose = 0
+    total_boost_dose = 0
     total_sinovac_first_dose = 0
     total_sinovac_second_dose = 0
     total_pfizer_first_dose = 0
@@ -115,6 +116,9 @@ def update():
         daily_second_dose = int(element["Total Dosis 2"])
         total_second_dose += daily_second_dose
 
+        daily_boost_dose = int(element["Total Dosis R"])
+        total_boost_dose += daily_boost_dose
+
         daily_sinovac_first_dose = int(element["1era Dosis Sinovac"])
         total_sinovac_first_dose += daily_sinovac_first_dose
 
@@ -136,6 +140,7 @@ def update():
         historic_result[str(curr_date)] = {
             "daily_first_dose": daily_first_dose,
             "daily_second_dose": daily_second_dose,
+            "daily_boost_dose": daily_boost_dose,
             "daily_sinovac_first_dose": daily_sinovac_first_dose,
             "daily_sinovac_second_dose": daily_sinovac_second_dose,
             "daily_pfizer_first_dose": daily_pfizer_first_dose,
@@ -145,6 +150,7 @@ def update():
 
             "total_first_dose": total_first_dose,
             "total_second_dose": total_second_dose,
+            "total_boost_dose": total_boost_dose,
             "total_sinovac_first_dose": total_sinovac_first_dose,
             "total_sinovac_second_dose": total_sinovac_second_dose,
             "total_pfizer_first_dose": total_pfizer_first_dose,
@@ -179,7 +185,7 @@ def update():
             if element_index != 0:
                 batch_update_cells = evaluate_row(
                     batch_update_cells,
-                    sheet_daily_vac, (daily_first_dose + daily_second_dose),
+                    sheet_daily_vac, (daily_first_dose + daily_second_dose + daily_boost_dose),
                     sheet_row_index, daily_vaccinated_col_index,
                     f"Update Daily: {date_row}"
                 )
