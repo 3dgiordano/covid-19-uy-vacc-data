@@ -48,6 +48,7 @@ jobs:
         git add data/*
         git add web/charts/*
         git diff-index --quiet HEAD || git commit -m "Update"
+      timeout-minutes: 5
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
