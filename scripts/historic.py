@@ -42,7 +42,11 @@ def get_col_index(headers, label):
 
 
 def get_historic():
-    return pd.read_csv(historic_url, sep=';')
+    # WA: TODO: Solve the certification problem with historic information
+    import requests
+    import io
+    s = requests.get(historic_url, verify=False).content
+    return pd.read_csv(io.StringIO(s.decode('utf-8')), sep=';')
 
 
 def evaluate_row(batch_update_cells, base_value, new_value, row_index, col_index, update_msg):
