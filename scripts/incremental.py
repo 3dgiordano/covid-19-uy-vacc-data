@@ -2,6 +2,11 @@ import json
 import time
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
+import ssl
+
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
 
 import gspread
 import pandas as pd
@@ -67,13 +72,13 @@ def get_col_index(headers, label):
 
 
 def get_data(data, columns):
-    json_origin = json.loads(urlopen(Request(monitor_url, data=data)).read().decode())
+    json_origin = json.loads(urlopen(Request(monitor_url, data=data), context=ctx).read().decode())
     print(json_origin)
     return pd.DataFrame(json_origin["resultset"], columns=columns).fillna(0)
 
 
 def get_data_schedule():
-    json_origin = json.loads(urlopen(Request(schedule_url)).read().decode())
+    json_origin = json.loads(urlopen(Request(schedule_url), context=ctx).read().decode())
     return pd.DataFrame(json_origin)
 
 
