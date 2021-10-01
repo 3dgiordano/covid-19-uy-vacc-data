@@ -319,6 +319,7 @@ def update_minimal():
         print("Agenda error!")
         day_agenda_first = 0
         day_agenda_second = 0
+        day_agenda_boost = 0
         day_agenda = 0
 
     today_vac_status = today_status(today)
