@@ -1,8 +1,8 @@
 import json
+import ssl
 import time
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
-import ssl
 
 ctx = ssl.create_default_context()
 ctx.check_hostname = False
@@ -101,7 +101,7 @@ def daily_vaccinated2():
 def daily_doses():
     data = b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_evolucion_dosis&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
-    return get_data(data, ['date', 'first_dose', 'second_dose', 'boost_dose'])
+    return get_data(data, ['date', 'first_dose', 'second_dose', 'third_dose', 'fourth_dose'])
 
 
 def daily_vaccinated_by_age(date):
@@ -210,7 +210,8 @@ def date_agenda(date):
            b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_indicadores_gral_agenda&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
     return get_data(data,
-                    ['future_first', 'today_first', 'future_second', 'today_second', 'future_boost', 'today_boost'])
+                    ['future_first', 'today_first', 'future_second', 'today_second', 'future_third', 'today_third',
+                     'future_fourth', 'today_fourth'])
 
 
 def date_agenda_second_dose(date):
@@ -229,7 +230,7 @@ def today_status(date):
            b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_indicadores_generales&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
     return get_data(data, ['total_vaccinations', 'today_vaccinations', 'first_dose', 'second_dose', 'update_time',
-                           'country_doses', 'boost_dose'])
+                           'country_doses', 'third_dose', 'fourth_dose'])
 
 
 def segment_vaccination(date):
@@ -313,7 +314,8 @@ def update_minimal():
         agenda_data = date_agenda(today)
         day_agenda_first = int(agenda_data["today_first"].item() or 0)
         day_agenda_second = int(agenda_data["today_second"].item() or 0)
-        day_agenda_boost = int(agenda_data["today_boost"].item() or 0)
+        day_agenda_boost = int(agenda_data["today_third"].item() or 0)
+        day_agenda_boost += int(agenda_data["today_fourth"].item() or 0)
         day_agenda = day_agenda_first + day_agenda_second + day_agenda_boost
     except HTTPError as e:
         print("Agenda error!")
@@ -332,7 +334,8 @@ def update_minimal():
     # today_total_vaccinations = int(today_vac_status["total_vaccinations"].item() or 0)
     today_total_people_vaccinations = int(today_vac_status["first_dose"].item() or 0)
     today_total_fully_vaccinations = int(today_vac_status["second_dose"].item() or 0)
-    today_total_boost_vaccinations = int(today_vac_status["boost_dose"].item() or 0)
+    today_total_boost_vaccinations = int(today_vac_status["third_dose"].item() or 0)
+    today_total_boost_vaccinations += int(today_vac_status["fourth_dose"].item() or 0)
     today_total_vaccinations = today_total_people_vaccinations + today_total_fully_vaccinations
     today_total_vaccinations += today_total_boost_vaccinations
 
