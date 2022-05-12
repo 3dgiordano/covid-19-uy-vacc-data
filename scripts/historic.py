@@ -122,7 +122,7 @@ def update():
         daily_second_dose = int(element["Total Dosis 2"])
         total_second_dose += daily_second_dose
 
-        daily_boost_dose = int(element["Total Dosis R"])
+        daily_boost_dose = int(element["Total Dosis 3"]) + int(element["Total Dosis 4"])
         total_boost_dose += daily_boost_dose
 
         daily_sinovac_first_dose = int(element["1era Dosis Sinovac"])
