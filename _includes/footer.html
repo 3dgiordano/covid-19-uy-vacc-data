@@ -65,34 +65,35 @@
 						formatter:"datetime", formatterParams:{
 							inputFormat:"YYYY-MM-DD",
 							outputFormat:date_format,
-						}
+						},
+						titleFormatter:titleCustomFormatter
 					},
-					{title:acts_label, field:"daily_vaccinated", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format},
+					{title:acts_label, field:"daily_vaccinated", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format, titleFormatter:titleCustomFormatter},
 					{
 						title:"Coronavac (Sinovac)", headerHozAlign:"center",
 						columns:[
-							{title:first_dose_label, field:"people_coronavac", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format},
-							{title:second_dose_label, field:"fully_coronavac", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format},
+							{title:first_dose_label, field:"people_coronavac", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format, titleFormatter:titleCustomFormatter},
+							{title:second_dose_label, field:"fully_coronavac", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format, titleFormatter:titleCustomFormatter},
 						],
 						titleFormatter:titleCustomFormatter
 					},
 					{
 						title:"Pfizer/BioNTech", headerHozAlign:"center",
 						columns:[
-							{title:first_dose_label, field:"people_pfizer", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format},
-							{title:second_dose_label, field:"fully_pfizer", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format},
+							{title:first_dose_label, field:"people_pfizer", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format, titleFormatter:titleCustomFormatter},
+							{title:second_dose_label, field:"fully_pfizer", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format, titleFormatter:titleCustomFormatter},
 						],
 						titleFormatter:titleCustomFormatter
 					},
 					{
 						title:"Oxford/AstraZeneca", headerHozAlign:"center",
 						columns:[
-							{title:first_dose_label, field:"people_astrazeneca", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format},
-							{title:second_dose_label, field:"fully_astrazeneca", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format},
+							{title:first_dose_label, field:"people_astrazeneca", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format, titleFormatter:titleCustomFormatter},
+							{title:second_dose_label, field:"fully_astrazeneca", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format, titleFormatter:titleCustomFormatter},
 						],
 						titleFormatter:titleCustomFormatter
 					},
-					{title:boost_label, field:"daily_boosters", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format},
+					{title:boost_label, field:"daily_boosters", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format, titleFormatter:titleCustomFormatter},
 				],
 				initialSort:[
 					{column:"date", dir:"desc"},
