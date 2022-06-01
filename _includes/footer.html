@@ -37,13 +37,13 @@
 <script>
 	var lang_eng = (window.location.pathname == "/en/")
 	var date_label = lang_eng ? "Date" : "Fecha";
-	var acts_label = lang_eng ? "Vaccination acts" : "Actos vacunales";
+	var acts_label = lang_eng ? "Acts" : "Actos";
 	var first_dose_label = lang_eng ? "1st" : "1era";
 	var second_dose_label = lang_eng ? "2nd" : "2da";
 	var boost_label = lang_eng ? "Booster" : "Refuerzo";
 	var date_format = lang_eng ? "MM/DD/YY" : "DD/MM/YY";
 	var number_format = lang_eng ? {decimal:",",thousand:".", precision:false} : {decimal:".",thousand:",", precision:false};
-	var min_with_cols = 113;
+	var min_with_cols = 103;
 	var title_font_size = 12;
 	var titleCustomFormatter = function(cell, formatterParams, onRendered){
 		cell.getElement().style.fontSize = title_font_size.toString() + "px";
