@@ -40,6 +40,7 @@
 	var acts_label = lang_eng ? "Vaccination acts" : "Actos vacunales";
 	var first_dose_label = lang_eng ? "1st" : "1era";
 	var second_dose_label = lang_eng ? "2nd" : "2da";
+	var boost_label = lang_eng ? "Booster" : "Refuerzo";
 	var date_format = lang_eng ? "MM/DD/YY" : "DD/MM/YY";
 	var number_format = lang_eng ? {decimal:",",thousand:".", precision:false} : {decimal:".",thousand:",", precision:false};
 	var min_with_cols = 113;
@@ -82,7 +83,7 @@
 							{title:second_dose_label, field:"fully_astrazeneca", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format},
 						],
 					},
-					
+					{title:boost_label, field:"daily_boosters", hozAlign:"center", headerHozAlign:"center", minWidth:min_with_cols, headerSort:false, bottomCalc:"sum", formatter:"money", formatterParams:number_format, bottomCalcFormatter:"money", bottomCalcFormatterParams:number_format},
 				],
 				initialSort:[
 					{column:"date", dir:"desc"},
