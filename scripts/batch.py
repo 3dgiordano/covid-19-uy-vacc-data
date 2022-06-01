@@ -1,7 +1,8 @@
 import pandas as pd
 
+# Enable share with link to allow export to public
 base_seet = "https://docs.google.com/spreadsheets/d/" \
-            "1ktfI1cEm-VyvRbiFkXvzTixrDrCG-85Et9Clz69QBp8/gviz/tq?tqx=out:csv&sheet="
+            "1J-cruSsRqJxaY6rPjwK7tWdIAldWfR82GH9Pp0u-WD0/gviz/tq?tqx=out:csv&sheet="
 
 
 def uruguay():

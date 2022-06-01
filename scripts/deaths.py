@@ -143,7 +143,7 @@ def daily_deaths_by_age():
 
 
 gc = gspread.service_account()
-sh = gc.open("CoronavirusUY - Vaccination monitor")
+sh = gc.open("vacuna.uy")
 
 sheet_deaths = sh.worksheet("Deaths")
 sheet_deaths_dic = sheet_deaths.get_all_records()
@@ -174,7 +174,7 @@ for deaths_date in deaths:
             death_daily = daily_death_value
             daily_death_col_index = get_col_index(sheet_deaths_headers, death_label)
             batch_update_deaths_cells.append(
-                gspread.models.Cell(sheet_deaths_row_index, daily_death_col_index,
+                gspread.Cell(sheet_deaths_row_index, daily_death_col_index,
                                     value=death_daily)
             )
     else:

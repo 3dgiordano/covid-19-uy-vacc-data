@@ -57,14 +57,14 @@ def evaluate_row(batch_update_cells, base_value, new_value, row_index, col_index
             print("* Warning! decrement!")
 
         batch_update_cells.append(
-            gspread.models.Cell(row_index, col_index, value=new_value)
+            gspread.Cell(row_index, col_index, value=new_value)
         )
     return batch_update_cells
 
 
 def update():
     gc = gspread.service_account()
-    sh = gc.open("CoronavirusUY - Vaccination monitor")
+    sh = gc.open("vacuna.uy")
 
     sheet = sh.worksheet("Uruguay")
     sheet_dic = sheet.get_all_records()
