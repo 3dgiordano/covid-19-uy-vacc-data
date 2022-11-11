@@ -7,6 +7,6 @@ remote_theme: jekyll/minima
 
 minima:
   social_links:
-    twitter: 3dgiordano
-    github: 3dgiordano
-    linkedin: davidgiordano
+    - { platform: twitter, user_url: "https://twitter.com/3dgiordano" }
+    - { platform: github, user_url: "https://github.com/3dgiordano/" }
+    - { platform: linkedin, user_url: "https://www.linkedin.com/in/davidgiordano/" }
