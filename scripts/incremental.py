@@ -101,7 +101,7 @@ def daily_vaccinated2():
 def daily_doses():
     data = b"path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_evolucion_dosis&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
-    return get_data(data, ['date', 'first_dose', 'second_dose', 'third_dose', 'fourth_dose'])
+    return get_data(data, ['date', 'first_dose', 'second_dose', 'third_dose', 'fourth_dose', 'fifth_or_more_dose'])
 
 
 def daily_vaccinated_by_age(date):
@@ -230,7 +230,7 @@ def today_status(date):
            b"&path=%2Fpublic%2FEpidemiologia%2FVacunas+Covid%2FPaneles%2FVacunas+Covid%2FVacunasCovid.cda&" \
            b"dataAccessId=sql_indicadores_generales&outputIndexId=1&pageSize=0&pageStart=0&sortBy=&paramsearchBox="
     return get_data(data, ['total_vaccinations', 'today_vaccinations', 'first_dose', 'second_dose', 'update_time',
-                           'country_doses', 'third_dose', 'fourth_dose'])
+                           'country_doses', 'third_dose', 'fourth_dose', 'fifth_or_more_dose'])
 
 
 def segment_vaccination(date):
@@ -336,6 +336,7 @@ def update_minimal():
     today_total_fully_vaccinations = int(today_vac_status["second_dose"].item() or 0)
     today_total_boost_vaccinations = int(today_vac_status["third_dose"].item() or 0)
     today_total_boost_vaccinations += int(today_vac_status["fourth_dose"].item() or 0)
+    today_total_boost_vaccinations += int(today_vac_status["fifth_or_more_dose"].item() or 0)
     today_total_vaccinations = today_total_people_vaccinations + today_total_fully_vaccinations
     today_total_vaccinations += today_total_boost_vaccinations
 
