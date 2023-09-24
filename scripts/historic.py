@@ -115,7 +115,12 @@ def update():
 
         # date = element["Fecha"].split("T")[0]
         date_row = str(curr_date)
-
+        org_date_row = datetime.datetime.strptime(element["Fecha"], "%d/%m/%Y").date()
+        #print(org_date_row)
+        if curr_date != org_date_row:
+            print(f"{curr_date} != {org_date_row}")
+            curr_date = org_date_row
+        #print(date_row)
         daily_first_dose = int(element["Total Dosis 1"])
         total_first_dose += daily_first_dose
 
